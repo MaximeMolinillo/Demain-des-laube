@@ -1,0 +1,38 @@
+@use "variables" as v;
+@use "reset";
+
+/*-----------HEADER---------*/
+header {
+    .navbar {
+        background-color: v.$green-pale;
+        .menu {
+        }
+        .socialNetworks {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
+           margin: 1rem;
+
+            a {
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: row;
+                //    align-items: flex-end;
+                img {
+                    width: 5rem;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/*-------------FOOTER------------*/ 
+
+footer{
+    background-color: v.$green-pale;
+}
