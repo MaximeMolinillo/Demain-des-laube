@@ -17,18 +17,28 @@
             </div>
             <div class="socialNetworks">
 
-                <a href="https://www.facebook.com/artisan.fleuriste.douai">
+                <a href="https://www.facebook.com/artisan.fleuriste.douai" target="_blank">
                     <img src="./img/logo/facebook.png" alt="facebook">
                 </a>
 
-                <a href="https://www.instagram.com/_demaindeslaube_/?hl=fr">
+                <a href="https://www.instagram.com/_demaindeslaube_/?hl=fr" target="_blank">
                     <img src="./img/logo/instagram.png" alt="instagram">
                 </a>
 
 
             </div>
         </div>
+
         <div class="banner">
-            <img src="./img/Banner.png" alt="">
+            <div class="wrapH1">
+                <h1>Demain <br> dès l'Aube</h1>
+            </div>
+            <h3>Artisan Fleuriste</h3>
+            <div class="headerBottom">
+                <img src="./img/logo/fleur-de-cerisier.png" alt="">
+                <h3 class="h3">Fleurit tout les évènements de votre vie</h3>
+                <img src="./img/logo/rose.png" alt="">
+            </div>
         </div>
+
     </header>
