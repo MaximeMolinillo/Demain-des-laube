@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Whisper&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Babylonica&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Updock&family=Whisper&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Babylonica&family=El+Messiri:wght@400;500;600;700&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Updock&family=Whisper&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -10,6 +12,7 @@ html {
 
 body {
   font-size: 1.6rem;
+  font-family: "Playfair Display", serif;
 }
 
 a {
@@ -45,7 +48,7 @@ header .navbar .socialNetworks a img {
   padding: 1rem;
 }
 header .banner {
-  background: url(../img/Banner.png);
+  background: url(../img/Banner3.png);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -85,7 +88,7 @@ header .banner .headerBottom {
 header .banner .headerBottom img {
   width: 3rem;
   height: 3rem;
-  margin: 1rem;
+  margin: 1gitrem;
 }
 header .banner .headerBottom .h3 {
   font-size: 3rem;
@@ -125,6 +128,22 @@ footer .followUs {
 footer .followUs a img {
   width: 5rem;
   padding: 1rem;
+}
+
+/*--------HOMEPAGE---------*/
+section .presentation, section .products {
+  text-align: center;
+}
+section .presentation h2, section .products h2 {
+  font-family: "Babylonica", cursive;
+  font-size: 7rem;
+  background-color: #F3FADC;
+}
+section .presentation p, section .products p {
+  margin: 5rem;
+}
+section .pictures {
+  width: 20%;
 }
 
 /*# sourceMappingURL=main.css.map */

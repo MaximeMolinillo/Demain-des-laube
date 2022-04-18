@@ -38,7 +38,7 @@
 
 </footer>
 
-<h2>Demain dès l'Aube</h2>
+
 </body>
 
 </html>

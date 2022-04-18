@@ -3,8 +3,30 @@
 @use "header";
 @use "footer";
 
+body{
+
+}
 
 
+/*--------HOMEPAGE---------*/
+section {
+    .presentation, .products{
+        text-align: center;
+        h2 {
+            font-family: v.$body-title-font;
+            font-size: 7rem;
+            background-color: v.$green-pale;
+        }
+        p {
+            margin: 5rem;
+           // font-family: v.$font-text;
+        }
+    }
+    .pictures{
+        width: 20%;
 
+        img{
 
-
+        }
+    }
+}
