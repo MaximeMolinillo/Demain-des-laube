@@ -1,4 +1,0 @@
-if (self.CavalryLogger) { CavalryLogger.start_js_script(document.currentScript); }
-
-__d("useOnRoutableDialogClose",["CometRouteRenderType","XCometHomeControllerRouteBuilder","react","useCometRouterDispatcher"],(function(a,b,c,d,e,f,g){"use strict";var h=d("react").useCallback;function a(a){var b=d("CometRouteRenderType").useIsPushView(),e=c("useCometRouterDispatcher")(),f=d("CometRouteRenderType").useIsHosted(),g=h(function(){if(e)if(e.popPushView&&b)return e.popPushView();else if(e.goBack&&f)return e.goBack();else{var d;return e.go((d=a)!=null?d:c("XCometHomeControllerRouteBuilder").buildURL({}),{target:"self"})}},[a,e,f,b]);return g}g["default"]=a}),98);
-__d("RoomsCreateDialogLobbyViewQuery_facebookRelayOperation",[],(function(a,b,c,d,e,f){e.exports="3851196294991710"}),null);

@@ -1,0 +1,88 @@
+@use "variables" as v;
+@use "reset";
+
+/*-------------FOOTER------------*/
+
+h5 {
+    font-size: 2rem;
+    margin-left: 4rem;
+    text-align: center;
+}
+
+.wrapFoot {
+   padding: 2rem;
+  
+    background-color: v.$green-pale;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    h2 {
+        text-align: center;
+    }
+    .contactUs {
+        text-align: center;
+        margin-left: 0rem;
+        width: 25%;
+        img {
+            width: 5rem;
+            padding: 1rem;
+        }
+    }
+
+    .payment {
+
+  width:25%;
+        img {
+            width: 20%;
+            margin-left: 40%;
+         
+           
+        }
+    }
+
+    .followUs {
+        width:25%;
+       // margin: 1rem;
+       ul{
+           li{
+               text-align: left;
+            span{
+                font-weight: 800;
+                margin-right: 2rem;
+               
+            }
+           }
+       }
+
+      
+    }
+    .navFooter{
+        width:25%;
+        text-align: center;
+        a{
+            color: v.$black;
+        }
+    }
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    p {
+        
+    }
+    img{
+        width: 5rem;
+        height: 5rem;
+        margin: 1rem;
+    }
+}
+
+.line {
+    width: 80%;
+    height: 0.1rem;
+    margin-left: 10%;
+    background-color: v.$black;
+    margin-top: 1rem;
+   // padding-top: 2rem;
+}

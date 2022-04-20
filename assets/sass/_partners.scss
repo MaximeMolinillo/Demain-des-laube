@@ -1,0 +1,24 @@
+@use "variables" as v;
+@use "reset";
+
+
+
+.partnersPage{
+    text-align: center;
+    margin: 5rem;
+    h1{
+        font-size: 5rem;
+    }
+    .imgPartners{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        img{
+           
+            width: 80%;
+        }
+        figcaption{
+            font-size: 3rem;
+        }
+    }
+}

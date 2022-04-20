@@ -1,0 +1,45 @@
+@use "variables" as v;
+@use "reset";
+
+.products {
+    width: 100%;
+
+    h2 {
+        width: 100%;
+        font-family: v.$body-title-font;
+        font-size: 7rem;
+        background-color: v.$green-pale;
+        border-radius: 2rem;
+        text-align: center;
+    }
+    h3 {
+        font-size: 3rem;
+        font-weight: 800;
+        text-align: center;
+    }
+    .underline {
+        width: 35%;
+        height: 0.1rem;
+        background-color: black;
+        margin-left: 32.5%;
+        margin-bottom: 5rem;
+    }
+    .wrapProducts {
+        display: flex;
+        text-align: center;
+        h4 {
+            font-size: 2rem;
+        }
+        a {
+            width: 30%;
+            color: v.$black;
+
+            img {
+                width: 20%;
+            }
+            p {
+                margin-top: 1rem;
+            }
+        }
+    }
+}

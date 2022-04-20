@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Whisper&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Babylonica&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Updock&family=Whisper&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Babylonica&family=El+Messiri:wght@400;500;600;700&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Updock&family=Whisper&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+h1, h2 {
+  font-family: "Whisper", cursive;
+}
+
+/*-------IMPORT---------*/
+/*-----------HEADER---------*/
+header .navbar {
+  background-color: #F3FADC;
+}
+header .navbar .socialNetworks {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  margin: 1rem;
+}
+header .navbar .socialNetworks a {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+header .navbar .socialNetworks a img {
+  width: 5rem;
+  padding: 1rem;
+}
+header .banner {
+  background: url(../img/background/Banner4.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+header .banner .wrapH1 {
+  margin-top: 2rem;
+  background-color: #ffffff;
+  box-shadow: 1rem 1rem 0.5rem #5C606B;
+}
+header .banner .wrapH1 h1 {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 5rem;
+  line-height: 100%;
+  padding-top: 1rem;
+  margin: 0.5rem;
+  width: 25rem;
+  border: 0.5rem solid #5C606B;
+  color: #5C606B;
+  background-color: #ffffff;
+}
+header .banner h3 {
+  color: #ffffff;
+  font-family: "Whisper", cursive;
+  font-size: 2rem;
+  margin-top: 1rem;
+  text-shadow: 0.3rem 0.3rem 0.2rem #5C606B;
+  letter-spacing: 0.25rem;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #F3FADC;
+  margin: 1rem;
+}
+.navBar a {
+  padding-left: 5rem;
+  margin: 1rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.headerBottom {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.headerBottom img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+}
+.headerBottom .h3 {
+  font-size: 3rem;
+  letter-spacing: 0.25rem;
+  font-family: "Babylonica", cursive;
+  font-size: 5rem;
+}
+
+/*-------------FOOTER------------*/
+h5 {
+  font-size: 2rem;
+  margin-left: 4rem;
+  text-align: center;
+}
+
+.wrapFoot {
+  padding: 2rem;
+  background-color: #F3FADC;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.wrapFoot h2 {
+  text-align: center;
+}
+.wrapFoot .contactUs {
+  text-align: center;
+  margin-left: 0rem;
+  width: 25%;
+}
+.wrapFoot .contactUs img {
+  width: 5rem;
+  padding: 1rem;
+}
+.wrapFoot .payment {
+  width: 25%;
+}
+.wrapFoot .payment img {
+  width: 20%;
+  margin-left: 40%;
+}
+.wrapFoot .followUs {
+  width: 25%;
+}
+.wrapFoot .followUs ul li {
+  text-align: left;
+}
+.wrapFoot .followUs ul li span {
+  font-weight: 800;
+  margin-right: 2rem;
+}
+.wrapFoot .navFooter {
+  width: 25%;
+  text-align: center;
+}
+.wrapFoot .navFooter a {
+  color: #000000;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+}
+.copyright img {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+}
+
+.line {
+  width: 80%;
+  height: 0.1rem;
+  margin-left: 10%;
+  background-color: #000000;
+  margin-top: 1rem;
+}
+
+.products {
+  width: 100%;
+}
+.products h2 {
+  width: 100%;
+  font-family: "Babylonica", cursive;
+  font-size: 7rem;
+  background-color: #F3FADC;
+  border-radius: 2rem;
+  text-align: center;
+}
+.products h3 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+}
+.products .underline {
+  width: 35%;
+  height: 0.1rem;
+  background-color: black;
+  margin-left: 32.5%;
+  margin-bottom: 5rem;
+}
+.products .wrapProducts {
+  display: flex;
+  text-align: center;
+}
+.products .wrapProducts h4 {
+  font-size: 2rem;
+}
+.products .wrapProducts a {
+  width: 30%;
+  color: #000000;
+}
+.products .wrapProducts a img {
+  width: 20%;
+}
+.products .wrapProducts a p {
+  margin-top: 1rem;
+}
+
+.whoIAmPage {
+  margin: 5rem;
+  text-align: center;
+}
+.whoIAmPage img {
+  width: 50%;
+}
+.whoIAmPage h1 {
+  font-family: "Whisper", cursive;
+  font-size: 5rem;
+  background-color: #F3FADC;
+  border-radius: 2rem;
+}
+
+.partnersPage {
+  text-align: center;
+  margin: 5rem;
+}
+.partnersPage h1 {
+  font-size: 5rem;
+}
+.partnersPage .imgPartners {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.partnersPage .imgPartners img {
+  width: 80%;
+}
+.partnersPage .imgPartners figcaption {
+  font-size: 3rem;
+}
+
+/*--------HOMEPAGE---------*/
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /*--------------Others----------------------*/
+}
+section .presentation,
+section .products {
+  text-align: center;
+  width: 100%;
+}
+section .presentation h2,
+section .products h2 {
+  font-family: "Babylonica", cursive;
+  font-size: 7rem;
+  background-color: #F3FADC;
+  border-radius: 2rem;
+}
+section .presentation p,
+section .products p {
+  margin: 5rem;
+}
+section .pic {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+section .pic .pictures {
+  width: 23rem;
+  flex-wrap: wrap;
+  background-color: #F3FADC;
+  padding: 1rem;
+}
+section .pic .pictures img {
+  width: 100%;
+  height: 25rem;
+}
+section .magasinPicture {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url("../img/Magasin/MagasinComptoir.jpg");
+  width: 100%;
+  height: 40rem;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section .magasinPicture2 {
+  background-image: url("../img/Magasin/Magasin.jpg");
+  width: 100%;
+  height: 40rem;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section .products h2 {
+  width: 100%;
+}
+section .products h3 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+section .products .underline {
+  width: 35%;
+  height: 0.1rem;
+  background-color: black;
+  margin-left: 32.5%;
+  margin-bottom: 5rem;
+}
+section .products .wrapProducts {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section .products .wrapProducts h4 {
+  font-size: 2rem;
+  margin-bottom: 0rem;
+}
+section .products .wrapProducts a {
+  width: 30%;
+  color: #000000;
+}
+section .products .wrapProducts a img {
+  width: 20%;
+}
+section .products .wrapProducts a p {
+  margin-top: 1rem;
+}
+section .othersActivity {
+  display: flex;
+}
+section .othersActivity img {
+  width: 30rem;
+  margin: 2rem;
+  border: 2rem solid #F3FADC;
+  margin-bottom: 0;
+}
+section .othersActivity h6 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+/*# sourceMappingURL=main.css.map */

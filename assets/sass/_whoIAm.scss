@@ -1,0 +1,19 @@
+@use "variables" as v;
+@use "reset";
+
+
+
+.whoIAmPage{
+    margin: 5rem;
+   text-align: center;
+    img{
+        width: 50%;
+ 
+    }
+    h1{
+        font-family: v.$title-font;
+        font-size: 5rem;
+        background-color: v.$green-pale;
+        border-radius: 2rem;
+    }
+}

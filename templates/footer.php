@@ -1,41 +1,53 @@
+
 <footer>
+<div class="line"></div>
+    <div class="wrapFoot">
+        <div class="contactUs">
 
-    <div class="contactUs">
-        <h5>Contact :</h5>
-        <ul>
-            <li>
-                <img src="./img/logo/vieux-telephone.png" alt="Téléphone">
-                <p>03-27-90-56-54</p>
-            </li>
-            <li>
-                <img src="./img/logo/email.png" alt="Email">
-                <p>perlonsen@gmail.com</p>
-            </li>
-            <li>
-                <img src="./img/logo/maison.png" alt="Adresse">
-                <p>17C rue du faubourg de béthune 59500 Douai</p>
-            </li>
-            <li>
-                <img src="./img/logo/parking-gratuit.png" alt="Parking">
-                <p>Stationnement gratuit et handicapé</p>
-            </li>
-        </ul>
-    </div>
-    <div class="payment">
-        <h5>Paiement sécurisé :</h5>
-        <img src="./img/logo/logo-cb.png" alt="">
-    </div>
-    <div class="followUs">
-        <h5>Suivez-nous :</h5>
-    <a href="https://www.facebook.com/artisan.fleuriste.douai">
-                    <img src="./img/logo/facebook.png" alt="facebook">
-                </a>
+            <h5>Demain dès l'Aube</h5>
+            <p>17C rue du faubourg de béthune 59500 Douai</p>
+            <p>03-27-90-56-54</p>
+            <p>perlonsen@gmail.com</p>
+            <a href="https://www.facebook.com/artisan.fleuriste.douai" target="_blank">
+                <img src="./assets/img/logo/facebook.png" alt="facebook">
+            </a>
+            <a href="https://www.instagram.com/_demaindeslaube_/?hl=fr" target="_blank">
+                <img src="./assets/img/logo/instagram.png" alt="instagram">
+            </a>
+    
+        </div>
 
-                <a href="https://www.instagram.com/_demaindeslaube_/?hl=fr">
-                    <img src="./img/logo/instagram.png" alt="instagram">
-                </a>
+        <div class="followUs">
+            <h5>Horraires d'ouvertures :</h5>
+            <ul>
+                <li> <span>Lundi :</span>Fermé </li>
+                <li> <span>Mardi :</span>10:00-12:30 -- 14:00-18:30 </li>
+                <li> <span>Mercredi :</span>10:00-12:30 -- 14:00-18:30 </li>
+                <li> <span>Jeudi :</span>10:00-12:30 -- 14:00-18:30 </li>
+                <li> <span>Vendredi :</span>10:00-12:30 -- 14:00-18:30 </li>
+                <li> <span>Samedi :</span>10:00-12:30 -- 14:00-18:30 </li>
+                <li> <span>Dimanche :</span>10:00-12:30 </li>
+            </ul>
+        </div>
+        <div class="payment">
+            <h5>Paiement sécurisé :</h5>
+            <img src="./assets/img/logo/logo-cb.png" alt="Carte bleu, Visa et Mastercard">
+        </div>
+        <div class="navFooter">
+            <h5>Menu</h5>
+            <ul>
+                <li> <a href="./index.php">Home</a></li>
+                <li><a href="./nosProduits.php">Nos Produits</a></li>
+                <li><a href="./partners.php">Partenaires</a></li>
+                <li><a href="./contact.php">Contact</a></li>
+                <li><a href="./whoIAm.php">Qui-suis-je ?</a></li>
+            </ul>
+            <div class="copyright">
+                <p>@copyright 2022 Maxime Molinillo</p>
+                <img src="./assets/img/logo/mMLogo.png" alt="">
+            </div>
+        </div>
     </div>
-
 </footer>
 
 
