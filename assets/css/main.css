@@ -93,30 +93,35 @@ header .banner h3 {
   display: flex;
   justify-content: space-around;
   background-color: #F3FADC;
-  margin: 1rem;
 }
 .navBar a {
   padding-left: 5rem;
   margin: 1rem;
   color: #000000;
   font-weight: 600;
+  text-decoration: overline;
+}
+.navBar a:hover {
+  color: white;
+  text-shadow: 0.2rem 0.2rem 1rem #000000;
 }
 
 .headerBottom {
+  padding-top: 0;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
 }
 .headerBottom img {
   width: 3rem;
   height: 3rem;
-  margin-right: 1rem;
 }
 .headerBottom .h3 {
   font-size: 3rem;
   letter-spacing: 0.25rem;
   font-family: "Babylonica", cursive;
   font-size: 5rem;
+  margin-top: 0;
 }
 
 /*-------------FOOTER------------*/
@@ -180,23 +185,23 @@ h5 {
   margin: 1rem;
 }
 
-.line {
+hr {
   width: 80%;
-  height: 0.1rem;
   margin-left: 10%;
-  background-color: #000000;
-  margin-top: 1rem;
 }
 
 .products {
-  width: 100%;
+  background: url("../img/background/backgroundFloral.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5rem;
 }
 .products h2 {
-  width: 100%;
   font-family: "Babylonica", cursive;
   font-size: 7rem;
   background-color: #F3FADC;
   border-radius: 2rem;
+  border: 0.5rem solid white;
   text-align: center;
 }
 .products h3 {
@@ -204,14 +209,8 @@ h5 {
   font-weight: 800;
   text-align: center;
 }
-.products .underline {
-  width: 35%;
-  height: 0.1rem;
-  background-color: black;
-  margin-left: 32.5%;
-  margin-bottom: 5rem;
-}
 .products .wrapProducts {
+  margin-top: 2rem;
   display: flex;
   text-align: center;
 }
@@ -230,36 +229,192 @@ h5 {
 }
 
 .whoIAmPage {
+  background: url("../img/background/backgroundFloral.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 5rem;
   text-align: center;
 }
 .whoIAmPage img {
   width: 50%;
+  box-shadow: 1rem 1rem 1rem #5C606B;
+  border: 2rem solid #F3FADC;
 }
 .whoIAmPage h1 {
-  font-family: "Whisper", cursive;
-  font-size: 5rem;
+  font-family: "Babylonica", cursive;
+  font-size: 7rem;
   background-color: #F3FADC;
   border-radius: 2rem;
+  border: 0.5rem solid white;
 }
 
 .partnersPage {
   text-align: center;
   margin: 5rem;
+  background: url("../img/background/backgroundFloral.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .partnersPage h1 {
-  font-size: 5rem;
+  font-family: "Babylonica", cursive;
+  font-size: 7rem;
+  background-color: #F3FADC;
+  border-radius: 2rem;
+  border: 0.5rem solid white;
 }
 .partnersPage .imgPartners {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.partnersPage .imgPartners img {
-  width: 80%;
+.partnersPage .imgPartners a {
+  position: relative;
 }
-.partnersPage .imgPartners figcaption {
+.partnersPage .imgPartners a img {
+  background-color: #F3FADC;
+  padding: 2rem;
+  width: 80%;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  box-shadow: 1rem 1rem 1rem #5C606B;
+}
+.partnersPage .imgPartners a:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.partnersPage .imgPartners a h6 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  text-shadow: 0.2rem 0.2rem 0.2rem #000000;
+}
+
+.contactPage .flowerPicture {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url("../img/Magasin/bouquetRose.png");
+  width: 100%;
+  height: 20rem;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contactPage form {
+  background: url("../img/background/backgroundFloral.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.contactPage form h1 {
+  font-family: "Babylonica", cursive;
+  font-size: 7rem;
+  background-color: #F3FADC;
+  border-radius: 2rem;
+  border: 0.5rem solid white;
+  width: 90%;
+  text-align: center;
+}
+.contactPage form .form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 600;
+}
+.contactPage form .form-group input,
+.contactPage form .form-group textarea {
+  border-radius: 2rem;
+  background-color: #F3FADC;
+  border: 0.2rem solid #5C606B;
+  box-shadow: 0.5rem 0.5rem 1rem #5C606B;
+  padding: 1rem;
+  font-family: "Playfair Display", serif;
+}
+.contactPage form .submit {
+  background-color: #F3FADC;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 2rem;
+  border-radius: 2rem;
+  padding: 2rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
+  box-shadow: 1rem 1rem 1rem #5C606B;
+}
+.contactPage form .submit:hover {
+  background-color: #5C606B;
+  color: #F3FADC;
+}
+
+.flowerPicture {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url("../img/Magasin/bouquetRose.png");
+  width: 100%;
+  height: 20rem;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+form {
+  background: url("../img/background/backgroundFloral.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+form h2 {
+  font-family: "Babylonica", cursive;
+  font-size: 7rem;
+  background-color: #F3FADC;
+  border-radius: 2rem;
+  border: 0.5rem solid white;
+  width: 90%;
+  text-align: center;
+}
+form .form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 600;
+}
+form .form-group input {
+  border-radius: 2rem;
+  background-color: #F3FADC;
+  border: 0.2rem solid #5C606B;
+  box-shadow: 0.5rem 0.5rem 1rem #5C606B;
+  padding: 1rem;
+  font-family: "Playfair Display", serif;
+}
+form .submit {
+  background-color: #F3FADC;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 2rem;
+  border-radius: 2rem;
+  padding: 2rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
+  box-shadow: 1rem 1rem 1rem #5C606B;
+}
+form .submit:hover {
+  background-color: #5C606B;
+  color: #F3FADC;
 }
 
 /*--------HOMEPAGE---------*/
@@ -272,7 +427,10 @@ section {
 section .presentation,
 section .products {
   text-align: center;
-  width: 100%;
+  width: 80%;
+  background: url("../img/background/backgroundFloral.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 section .presentation h2,
 section .products h2 {
@@ -280,6 +438,7 @@ section .products h2 {
   font-size: 7rem;
   background-color: #F3FADC;
   border-radius: 2rem;
+  border: 0.5rem solid white;
 }
 section .presentation p,
 section .products p {
@@ -320,19 +479,15 @@ section .magasinPicture2 {
   background-repeat: no-repeat;
   background-size: cover;
 }
+section .products {
+  height: 100vh;
+}
 section .products h2 {
   width: 100%;
 }
 section .products h3 {
   font-size: 3rem;
   font-weight: 800;
-}
-section .products .underline {
-  width: 35%;
-  height: 0.1rem;
-  background-color: black;
-  margin-left: 32.5%;
-  margin-bottom: 5rem;
 }
 section .products .wrapProducts {
   display: inline-flex;
@@ -349,6 +504,14 @@ section .products .wrapProducts a {
 }
 section .products .wrapProducts a img {
   width: 20%;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+section .products .wrapProducts a:hover img {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
 }
 section .products .wrapProducts a p {
   margin-top: 1rem;
@@ -356,16 +519,62 @@ section .products .wrapProducts a p {
 section .othersActivity {
   display: flex;
 }
-section .othersActivity img {
+section .othersActivity .wrapImg {
+  position: relative;
+}
+section .othersActivity .wrapImg img {
   width: 30rem;
   margin: 2rem;
   border: 2rem solid #F3FADC;
   margin-bottom: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  box-shadow: 1rem 1rem 1rem #5C606B;
 }
-section .othersActivity h6 {
+section .othersActivity .wrapImg img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+section .othersActivity .wrapImg h6 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   text-align: center;
-  font-size: 2rem;
   margin-top: 0;
+  color: #ffffff;
+  text-shadow: 0.2rem 0.2rem 0.2rem #000000;
+  font-size: 3rem;
+}
+
+.map {
+  background: url("../img/background/backgroundFloral.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  margin: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.map iframe {
+  background-color: #F3FADC;
+  padding: 2rem;
+  box-shadow: 1rem 1rem 1rem #5C606B;
+}
+.map .parking {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.map .parking h3 {
+  margin: 2rem;
+}
+.map .parking img {
+  width: 10rem;
+  height: 10rem;
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

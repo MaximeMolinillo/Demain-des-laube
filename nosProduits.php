@@ -7,7 +7,8 @@ include("templates/header.php");
 <div class="products">
     <h2>Nos Productions</h2>
     <h3>Tout nos produits sont 100% fait maison</h3>
-    <div class="underline"></div>
+   
+    <hr>
     <div class="wrapProducts">
         <div class="flowers">
             <a href="">

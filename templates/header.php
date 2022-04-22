@@ -15,18 +15,7 @@
             <div class="menu">
 
             </div>
-            <!-- <div class="socialNetworks">
 
-                <a href="https://www.facebook.com/artisan.fleuriste.douai" target="_blank">
-                    <img src="./assets/img/logo/facebook.png" alt="facebook">
-                </a>
-
-                <a href="https://www.instagram.com/_demaindeslaube_/?hl=fr" target="_blank">
-                    <img src="./assets/img/logo/instagram.png" alt="instagram">
-                </a>
-
-
-            </div> -->
         </div>
 
         <div class="banner">
@@ -42,11 +31,14 @@
             <a href="./partners.php">Partenaires</a>
             <a href="./contact.php">Contact</a>
             <a href="./whoIAm.php">Qui-suis-je ?</a>
+            <a href="./login.php">Connexion</a>
+            <a href="./inscription.php">Inscription</a>
         </div>
 
         <div class="headerBottom">
             <img src="./assets/img/logo/fleur-de-cerisier.png" alt="">
-            <h3 class="h3">Fleurit tout les évènements de votre vie</h3>
+            <h3 class="h3">Fleurit tous les évènements de votre vie</h3>
             <img src="./assets/img/logo/rose.png" alt="">
         </div>
+
     </header>

@@ -1,11 +1,12 @@
 
 <footer>
-<div class="line"></div>
+<!-- <div class="line"></div> -->
+<hr>
     <div class="wrapFoot">
         <div class="contactUs">
 
             <h5>Demain dès l'Aube</h5>
-            <p>17C rue du faubourg de béthune 59500 Douai</p>
+            <p>17C rue du faubourg de béthune <br> 59500 Douai</p>
             <p>03-27-90-56-54</p>
             <p>perlonsen@gmail.com</p>
             <a href="https://www.facebook.com/artisan.fleuriste.douai" target="_blank">
@@ -13,6 +14,12 @@
             </a>
             <a href="https://www.instagram.com/_demaindeslaube_/?hl=fr" target="_blank">
                 <img src="./assets/img/logo/instagram.png" alt="instagram">
+            </a>
+            <a href="mailto:perlonsen@gmail.com">
+                <img src="./assets/img/logo/email.png" alt="email">
+            </a>
+            <a href="tel:+33327905654">
+                <img src="./assets/img/logo/vieux-telephone.png" alt="téléphone">
             </a>
     
         </div>

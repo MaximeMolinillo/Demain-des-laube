@@ -1,0 +1,11 @@
+@use "variables" as v;
+@use "reset";
+
+
+@mixin title-mix {
+    font-family: v.$body-title-font;
+    font-size: 7rem;
+    background-color: v.$green-pale;
+    border-radius: 2rem;
+    border: 0.5rem solid white;
+}

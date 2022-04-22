@@ -1,15 +1,16 @@
 @use "variables" as v;
 @use "reset";
+@use "mixin" as m;
 
 .products {
-    width: 100%;
+    background: url("../img/background/backgroundFloral.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 5rem;
 
     h2 {
-        width: 100%;
-        font-family: v.$body-title-font;
-        font-size: 7rem;
-        background-color: v.$green-pale;
-        border-radius: 2rem;
+        @include m.title-mix;
+
         text-align: center;
     }
     h3 {
@@ -17,14 +18,9 @@
         font-weight: 800;
         text-align: center;
     }
-    .underline {
-        width: 35%;
-        height: 0.1rem;
-        background-color: black;
-        margin-left: 32.5%;
-        margin-bottom: 5rem;
-    }
+ 
     .wrapProducts {
+        margin-top: 2rem;
         display: flex;
         text-align: center;
         h4 {

@@ -1,0 +1,80 @@
+@use "variables" as v;
+@use "reset";
+@use "mixin" as m;
+
+.contactPage {
+   
+    .flowerPicture {
+        display: flex;
+        flex-wrap: wrap;
+        background-image: url("../img/Magasin/bouquetRose.png");
+        width: 100%;
+        height: 20rem;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    form {
+        background: url("../img/background/backgroundFloral.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            @include m.title-mix;
+             width: 90%;
+             text-align: center;
+            // margin-left: 2.5%;
+         
+          
+        }
+        .form-group {
+            //    margin: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-weight: 600;
+            input,
+            textarea {
+                border-radius: 2rem;
+                background-color: v.$green-pale;
+                border: 0.2rem solid v.$dark-gray;
+                box-shadow: 0.5rem 0.5rem 1rem v.$dark-gray;
+                padding: 1rem;
+           
+                font-family: v.$font-text;
+                }
+                textarea{
+                    
+                   
+                }
+          
+          
+        }
+        .submit{
+          //  color: v.$white;
+            background-color: v.$green-pale;
+            font-family: v.$font-text;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 2rem;
+            border-radius: 2rem;
+            padding: 2rem;
+           padding-right: 5rem;
+           padding-left: 5rem;
+           box-shadow: 1rem 1rem 1rem v.$dark-gray;
+           &:hover{
+background-color: v.$dark-gray;
+color: v.$green-pale;
+           }
+        }
+    }
+}
+// input::placeholder{
+//     font-family: v.$font-text;
+//     color: blue;
+// }

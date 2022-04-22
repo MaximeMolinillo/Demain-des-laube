@@ -1,19 +1,22 @@
 @use "variables" as v;
 @use "reset";
+@use "mixin" as m;
 
 
 
 .whoIAmPage{
-    margin: 5rem;
+    background: url("../img/background/backgroundFloral.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+   margin: 5rem;
    text-align: center;
     img{
         width: 50%;
+        box-shadow: 1rem 1rem 1rem v.$dark-gray;
+        border: 2rem solid v.$green-pale;
  
     }
     h1{
-        font-family: v.$title-font;
-        font-size: 5rem;
-        background-color: v.$green-pale;
-        border-radius: 2rem;
+        @include m.title-mix;
     }
 }

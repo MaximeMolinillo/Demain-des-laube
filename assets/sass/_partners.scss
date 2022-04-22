@@ -1,24 +1,46 @@
 @use "variables" as v;
 @use "reset";
+@use "mixin" as m;
 
-
-
-.partnersPage{
+.partnersPage {
     text-align: center;
     margin: 5rem;
-    h1{
-        font-size: 5rem;
+    background: url("../img/background/backgroundFloral.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    h1 {
+        @include m.title-mix;
     }
-    .imgPartners{
+    .imgPartners {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        img{
-           
-            width: 80%;
-        }
-        figcaption{
-            font-size: 3rem;
+        a {
+            position: relative;
+            img {
+                background-color: v.$green-pale;
+                padding: 2rem;
+                width: 80%;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+                box-shadow: 1rem 1rem 1rem v.$dark-gray;
+            }
+            &:hover img {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+            h6{
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                font-size: 3rem;
+                margin-bottom: 3rem;
+                color: v.$white;
+                text-shadow: 0.2rem 0.2rem 0.2rem v.$black;
+            }
         }
     }
 }
