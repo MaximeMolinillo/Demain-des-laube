@@ -8,10 +8,26 @@ include("templates/header.php");
 $db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
 
 
-$query = $db->query("SELECT * FROM photos");
+$query = $db->query("SELECT * FROM photos ORDER BY id DESC LIMIT 0,12");
 $photos = $query->fetchAll();
 
 
+
+// $query = $db->query("SELECT photos.title, type.category AS 'type'
+// FROM photos
+// INNER JOIN photos_category
+// ON photos.id = photos_category.id_photos
+// INNER JOIN type
+// ON photos_category.id_genre = type.id
+// GROUP BY photos.title");
+// $type = $query->fetch();
+
+// foreach ($type as $item) {
+//     if ($_GET["id"] == $item["id"]) {
+//         $find = true;
+//         $data = $item;
+//     }
+// }
 
 ?>
 
@@ -23,15 +39,22 @@ $photos = $query->fetchAll();
     <?php
     foreach ($photos as $photo) {
     ?>
-        <div class="pic">
+       <div class="pic"> 
             <div class="pictures">
-                <img src="<?= $photo["picture"] ?>" alt=" <?= $photo["title"] ?>">
+           <img src="assets/img/products/<?=$photo['picture']?>" >
+            <!-- <h1><?= $photo["title"] ?></h1>  -->
+            <!-- <h2><?= $photo["category"]?></h2> -->
+
+          
+   
             </div>
         </div>
-    <?php
+        <?php
 
-    }
-    ?>
+}
+
+  
+      ?>
 
     <div class="presentation">
         <h2>Présentation</h2>

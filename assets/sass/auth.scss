@@ -2,7 +2,6 @@
 @use "reset";
 @use "mixin" as m;
 
-
 .flowerPicture {
     display: flex;
     flex-wrap: wrap;
@@ -24,11 +23,9 @@ form {
     align-items: center;
     h2 {
         @include m.title-mix;
-         width: 90%;
-         text-align: center;
+        width: 90%;
+        text-align: center;
         // margin-left: 2.5%;
-     
-      
     }
     .form-group {
         //    margin: 0.5rem;
@@ -36,21 +33,18 @@ form {
         flex-direction: column;
         text-align: center;
         font-weight: 600;
-        input{
+        input {
             border-radius: 2rem;
             background-color: v.$green-pale;
             border: 0.2rem solid v.$dark-gray;
             box-shadow: 0.5rem 0.5rem 1rem v.$dark-gray;
             padding: 1rem;
-       
+
             font-family: v.$font-text;
-            }
-         
-      
-      
+        }
     }
-    .submit{
-      //  color: v.$white;
+    .submit {
+        //  color: v.$white;
         background-color: v.$green-pale;
         font-family: v.$font-text;
         font-size: 3rem;
@@ -58,12 +52,86 @@ form {
         margin: 2rem;
         border-radius: 2rem;
         padding: 2rem;
-       padding-right: 5rem;
-       padding-left: 5rem;
-       box-shadow: 1rem 1rem 1rem v.$dark-gray;
-       &:hover{
-background-color: v.$dark-gray;
-color: v.$green-pale;
-       }
+        padding-right: 5rem;
+        padding-left: 5rem;
+        box-shadow: 1rem 1rem 1rem v.$dark-gray;
+        &:hover {
+            background-color: v.$dark-gray;
+            color: v.$green-pale;
+        }
     }
+}
+
+.bottomLink {
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 0.2rem 0.2rem 0.25rem v.$dark-gray;
+    text-decoration: overline;
+}
+
+/**-------------My acount-------*/
+.myAccount {
+    // max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    //   flex-wrap: wrap;
+    width: 100%;
+   margin-bottom: 30rem;
+    .view {
+        display: flex;
+        //  flex-direction: column;
+       max-width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 5rem;
+        background: url("../img/background/backgroundFloral.png");
+        border: 2rem solid v.$green-pale;
+        border-radius: 2rem;
+       // background-size: cover;
+      //  background-repeat: no-repeat;
+
+        // .photos {
+            // display: flex;
+          //  width: 20%;
+            //  flex-direction:column;
+            // flex-wrap: wrap;
+            .photo {
+                // width: 100%;
+                // display: flex;
+                // flex-wrap: wrap;
+                // width: 10%;
+                // height: 10rem;
+                // margin :1rem;
+                // flex-wrap: wrap;
+                // margin-bottom: 30rem;
+                max-width: 8rem;
+                flex-wrap: wrap;
+               // height: 23rem;
+               margin: 0.2rem;
+               padding: 0.2rem;
+               border: 0.1rem solid v.$black;
+               display: flex;
+               justify-content: space-evenly;
+               flex-direction: column;
+               text-align: center;
+             
+                img {
+               
+                   
+                }
+                h1 {
+                    font-size: 2rem;
+                    margin-top: 0.1rem;
+                }
+                h2{
+                    font-size: 1.5rem;
+                    margin-top: 0.1rem;
+                }
+                form{
+                    // display: flex;
+                    // align-items: flex-end;
+                }
+            }
+        }
+    // }
 }

@@ -6,7 +6,7 @@ include("templates/header.php");
 
 <div class="products">
     <h2>Nos Productions</h2>
-    <h3>Tout nos produits sont 100% fait maison</h3>
+    <h3>Tous nos produits sont 100% faits maison</h3>
    
     <hr>
     <div class="wrapProducts">
@@ -21,7 +21,7 @@ include("templates/header.php");
             <a href="">
                 <img src="./assets/img/logo/decoratif.png" alt="Décorations">
                 <h4>Décorations</h4>
-                <p>Voici nos décorations florale ou pas</p>
+                <p>Voici nos décorations florales ou pas</p>
             </a>
         </div>
         <div class="jewels">
@@ -34,7 +34,7 @@ include("templates/header.php");
         <div class="event">
             <a href="">
                 <img src="./assets/img/logo/groupe.png" alt="Evennementiel">
-                <h4>Evennementiel</h4>
+                <h4>Evènementiel</h4>
                 <p>Découvrez nos réalisations, pour vos mariages, entérrements...</p>
             </a>
         </div>

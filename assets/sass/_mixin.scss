@@ -1,5 +1,5 @@
 @use "variables" as v;
-@use "reset";
+//@use "reset";
 
 
 @mixin title-mix {
@@ -8,4 +8,9 @@
     background-color: v.$green-pale;
     border-radius: 2rem;
     border: 0.5rem solid white;
+}
+
+@mixin no-margin {
+    margin: 0;
+    padding: 0;
 }

@@ -3,29 +3,30 @@
 
 /*-----------HEADER---------*/
 header {
-    .navbar {
-        background-color: v.$green-pale;
-        .menu {
-        }
-        .socialNetworks {
-            display: flex;
-            justify-content: flex-end;
-            flex-direction: row;
-            margin: 1rem;
-            a {
-                display: flex;
-                justify-content: flex-end;
-                flex-direction: row;
-                img {
-                    width: 5rem;
-                    padding: 1rem;
-                }
-            }
-        }
-    }
+    width: 100%;
+    // .navBar {
+    //     background-color: v.$green-pale;
+    //     .menu {
+    //     }
+        // .socialNetworks {
+        //     display: flex;
+        //     justify-content: flex-end;
+        //     flex-direction: row;
+        //     margin: 1rem;
+        //     a {
+        //         display: flex;
+        //         justify-content: flex-end;
+        //         flex-direction: row;
+        //         img {
+        //             width: 5rem;
+        //             padding: 1rem;
+        //         }
+        //     }
+        // }
+   // }
 
     .banner {
-        background: url(../img/background/Banner4.png);
+        background: url(../img/background/Banner8.png);
         background-size: cover;
         background-repeat: no-repeat;
         width: 100%;
@@ -34,6 +35,10 @@ header {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        @media screen and (max-width: v.$lg-breakpoint) {
+         //   width: 50rem;
+              
+                }
 
         .wrapH1 {
             margin-top: 2rem;
@@ -72,6 +77,11 @@ header {
    // margin: 1rem;
     // width: 90%;
     // margin-left: 5%;
+    @media screen and (max-width: v.$lg-breakpoint) {
+flex-wrap: wrap;
+
+  
+    }
 
     a {
         padding-left: 5rem;

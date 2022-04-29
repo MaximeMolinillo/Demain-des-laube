@@ -1,12 +1,12 @@
 <?php
 
 //Chargement dependances Composer
-require("./vendor/autoload.php");
+require("./svendor/autoload.php");
 
 use PHPMailer\PHPMailer\PHPMailer;
 
 //Création d'une constante pour générer le lien de reinitialisation du mot de passe
-define("HOST", "http://localhost/demaindeslaube/");
+define("HOST", "http://localhost/demain-des-laube/");
 
 if(isset($_POST["email"])) {
     $email =trim(strip_tags($_POST["email"]));
@@ -29,7 +29,7 @@ if(isset($_POST["email"])) {
         if ($query->execute()) {
               // L'insertion en base c'est ok, on peut passer à l'envoi du mail
             // Appel au constructeur de la classe PHPMailer
-            $phpmailer = new PHPMailer();
+            $phpmailer = new PHPMailer;
 
             $phpmailer->isSMTP();
 
@@ -43,18 +43,34 @@ if(isset($_POST["email"])) {
             //Expéditeur
             $phpmailer->From = "caro@demaindeslaube.fr";
             //Nom a afficher à la place de l'adresse mail
-            $phpmailer->FromName = "Demain dèsl'Aube";
+            $phpmailer->FromName = "Demain dès l'Aube";
+            $phpmailer->addAddress($email);
             //On indique que le contenu du mail sera du code html
+
             $phpmailer->isHTML();
             $phpmailer->Subject = "Réinitialisation du mot de passe";
             //Corps du mail
-            $phpmailer->$Body = "<a href=\"".HOST."new_password.php?token={$token}\">Réinitialisation du mot de passe</a>";
+            $phpmailer->$Body = "<a href=\"" . HOST . "new_password.php?token={$token}\">Réinitialisation du mot de passe</a>";
             //Encodage utf-8
             $phpmailer->Charset = "UTF-8";
             //Envoie du mail
             $phpmailer->send();
 
-            header("Location: login.php");
+
+
+            //Mail en ligne
+            // $headers->From = "max_224@hotmail.fr";
+            // $header->FromName ="Demain dès l'aube";
+            // $header->$phpmailer->isHTML();
+            // $header->$phpmailer->Subject = "Réinitialisation du mot de passe";
+            // $header->$phpmailer->$Body = "<a href=\"".HOST."new_password.php?token={$token}\">Réinitialisation du mot de passe</a>";
+            // $header->$phpmailer->Charset = "UTF-8";
+            // $header->send();
+
+            // mail('maxime.molinillo@outlook.fr', 'Demain dès lAube', 'Hello test mail', $headers);
+
+
+            header("Location: new_password.php");
         }
     }
 }

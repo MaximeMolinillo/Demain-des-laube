@@ -9,52 +9,62 @@
 @use "contact";
 @use "auth";
 
-
-
-
-
 /*--------HOMEPAGE---------*/
 section {
-    //  width: 100%;
-    display: flex;
+     width: 100%;
+   display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+//   //  justify-content: center;
+//    flex-direction: row;
 
- 
-    .presentation,
-    .products {
-        text-align: center;
-        width: 80%;
-        background: url("../img/background/backgroundFloral.png");
-        background-size: cover;
-        background-repeat: no-repeat;
+//    position: relative;
+//    display: flex;
+//    justify-content: space-between;
 
-        h2 {
-          @include m.title-mix;
-        }
-        p {
-            margin: 5rem;
-        }
-    }
-    .pic {
-        position: relative;
+
+     .pic {
+        // position: relative;
+        // width: 100%;
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
+       // margin: 1rem;
+
+     
 
         .pictures {
-            width: 23rem;
-            flex-wrap: wrap;
+            display: flex;
+         //  width: 20rem;
+        //    height: 30rem;
+           flex-wrap: wrap;
             background-color: v.$green-pale;
+            // flex-basis: 18%;
+            // position: absolute;
+            flex-direction: column;
 
             padding: 1rem;
 
             img {
-                width: 100%;
-                height: 25rem;
+               width: 20rem;
             }
         }
     }
 
+  .presentation,
+  .products {
+      text-align: center;
+      width: 80%;
+      background: url("../img/background/backgroundFloral.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      h2 {
+          @include m.title-mix;
+      }
+      p {
+          margin: 5rem;
+      }
+  }
     .magasinPicture {
         display: flex;
         flex-wrap: wrap;
@@ -79,7 +89,10 @@ section {
 
     .products {
         height: 100vh;
-       // width: 100%;
+        // width: 100%;
+        @media screen and (max-width: v.$lg-breakpoint) {
+            height: 100%;
+        }
         h2 {
             width: 100%;
         }
@@ -98,6 +111,11 @@ section {
             display: inline-flex;
             justify-content: space-between;
             align-items: center;
+            @media screen and (max-width: v.$lg-breakpoint) {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
             h4 {
                 font-size: 2rem;
                 margin-bottom: 0rem;
@@ -126,12 +144,16 @@ section {
 
     .othersActivity {
         display: flex;
-      
+        width: 100%;
+        @media screen and (max-width: v.$lg-breakpoint) {
+            flex-direction: column;
+            align-items: center;
+        }
 
         .wrapImg {
             position: relative;
-             // overflow: hidden;
-             // display: flex;
+            // overflow: hidden;
+            // display: flex;
             img {
                 width: 30rem;
                 // height: 30rem;
@@ -147,7 +169,7 @@ section {
                 transition: 0.3s ease-in-out;
                 box-shadow: 1rem 1rem 1rem v.$dark-gray;
 
-                &:hover{
+                &:hover {
                     -webkit-transform: scale(1.1);
                     transform: scale(1.1);
                 }
@@ -169,7 +191,7 @@ section {
 }
 .map {
     background: url("../img/background/backgroundFloral.png");
- 
+
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -177,10 +199,20 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    @media screen and (max-width: v.$lg-breakpoint) {
+        flex-direction: column;
+        justify-content: center;
+    }
     iframe {
         background-color: v.$green-pale;
         padding: 2rem;
         box-shadow: 1rem 1rem 1rem v.$dark-gray;
+        @media screen and (max-width: v.$lg-breakpoint) {
+            width: 30rem;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
     }
 
     .parking {

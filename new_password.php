@@ -46,7 +46,7 @@ if (isset($_GET["token"])) {
     }
 } else {
     //Pas de token dans l'url c'est louche !
-    header("Location: ./");
+    header("Location: ./login.php");
 }
 
 ?>
