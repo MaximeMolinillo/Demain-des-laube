@@ -2,7 +2,7 @@
 @use "reset";
 @use "mixin" as m;
 
-.products {
+.productsView {
     background: url("../img/background/backgroundFloral.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,30 +12,171 @@
         @include m.title-mix;
 
         text-align: center;
+        @media screen and (max-width: v.$md-breakpoint) {
+            font-size: 3rem;
+        }
     }
     h3 {
         font-size: 3rem;
         font-weight: 800;
         text-align: center;
+        background-color: v.$white;
+        width: 60%;
+        margin-left: 20%;
+        border-radius: 2rem;
+        padding: 1rem;
+        box-shadow: 0.1rem 0.1rem 1rem v.$color-shadow;
+        @media screen and (max-width: v.$md-breakpoint) {
+            font-size: 1rem;
+            box-shadow: none;
+        }
     }
- 
+
     .wrapProducts {
         margin-top: 2rem;
         display: flex;
+        flex-wrap: wrap;
         text-align: center;
-        h4 {
-            font-size: 2rem;
-        }
-        a {
-            width: 30%;
-            color: v.$black;
+        justify-content: center;
 
-            img {
-                width: 20%;
+        .prod {
+            border: 0.5rem solid v.$color-border;
+            box-shadow: 1rem 1rem 1rem v.$color-shadow;
+            background-color: v.$green-pale;
+            border-radius: 2rem;
+            margin: 3rem;
+            width: 25%;
+            padding: 3rem;
+            text-align: center;
+            @media screen and (max-width: v.$lg-breakpoint) {
+                width: 25rem;
             }
-            p {
-                margin-top: 1rem;
+            h4 {
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                margin: 0;
+                padding: 0;
+                // display: inline;
+                // flex-wrap: nowrap;
+            }
+            a {
+                // width: 10rem;
+                color: v.$black;
+
+                img {
+                    background-color: v.$white;
+
+                    //  margin: 2rem;
+                    border-radius: 50%;
+                    width: 20rem;
+                    margin-bottom: 2rem;
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                    -webkit-transition: 0.3s ease-in-out;
+                    transition: 0.3s ease-in-out;
+                }
+                &:hover img {
+                    -webkit-transform: scale(1.3);
+                    transform: scale(1.3);
+                }
+                p {
+                    margin-top: 1rem;
+                }
             }
         }
     }
 }
+
+.radient {
+    width: 100%;
+    height: 5rem;
+    background: linear-gradient(to bottom, transparent, 50%, v.$green-pale);
+}
+
+.viewProducts {
+    background: url(../img/background/inverseBackground.png);
+
+    // .flowersView {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  
+    h1 {
+        width: 80%;
+
+        @include m.title-mix;
+    }
+    .view {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .img {
+            border: 1rem solid v.$color-border;
+            box-shadow: (0.5rem 0.5rem 1rem v.$color-shadow);
+            background-color: white;
+            background: url("../img/background/backgroundFloral.png");
+            background-size: cover;
+width: 25%;
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            margin: 1rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+            flex-direction: column;
+            // color: v.$dark-gray;
+            img {
+                border: 0.5rem solid v.$color-border;
+                width: 27rem;
+                border-radius: 2rem;
+            }
+            &:hover img {
+                -webkit-filter: sepia(100%);
+                filter: sepia(100%);
+                -webkit-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+            }
+
+            .txtView {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                // font-family: v.$body-title-font;
+                //  border: 0.1rem solid v.$black;
+                border-radius: 2rem;
+                margin: 1rem;
+                padding: 1rem;
+                color: v.$dark-gray;
+                text-shadow: 0.1rem 0.1rem 0.5rem v.$color-shadow;
+                background-color: v.$green-pale;
+                // box-shadow: 0.1rem 0.1rem 1rem v.$dark-gray;
+              //  max-width: 20%;
+                h3 {
+          
+                    padding: 1rem;
+                    border-radius: 2rem;
+                    text-transform: uppercase;
+                    background-color: v.$white;
+                   
+                }
+                h4 {
+                    background-color: v.$white;
+                    padding: 1rem;
+                    border-radius: 2rem;
+                  //  max-width: 20%;
+                }
+            }
+        }
+    }
+    //  }
+}
+
+.a{
+    width: 100%;
+    text-align: center;
+  }

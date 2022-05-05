@@ -1,5 +1,5 @@
 <!-- <?php
-session_start();
+// session_start();
 ?> -->
 
 <!DOCTYPE html>
@@ -11,9 +11,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
     <title>Demain dès l'Aube</title>
 </head>
 
@@ -37,9 +37,10 @@ session_start();
             <a href="./index.php">Home</a>
             <a href="./nosProduits.php">Nos Produits</a>
             <a href="./partners.php">Partenaires</a>
-            <a href="./contact.php">Contact</a>
+            <!-- <a href="./contact.php">Contact</a> -->
             <a href="./whoIAm.php">Qui-suis-je ?</a>
             <a href="./login.php">Connexion</a>
+            <a href="./my_account.php">Mon compte</a>
             <a href="./inscription.php">Inscription</a>
         </div>
 

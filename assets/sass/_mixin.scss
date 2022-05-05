@@ -7,7 +7,8 @@
     font-size: 7rem;
     background-color: v.$green-pale;
     border-radius: 2rem;
-    border: 0.5rem solid white;
+    border: 0.5rem solid v.$color-border;
+    box-shadow: 1rem 1rem 1rem v.$color-shadow;
 }
 
 @mixin no-margin {

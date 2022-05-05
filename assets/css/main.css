@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Whisper&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Babylonica&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Updock&family=Whisper&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Babylonica&family=El+Messiri:wght@400;500;600;700&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Updock&family=Whisper&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -111,20 +112,22 @@ header .banner h3 {
 .headerBottom .h3 {
   font-size: 3rem;
   letter-spacing: 0.25rem;
-  font-family: "Babylonica", cursive;
+  font-family: "Arizonia", cursive;
   font-size: 5rem;
   margin-top: 0;
 }
 
 /*-------------FOOTER------------*/
 h5 {
-  font-size: 2rem;
+  font-size: 1rem;
   margin-left: 4rem;
   text-align: center;
 }
 
 .wrapFoot {
-  padding: 2rem;
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
   background-color: #F3FADC;
   width: 100%;
   display: flex;
@@ -147,7 +150,14 @@ h5 {
 }
 .wrapFoot .payment img {
   width: 20%;
-  margin-left: 40%;
+}
+.wrapFoot .payment .copyright {
+  display: flex;
+  justify-content: center;
+}
+.wrapFoot .payment .copyright img {
+  width: 2rem;
+  height: 2rem;
 }
 .wrapFoot .followUs {
   width: 25%;
@@ -182,42 +192,174 @@ hr {
   margin-left: 10%;
 }
 
-.products {
+.productsView {
   background: url("../img/background/backgroundFloral.png");
   background-size: cover;
   background-repeat: no-repeat;
   margin: 5rem;
 }
-.products h2 {
-  font-family: "Babylonica", cursive;
+.productsView h2 {
+  font-family: "Arizonia", cursive;
   font-size: 7rem;
   background-color: #F3FADC;
   border-radius: 2rem;
-  border: 0.5rem solid white;
+  border: 0.5rem solid #e9ecdf;
+  box-shadow: 1rem 1rem 1rem #728572;
   text-align: center;
 }
-.products h3 {
+@media screen and (max-width: 768px) {
+  .productsView h2 {
+    font-size: 3rem;
+  }
+}
+.productsView h3 {
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
+  background-color: #ffffff;
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 2rem;
+  padding: 1rem;
+  box-shadow: 0.1rem 0.1rem 1rem #728572;
 }
-.products .wrapProducts {
+@media screen and (max-width: 768px) {
+  .productsView h3 {
+    font-size: 1rem;
+    box-shadow: none;
+  }
+}
+.productsView .wrapProducts {
   margin-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.productsView .wrapProducts .prod {
+  border: 0.5rem solid #e9ecdf;
+  box-shadow: 1rem 1rem 1rem #728572;
+  background-color: #F3FADC;
+  border-radius: 2rem;
+  margin: 3rem;
+  width: 25%;
+  padding: 3rem;
   text-align: center;
 }
-.products .wrapProducts h4 {
-  font-size: 2rem;
+@media screen and (max-width: 992px) {
+  .productsView .wrapProducts .prod {
+    width: 25rem;
+  }
 }
-.products .wrapProducts a {
-  width: 30%;
+.productsView .wrapProducts .prod h4 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+.productsView .wrapProducts .prod a {
   color: #000000;
 }
-.products .wrapProducts a img {
-  width: 20%;
+.productsView .wrapProducts .prod a img {
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 20rem;
+  margin-bottom: 2rem;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.products .wrapProducts a p {
+.productsView .wrapProducts .prod a:hover img {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+.productsView .wrapProducts .prod a p {
   margin-top: 1rem;
+}
+
+.radient {
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(to bottom, transparent, 50%, #F3FADC);
+}
+
+.viewProducts {
+  background: url(../img/background/inverseBackground.png);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.viewProducts h1 {
+  width: 80%;
+  font-family: "Arizonia", cursive;
+  font-size: 7rem;
+  background-color: #F3FADC;
+  border-radius: 2rem;
+  border: 0.5rem solid #e9ecdf;
+  box-shadow: 1rem 1rem 1rem #728572;
+}
+.viewProducts .view {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.viewProducts .view .img {
+  border: 1rem solid #e9ecdf;
+  box-shadow: 0.5rem 0.5rem 1rem #728572;
+  background-color: white;
+  background: url("../img/background/backgroundFloral.png");
+  background-size: cover;
+  width: 25%;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.viewProducts .view .img img {
+  border: 0.5rem solid #e9ecdf;
+  width: 27rem;
+  border-radius: 2rem;
+}
+.viewProducts .view .img:hover img {
+  -webkit-filter: sepia(100%);
+  filter: sepia(100%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.viewProducts .view .img .txtView {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+  color: #5C606B;
+  text-shadow: 0.1rem 0.1rem 0.5rem #728572;
+  background-color: #F3FADC;
+}
+.viewProducts .view .img .txtView h3 {
+  padding: 1rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  background-color: #ffffff;
+}
+.viewProducts .view .img .txtView h4 {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.a {
+  width: 100%;
+  text-align: center;
 }
 
 .whoIAmPage {
@@ -233,11 +375,12 @@ hr {
   border: 2rem solid #F3FADC;
 }
 .whoIAmPage h1 {
-  font-family: "Babylonica", cursive;
+  font-family: "Arizonia", cursive;
   font-size: 7rem;
   background-color: #F3FADC;
   border-radius: 2rem;
-  border: 0.5rem solid white;
+  border: 0.5rem solid #e9ecdf;
+  box-shadow: 1rem 1rem 1rem #728572;
 }
 
 .partnersPage {
@@ -248,11 +391,12 @@ hr {
   background-repeat: no-repeat;
 }
 .partnersPage h1 {
-  font-family: "Babylonica", cursive;
+  font-family: "Arizonia", cursive;
   font-size: 7rem;
   background-color: #F3FADC;
   border-radius: 2rem;
-  border: 0.5rem solid white;
+  border: 0.5rem solid #e9ecdf;
+  box-shadow: 1rem 1rem 1rem #728572;
 }
 .partnersPage .imgPartners {
   display: flex;
@@ -308,11 +452,12 @@ hr {
   align-items: center;
 }
 .contactPage form h1 {
-  font-family: "Babylonica", cursive;
+  font-family: "Arizonia", cursive;
   font-size: 7rem;
   background-color: #F3FADC;
   border-radius: 2rem;
-  border: 0.5rem solid white;
+  border: 0.5rem solid #e9ecdf;
+  box-shadow: 1rem 1rem 1rem #728572;
   width: 90%;
   text-align: center;
 }
@@ -370,11 +515,12 @@ form {
   align-items: center;
 }
 form h2 {
-  font-family: "Babylonica", cursive;
+  font-family: "Arizonia", cursive;
   font-size: 7rem;
   background-color: #F3FADC;
   border-radius: 2rem;
-  border: 0.5rem solid white;
+  border: 0.5rem solid #e9ecdf;
+  box-shadow: 1rem 1rem 1rem #728572;
   width: 90%;
   text-align: center;
 }
@@ -452,11 +598,30 @@ form .submit:hover {
   font-size: 1.5rem;
   margin-top: 0.1rem;
 }
+.welcome {
+  font-size: 3rem;
+  text-align: center;
+  background-color: #F3FADC;
+}
+
+.inscription p {
+  font-size: 1rem;
+}
+
+.deleteAccount h3 {
+  text-align: center;
+  background-color: #F3FADC;
+}
+
+.mL {
+  text-align: center;
+}
+
 /*--------HOMEPAGE---------*/
 section {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   /*--------------Others----------------------*/
 }
 section .pic {
@@ -474,24 +639,22 @@ section .pic .pictures {
 section .pic .pictures img {
   width: 20rem;
 }
-section .presentation,
-section .products {
+section .presentation {
   text-align: center;
   width: 80%;
   background: url("../img/background/backgroundFloral.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
-section .presentation h2,
-section .products h2 {
-  font-family: "Babylonica", cursive;
+section .presentation h2 {
+  font-family: "Arizonia", cursive;
   font-size: 7rem;
   background-color: #F3FADC;
   border-radius: 2rem;
-  border: 0.5rem solid white;
+  border: 0.5rem solid #e9ecdf;
+  box-shadow: 1rem 1rem 1rem #728572;
 }
-section .presentation p,
-section .products p {
+section .presentation p {
   margin: 5rem;
 }
 section .magasinPicture {
@@ -514,58 +677,21 @@ section .magasinPicture2 {
   background-repeat: no-repeat;
   background-size: cover;
 }
-section .products {
-  height: 100vh;
+section .products .wrapProducts .prod {
+  width: 25%;
 }
-@media screen and (max-width: 992px) {
-  section .products {
-    height: 100%;
-  }
-}
-section .products h2 {
-  width: 100%;
-}
-section .products h3 {
-  font-size: 3rem;
-  font-weight: 800;
-}
-section .products .wrapProducts {
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-}
-@media screen and (max-width: 992px) {
-  section .products .wrapProducts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-section .products .wrapProducts h4 {
+section .products .wrapProducts .prod h4 {
   font-size: 2rem;
-  margin-bottom: 0rem;
+  padding: 0;
 }
-section .products .wrapProducts a {
-  width: 30%;
-  color: #000000;
+section .products .wrapProducts .prod img {
+  width: 10rem;
 }
-section .products .wrapProducts a img {
-  width: 20%;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-section .products .wrapProducts a:hover img {
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
-}
-section .products .wrapProducts a p {
-  margin-top: 1rem;
+section .products .wrapProducts .prod p {
+  margin-bottom: 0;
 }
 section .othersActivity {
   display: flex;
-  width: 100%;
 }
 @media screen and (max-width: 992px) {
   section .othersActivity {
@@ -595,13 +721,16 @@ section .othersActivity .wrapImg h6 {
   right: 0;
   bottom: 0;
   text-align: center;
-  margin-top: 0;
   color: #ffffff;
   text-shadow: 0.2rem 0.2rem 0.2rem #000000;
   font-size: 3rem;
+  font-family: "Arizonia", cursive;
+  background-color: rgba(243, 250, 220, 0.5);
+  border-radius: 2rem;
+  margin-right: 5rem;
+  margin-left: 5rem;
 }
-
-.map {
+section .map {
   background: url("../img/background/backgroundFloral.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -612,34 +741,34 @@ section .othersActivity .wrapImg h6 {
   justify-content: center;
 }
 @media screen and (max-width: 992px) {
-  .map {
+  section .map {
     flex-direction: column;
     justify-content: center;
   }
 }
-.map iframe {
+section .map iframe {
   background-color: #F3FADC;
   padding: 2rem;
   box-shadow: 1rem 1rem 1rem #5C606B;
 }
 @media screen and (max-width: 992px) {
-  .map iframe {
+  section .map iframe {
     width: 30rem;
     display: flex;
     align-items: center;
     text-align: center;
   }
 }
-.map .parking {
+section .map .parking {
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
 }
-.map .parking h3 {
+section .map .parking h3 {
   margin: 2rem;
 }
-.map .parking img {
+section .map .parking img {
   width: 10rem;
   height: 10rem;
   padding: 1rem;

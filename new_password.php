@@ -1,63 +1,106 @@
 <?php
-include("templates/header.php");
+session_start();
 
+require("./vendor/autoload.php");
+
+$message = "";
+$errors = [];
 if (isset($_GET["token"])) {
     $token = trim(strip_tags($_GET["token"]));
 
-    if ($password !== $retypePassword) {
-        $errors["retypePasword"] = "Les mots de passe de correspondent pas!";
-    }
-
-    $uppercase = preg_match("/[A-Z]/", $password);
-    $lowercase = preg_match("/[a-z]/", $password);
-    $number = preg_match("/[0-9]/", $password);
-    $haveSpace = preg_match("/ /", $password);
-
-    if (strlen($password) < 6 || !$uppercase || !$lowercase || $haveSpace) {
-        $errors["password"] = "Le mot de passe doit contenir 6 caractéres minimum, une majuscule, une minuscule et un chiffre";
-    }
-
-    $db = new PDO("mysql:host=localhost;dbname=startauth", "root", "");
-    $query = $db->prepare("SELECT email FROM password_reset WHERE token LIKE :token");
+    $db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
+    $query = $db->prepare("SELECT email, validity FROM password_reset WHERE token = :token");
     $query->bindParam(":token", $token);
     $query->execute();
     $result = $query->fetch();
 
+    //  validité
+    if (!$result || $result["validity"] < time()) {
+        array_push($errors, "Votre lien de récupération du mot de passe est invalide ou expiré");
+    } else {
+        $_SESSION["token"] = $token;
+    }
+   // }
+    // var_dump($result);
+
     if (empty($result)) {
         //token pas trouvé redirection
-        header("Location: ./");
+        header("Location: index.php");
     }
 
-    //var_dump($result);
-    if (isset($_POST["password"])) {
+
+    if (isset($_POST["newPassword"])) {
+        //  $token = $_SESSION["token"];
+
+        $passwordReset = trim(strip_tags($_POST["passwordReset"]));
+        $retypePasswordReset = trim(strip_tags($_POST["retypePasswordReset"]));
+
+        $req = $db->prepare("SELECT email, validity FROM password_reset WHERE token=:token");
+        $req->bindParam(":token", $token);
+        $req->execute();
+        $res = $req->fetch();
+        // var_dump($res["email"]);
+        $emailReset = $res["email"];
+
+        //Validation password
+        if ($passwordReset !== $retypePasswordReset) {
+            $errors["retypePasword"] = "Les mots de passe de correspondent pas!";
+        }
+
+        $uppercase = preg_match("/[A-Z]/", $passwordReset);
+        $lowercase = preg_match("/[a-z]/", $passwordReset);
+        $number = preg_match("/[0-9]/", $passwordReset);
+        $haveSpace = preg_match("/ /", $passwordReset);
+        $specialChar = preg_match("/[^a-zA-Z0-9]/", $passwordReset);
+
+        if (strlen($passwordReset) < 6 || !$uppercase || !$lowercase || $haveSpace || !$specialChar) {
+            $errors["password"] = "Le mot de passe doit contenir 6 caractéres minimum, une majuscule, une minuscule, un chiffre et un caractére spécial";
+        }
+
+        //var_dump($result);
+
         //Le formulaire est envoyé et un mot de passe est disponible
         //N'oubliez pas de valider la consistance du mot de passe comme dans create_account.php
-        $password = trim(strip_tags($_POST["password"]));
-        $password = password_hash($password, PASSWORD_DEFAULT);
 
-        //Requete SQL de mise a jour du mot de passe
-        $query = $db->prepare("UPDATE users SET password = :password WHERE email LIKE :email");
-        $query->bindParam(":password", $password);
-        $query->bindParam(":email", $result["email"]);
-        if ($query->execute()) {
+
+        if (empty($message)) {
+
+            $passwordReset = password_hash($passwordReset, PASSWORD_DEFAULT);
+            //Requete SQL de mise a jour du mot de passe
+            $query = $db->prepare("UPDATE users SET password = :passwordReset WHERE email = :email");
+            $query->bindParam(":passwordReset", $passwordReset);
+            $query->bindParam(":email", $emailReset);
+            $query->execute();
+            // $req = $db->prepare("DELETE * FROM password_reset WHERE");
             //Possibilité de compléter avec une réquéte DELETE sur la table password_reset pour purger la ligne en question
-            header("Location: ./login.php");
+             header("Location: login.php");
+        } else {
+            $errors = "Erreur de base de donnée";
         }
     }
-} else {
+}
+//}
+else {
     //Pas de token dans l'url c'est louche !
-    header("Location: ./login.php");
+
+    header("Location: index.php");
 }
 
+include("templates/header.php");
 ?>
 
 <div class="newPassword">
     <form action="" method="post">
-        <label for="inputPassword">Nouveau mot de passe :</label>
-        <input type="password" name="password" id="inputPassword">
-        <label for="retypeInputPassword">Retaper votre mot de passe :</label>
-        <input type="retypePassword" name="retypePassword" id="retypeInputPassword">
-        <input type="submit" value="Envoyer">
+        <!-- <?= $message ?> -->
+        <div class="form-group">
+            <label for="inputPassword">Nouveau mot de passe :</label>
+            <input type="password" name="passwordReset" id="inputPassword">
+        </div>
+        <div class="form-group">
+            <label for="retypeInputPassword">Retaper votre mot de passe :</label>
+            <input type="password" name="retypePasswordReset" id="retypeInputPassword" required>
+        </div>
+        <input type="submit" value="Envoyer" class="submit" name="newPassword">
     </form>
 </div>
 

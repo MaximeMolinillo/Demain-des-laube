@@ -15,20 +15,10 @@ CREATE TABLE photos(
 
 
 INSERT INTO photos
-(title, description, picture)
+(title, description, picture, category)
 VALUES
-("", "", ""),
-("", "", ""),
-("", "", ""),
-("", "", ""),
-("", "", ""),
-("", "", ""),
-("", "", ""),
-("", "", ""),
-("", "", ""),
-("", "", ""),
-("", "", ""),
-("", "", ""),
+("HELLO", "123", "IMG-20220422-WA0024", "Fleurs"),
+
 
 
 
@@ -78,10 +68,14 @@ VALUES
 (1,4)
 
 
-SELECT photos.title, type.category AS "type"
-FROM photos
-INNER JOIN photos_category
-ON photos.id = photos_category.id_photos
-INNER JOIN type
-ON photos_category.id_genre = type.id
-GROUP BY photos.title;
+-- SELECT photos.title, type.category AS "type"
+-- FROM photos
+-- INNER JOIN photos_category
+-- ON photos.id = photos_category.id_photos
+-- INNER JOIN type
+-- ON photos_category.id_genre = type.id
+-- GROUP BY photos.title;
+
+--Ajout nouvelle colonne a passwordreset pr donner une validité au lien
+ALTER TABLE password_reset
+ADD validity  int(11);

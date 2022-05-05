@@ -1,5 +1,15 @@
 {
-    "require": {
-        "phpmailer/phpmailer": "^6.6"
-    }
+    "name": "max/mailer",
+    "autoload": {
+        "psr-4": {
+            "Max\\Mailer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maxime Molinillo",
+            "email": "max_224@hotmail.fr"
+        }
+    ],
+    "require": {}
 }

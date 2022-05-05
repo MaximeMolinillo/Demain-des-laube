@@ -4,14 +4,16 @@
 /*-------------FOOTER------------*/
 
 h5 {
-    font-size: 2rem;
+    font-size: 1rem;
     margin-left: 4rem;
     text-align: center;
 }
 
 .wrapFoot {
-   padding: 2rem;
-  
+    font-size: 1rem;
+    padding: 1rem;
+    text-align: center;
+
     background-color: v.$green-pale;
     width: 100%;
     display: flex;
@@ -30,36 +32,39 @@ h5 {
     }
 
     .payment {
-
-  width:25%;
+        width: 25%;
         img {
             width: 20%;
-            margin-left: 40%;
-         
-           
+          //  margin-left: 40%;
+        }
+        .copyright{
+            display: flex;
+    justify-content: center;
+
+            img{
+                width: 2rem;
+                height: 2rem;
+            }
         }
     }
 
     .followUs {
-        width:25%;
-       // margin: 1rem;
-       ul{
-           li{
-               text-align: left;
-            span{
-                font-weight: 800;
-                margin-right: 2rem;
-               
+        width: 25%;
+        // margin: 1rem;
+        ul {
+            li {
+                text-align: left;
+                span {
+                    font-weight: 800;
+                    margin-right: 2rem;
+                }
             }
-           }
-       }
-
-      
+        }
     }
-    .navFooter{
-        width:25%;
+    .navFooter {
+        width: 25%;
         text-align: center;
-        a{
+        a {
             color: v.$black;
         }
     }
@@ -69,15 +74,14 @@ h5 {
     display: flex;
     justify-content: center;
     p {
-        
     }
-    img{
+    img {
         width: 5rem;
         height: 5rem;
         margin: 1rem;
     }
 }
-hr{
+hr {
     width: 80%;
     margin-left: 10%;
 }

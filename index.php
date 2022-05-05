@@ -39,22 +39,22 @@ $photos = $query->fetchAll();
     <?php
     foreach ($photos as $photo) {
     ?>
-       <div class="pic"> 
+        <div class="pic">
             <div class="pictures">
-           <img src="assets/img/products/<?=$photo['picture']?>" >
-            <!-- <h1><?= $photo["title"] ?></h1>  -->
-            <!-- <h2><?= $photo["category"]?></h2> -->
+                <img src="assets/img/products/<?= $photo['picture'] ?>">
+                <!-- <h1><?= $photo["title"] ?></h1>  -->
+                <!-- <h2><?= $photo["category"] ?></h2> -->
 
-          
-   
+
+
             </div>
         </div>
-        <?php
+    <?php
 
-}
+    }
 
-  
-      ?>
+
+    ?>
 
     <div class="presentation">
         <h2>Présentation</h2>
@@ -65,38 +65,59 @@ $photos = $query->fetchAll();
 
     </div>
 
-    <div class="products">
+    <div class=" products productsView">
         <h2>Nos Productions</h2>
         <h3>Tout nos produits sont 100% fait maison</h3>
         <!-- <div class="underline"></div> -->
         <hr>
         <div class="wrapProducts">
-            <div class="flowers">
-                <a href="">
+            <div class="prod">
+                <a href="nosProduits.php#flowerLink">
                     <img src="./assets/img/logo/bouquet-de-fleurs.png" alt="Bouquet de fleurs">
+                    <hr>
                     <h4>Fleurs et bouquets</h4>
-                    <p>Fleurs, bouquets, compositions...Découvrez nos diverses créations florales</p>
+                    <p>Fleurs, bouquets, compositions... Découvrez nos diverses créations florales</p>
+                </a>
+                
+            </div>
+            <div class="prod">
+                <a href="nosProduits.php#plantLink">
+                    <img src="./assets/img/logo/plante.png" alt="Plante Verte">
+                    <hr>
+                    <h4>Plantes Vertes</h4>
+                    <p>Retrouvez notre selection de plantes vertes pour egayer votre intérieur</p>
                 </a>
             </div>
-            <div class="deco">
-                <a href="">
+            <div class="prod">
+                <a href="nosProduits.php#decoLink">
                     <img src="./assets/img/logo/decoratif.png" alt="Décorations">
+                    <hr>
                     <h4>Décorations</h4>
                     <p>Voici nos décorations florale ou pas</p>
                 </a>
             </div>
-            <div class="jewels">
-                <a href="">
+            <div class="prod">
+                <a href="nosProduits.php#jewelsLink">
                     <img src="./assets/img/logo/collier.png" alt="Bijoux">
+                    <hr>
                     <h4>Bijoux</h4>
                     <p>Notre gamme de bijoux</p>
                 </a>
             </div>
-            <div class="event">
-                <a href="">
-                    <img src="./assets/img/logo/groupe.png" alt="Evennementiel">
-                    <h4>Evènementiel</h4>
-                    <p>Découvrez nos réalisations, pour vos mariages, entérrements...</p>
+            <div class="prod">
+                <a href="nosProduits.php#wedingLink">             
+                    <img src="./assets/img/logo/weding.png" alt="Mariage">
+                    <hr>
+                    <h4>Mariages</h4>
+                    <p>Découvrez nos réalisations pour vos mariages</p>
+                </a>
+            </div>
+            <div class="prod">
+                <a href="nosProduits.php#mourningLink">
+                    <img src="./assets/img/logo/rip.png" alt="Deuil">
+                    <hr>
+                    <h4>Deuil</h4>
+                    <p>Découvrez nos réalisations pour accompagner vos périodes de deuil</p>
                 </a>
             </div>
         </div>
@@ -104,7 +125,7 @@ $photos = $query->fetchAll();
 
     <div class="magasinPicture2">
     </div>
-    
+
     <div class="othersActivity">
         <div class="wrapImg">
             <a href="./contact.php">

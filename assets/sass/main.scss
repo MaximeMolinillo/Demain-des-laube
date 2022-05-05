@@ -8,35 +8,33 @@
 @use "partners";
 @use "contact";
 @use "auth";
+@use "othersPage";
 
 /*--------HOMEPAGE---------*/
 section {
-     width: 100%;
-   display: flex;
+    // width: 100%;
+    display: flex;
     flex-wrap: wrap;
-//   //  justify-content: center;
-//    flex-direction: row;
+    justify-content: center;
+    //    flex-direction: row;
 
-//    position: relative;
-//    display: flex;
-//    justify-content: space-between;
+    //    position: relative;
+    //    display: flex;
+    //    justify-content: space-between;
 
-
-     .pic {
+    .pic {
         // position: relative;
         // width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-       // margin: 1rem;
-
-     
+        // margin: 1rem;
 
         .pictures {
             display: flex;
-         //  width: 20rem;
-        //    height: 30rem;
-           flex-wrap: wrap;
+            //  width: 20rem;
+            //    height: 30rem;
+            flex-wrap: wrap;
             background-color: v.$green-pale;
             // flex-basis: 18%;
             // position: absolute;
@@ -45,26 +43,25 @@ section {
             padding: 1rem;
 
             img {
-               width: 20rem;
+                width: 20rem;
             }
         }
     }
 
-  .presentation,
-  .products {
-      text-align: center;
-      width: 80%;
-      background: url("../img/background/backgroundFloral.png");
-      background-size: cover;
-      background-repeat: no-repeat;
+    .presentation {
+        text-align: center;
+        width: 80%;
+        background: url("../img/background/backgroundFloral.png");
+        background-size: cover;
+        background-repeat: no-repeat;
 
-      h2 {
-          @include m.title-mix;
-      }
-      p {
-          margin: 5rem;
-      }
-  }
+        h2 {
+            @include m.title-mix;
+        }
+        p {
+            margin: 5rem;
+        }
+    }
     .magasinPicture {
         display: flex;
         flex-wrap: wrap;
@@ -88,63 +85,31 @@ section {
     }
 
     .products {
-        height: 100vh;
-        // width: 100%;
-        @media screen and (max-width: v.$lg-breakpoint) {
-            height: 100%;
-        }
-        h2 {
-            width: 100%;
-        }
-        h3 {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-        // .underline {
-        //     width: 35%;
-        //     height: 0.1rem;
-        //     background-color: black;
-        //     margin-left: 32.5%;
-        //     margin-bottom: 5rem;
-        // }
+        //------Voir nosProduits.scss-------
         .wrapProducts {
-            display: inline-flex;
-            justify-content: space-between;
-            align-items: center;
-            @media screen and (max-width: v.$lg-breakpoint) {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            h4 {
-                font-size: 2rem;
-                margin-bottom: 0rem;
-            }
-            a {
-                width: 30%;
-                color: v.$black;
-                img {
-                    width: 20%;
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                    -webkit-transition: 0.3s ease-in-out;
-                    transition: 0.3s ease-in-out;
+            .prod {
+                width: 25%;
+                //    padding: 3rem;
+                //    margin: 1rem;
+                h4 {
+                    font-size: 2rem;
+                    padding: 0;
                 }
-                &:hover img {
-                    -webkit-transform: scale(1.3);
-                    transform: scale(1.3);
+                img {
+                    width: 10rem;
                 }
                 p {
-                    margin-top: 1rem;
+                    margin-bottom: 0;
                 }
             }
         }
     }
+
     /*--------------Others----------------------*/
 
     .othersActivity {
         display: flex;
-        width: 100%;
+        // width: 80%;
         @media screen and (max-width: v.$lg-breakpoint) {
             flex-direction: column;
             align-items: center;
@@ -178,55 +143,62 @@ section {
                 position: absolute;
                 left: 0;
                 right: 0;
-                // top: 0;
+                //  top: 0;
                 bottom: 0;
                 text-align: center;
-                margin-top: 0;
+                // margin-top: 0;
                 color: v.$white;
                 text-shadow: 0.2rem 0.2rem 0.2rem v.$black;
                 font-size: 3rem;
+                font-family: v.$body-title-font;
+                background-color: rgb(243, 250, 220, 0.5);
+                //  margin: 0;
+                border-radius: 2rem;
+                margin-right: 5rem;
+                margin-left: 5rem;
             }
         }
     }
-}
-.map {
-    background: url("../img/background/backgroundFloral.png");
 
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    margin: 5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    @media screen and (max-width: v.$lg-breakpoint) {
-        flex-direction: column;
-        justify-content: center;
-    }
-    iframe {
-        background-color: v.$green-pale;
-        padding: 2rem;
-        box-shadow: 1rem 1rem 1rem v.$dark-gray;
-        @media screen and (max-width: v.$lg-breakpoint) {
-            width: 30rem;
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-    }
+    .map {
+        background: url("../img/background/backgroundFloral.png");
 
-    .parking {
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        margin: 5rem;
         display: flex;
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
         justify-content: center;
-        h3 {
-            margin: 2rem;
+        @media screen and (max-width: v.$lg-breakpoint) {
+            flex-direction: column;
+            justify-content: center;
         }
-        img {
-            width: 10rem;
-            height: 10rem;
-            padding: 1rem;
+        iframe {
+            background-color: v.$green-pale;
+            padding: 2rem;
+            box-shadow: 1rem 1rem 1rem v.$dark-gray;
+            @media screen and (max-width: v.$lg-breakpoint) {
+                width: 30rem;
+                display: flex;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        .parking {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            h3 {
+                margin: 2rem;
+            }
+            img {
+                width: 10rem;
+                height: 10rem;
+                padding: 1rem;
+            }
         }
     }
 }

@@ -1,46 +1,154 @@
 <?php
+//ouverture de session
+session_start();
+
+require("./vendor/autoload.php");
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+define("HOST", "http://localhost/demain-des-laube/");
+
+if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR"])) {
+    header("Location: login.php");
+}
+
+
+////envoie de mail sur la boite de la patronne
+$errors = [];
+$messageErrors = "";
+if (isset($_POST["contactMail"])) {
+    $nameC = trim(strip_tags($_POST["nameC"]));
+    $firstnameC = trim(strip_tags($_POST["firstnameC"]));
+    $emailC = trim(strip_tags($_POST["emailC"]));
+    $telC = trim(strip_tags($_POST["telC"]));
+    $objectC = trim(strip_tags($_POST["objectC"]));
+    $messageC = trim(strip_tags($_POST["messageC"]));
+
+    //  var_dump($nameC);
+
+    if (empty($emailC)) {
+        array_push($errors, "Veuillez renseigner votre email, afin que nous puissions vous transmettre une réponse !");
+    }
+
+    if (empty($errors)) {
+        $phpmailer = new PHPMailer();
+
+        $phpmailer->isSMTP();
+
+        $phpmailer->Host = 'smtp.mailtrap.io';
+        $phpmailer->SMTPAuth = true;
+        $phpmailer->Port = 2525;
+        $phpmailer->Username = '4a87d0b4f0169e';
+        $phpmailer->Password = '0163345150a19e';
+
+        $phpmailer->From = $emailC;
+
+        $phpmailer->FromName = $nameC . " " . $firstnameC;
+        // Destinataire
+        $phpmailer->addAddress("max_224@hotmail.fr");
+        // Adresse de réponse
+        $phpmailer->addReplyTo($emailC);
+        //Send HTML or Plain Text email
+        $phpmailer->isHTML();
+        $phpmailer->CharSet = "UTF-8";
+        $phpmailer->Subject = $objectC;
+        //Corps du mail
+        $phpmailer->Body = $messageC . " " . 'De la part de :' . " " . $firstnameC . " " . $nameC . ". " . 'Numéro de téléphone :' . " " . $telC;
+        try {
+            //Envoie du mail
+            $phpmailer->send();
+
+            // On affiche un message de succès si la requéte s'est bien executée.
+            echo  $messageErrors = "<div class=\"alert alert-success\">Votre message à bien été envoyé.</div>";
+        } catch (Exception $e) {
+            $messageErrors = "Un problème s'est produit ";
+        }
+    }
+}
+
+
+
+
+
+
+// $db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
+// $query = $db->query("SELECT * FROM users WHERE id LIKE ");
+// $photos = $query->fetchAll();
+//Suppression de compte
+if (!empty($_POST["deleteAccountBtn"])) {
+    $idUsers = $_SESSION["userId"];
+    $db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
+    $query = $db->prepare("DELETE FROM users WHERE id LIKE $idUsers");
+    // }
+    // $query->bindParam(":deleteAccount", $deleteAccount);
+    if ($query->execute()) {
+        session_destroy();
+       header("location: index.php");
+    }
+}
+
 include("templates/header.php");
 ?>
 
 <div class="contactPage">
-<div class="flowerPicture">
+    <div class="flowerPicture">
 
-</div>
+
+    </div>
+    <div class="welcome">
+        <h2>Bienvenue sur votre compte, <?= $_SESSION["userName"] . " " . $_SESSION["user"] ?></h2>
+    </div>
+
+
 
     <form action="" method="post">
         <h1>Contactez-nous</h1>
 
-<hr>
+        <hr>
 
         <div class="form-group">
-            <label for="inputNom">Nom :</label>
-            <input type="nom" name="nom" id="inputNom">
+            <label for="inputName">Nom :</label>
+            <input type="text" name="nameC" id="inputName" placeholder="Votre Nom">
         </div>
         <div class="form-group">
-            <label for="inputPrenom">Prénom :</label>
-            <input type="prenom" name="prenom" id="inputPrenom">
+            <label for="inputFirstname">Prénom :</label>
+            <input type="text" name="firstnameC" id="inputFirstname" placeholder="Votre Prénom">
         </div>
         <div class="form-group">
             <label for="inputEmail">Email :</label>
-            <input type="email" name="email" id="inputEmail">
+            <input type="email" name="emailC" id="inputEmail" placeholder="Votre email">
         </div>
         <div class="form-group">
             <label for="inputTel">Télephone :</label>
-            <input type="tel" name="tel" id="inputTel">
+            <input type="tel" name="telC" id="inputTel" placeholder="Votre Numéro de tél">
         </div>
         <div class="form-group">
-            <label for="inputObjet">Objet :</label>
-            <input type="text" name="objet" id="inputObjet">
+            <label for="inputObject">Objet :</label>
+            <input type="text" name="objectC" id="inputObject" placeholder="Objet de votre demande">
         </div>
         <div class="form-group">
             <label for="inputMessage">Message :</label>
-           <textarea name="message" id="inputMessage" cols="30" rows="10"></textarea>
+            <textarea name="messageC" id="inputMessage" cols="30" rows="10" placeholder="Votre message"></textarea>
         </div>
 
-        <input type="submit" class="submit" value="Envoyer">
+        <input type="submit" class="submit" value="Envoyer" name="contactMail">
     </form>
 
+    <div class="bottomLink">
+        <a href="logout.php">Déconnexion</a>
+    </div>
 
+
+    <div class="deleteAccount">
+        <h3>supprimer mon compte</h3>
+        <form action="" method="post">
+            <div class="form-group">
+       
+                <input type="submit" value="Supprimer mon compte" name="deleteAccountBtn">
+            </div>
+        </form>
+    </div>
 
 </div>
 

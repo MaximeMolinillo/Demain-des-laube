@@ -16,10 +16,10 @@
 photo["picture"]?>" alt=" <?= $photo["title"] ?>">
 
 $query = $db->query("SELECT * FROM products ORDER BY id LIMIT 10,32");
+       value="<?= isset($filesModify) ? $filesModify : "" ?>"
 
 
-
-
+ <!-- value="<?= isset($filesModify) ? $filesModify : "" ?>" -->
 
 
 
