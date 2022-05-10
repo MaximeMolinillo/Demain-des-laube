@@ -25,10 +25,8 @@ form {
         @include m.title-mix;
         width: 90%;
         text-align: center;
-        // margin-left: 2.5%;
     }
     .form-group {
-        //    margin: 0.5rem;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -39,12 +37,10 @@ form {
             border: 0.2rem solid v.$dark-gray;
             box-shadow: 0.5rem 0.5rem 1rem v.$dark-gray;
             padding: 1rem;
-
             font-family: v.$font-text;
         }
     }
     .submit {
-        //  color: v.$white;
         background-color: v.$green-pale;
         font-family: v.$font-text;
         font-size: 3rem;
@@ -59,6 +55,9 @@ form {
             background-color: v.$dark-gray;
             color: v.$green-pale;
         }
+        @media screen and (max-width: v.$sm-breakpoint) {
+            font-size: 2rem;
+        }
     }
 }
 
@@ -71,89 +70,76 @@ form {
 
 /**-------------My acount-------*/
 .myAccount {
-    // max-width: 50%;
     display: flex;
     flex-direction: column;
-    //   flex-wrap: wrap;
     width: 100%;
-   margin-bottom: 30rem;
-
+    margin-bottom: 30rem;
+    .ourProducts {
+        @include m.title-mix;
+        text-align: center;
+        margin: 0 10% 0 10%;
+    }
     .view {
         display: flex;
-        //  flex-direction: column;
-       max-width: 100%;
-        justify-content: space-between;
+        max-width: 100%;
+        justify-content: center;
         flex-wrap: wrap;
         margin: 5rem;
         background: url("../img/background/backgroundFloral.png");
         border: 2rem solid v.$green-pale;
         border-radius: 2rem;
-       // background-size: cover;
-      //  background-repeat: no-repeat;
-
-        // .photos {
-            // display: flex;
-          //  width: 20%;
-            //  flex-direction:column;
-            // flex-wrap: wrap;
-            .photo {
-                // width: 100%;
-                // display: flex;
-                // flex-wrap: wrap;
-                // width: 10%;
-                // height: 10rem;
-                // margin :1rem;
-                // flex-wrap: wrap;
-                // margin-bottom: 30rem;
-                max-width: 8rem;
-                flex-wrap: wrap;
-               // height: 23rem;
-               margin: 0.2rem;
-               padding: 0.2rem;
-               border: 0.1rem solid v.$black;
-               display: flex;
-               justify-content: space-evenly;
-               flex-direction: column;
-               text-align: center;
-             
-                img {
-               
-                   
-                }
-                h1 {
-                    font-size: 2rem;
-                    margin-top: 0.1rem;
-                }
-                h2{
-                    font-size: 1.5rem;
-                    margin-top: 0.1rem;
-                }
-                form{
-                    // display: flex;
-                    // align-items: flex-end;
-                  
-                
+        .photo {
+            max-width: 12rem;
+            flex-wrap: wrap;
+            margin: 1rem;
+            padding: 0.5rem;
+            border: 0.2rem solid v.$black;
+            border-radius: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            text-align: center;
+            img {
+                border-radius: 2rem;
+            }
+            h1 {
+                font-size: 2rem;
+                margin-top: 0.1rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 0.1rem;
+            }
+            form {
+                button {
+                    margin: 0.1rem;
+                    border-radius: 2rem;
+                    font-size: 1.3rem;
+                    color: v.$black;
+                    background-color: v.$green-pale;
+                    box-shadow: 0.5rem 0.5rem 0.5rem v.$dark-gray;
                 }
             }
         }
-    // }
-}
-.welcome{
-    font-size: 3rem;
-     text-align: center;
-     background-color: v.$green-pale;
-}
-.inscription{
-    p{
-        font-size: 1rem;
-   
-      
     }
 }
-.deleteAccount{
-    h3{
+.welcome {
+    font-size: 3rem;
+    text-align: center;
+    background: linear-gradient(to top, transparent, 20%, v.$green-pale-back);
+}
+.inscription {
+    p {
+        font-size: 1rem;
+    }
+}
+.deleteAccount {
+    h3 {
         text-align: center;
         background-color: v.$green-pale;
     }
-    
+}
+.error {
+    color: v.$alert;
+    text-align: center;
 }

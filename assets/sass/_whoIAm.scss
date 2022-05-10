@@ -2,21 +2,29 @@
 @use "reset";
 @use "mixin" as m;
 
-
-
-.whoIAmPage{
+.whoIAmPage {
     background: url("../img/background/backgroundFloral.png");
     background-size: cover;
     background-repeat: no-repeat;
-   margin: 5rem;
-   text-align: center;
-    img{
-        width: 50%;
+    margin: 5rem;
+    text-align: center;
+    img {
+        width: 50rem;
         box-shadow: 1rem 1rem 1rem v.$dark-gray;
         border: 2rem solid v.$green-pale;
- 
+        @media screen and (max-width: v.$sm-breakpoint) {
+            width: 25rem;
+        }
     }
-    h1{
+    h1 {
         @include m.title-mix;
+    }
+    p {
+        margin: 5rem 15rem 5rem 15rem;
+        font-size: 2rem;
+        @media screen and (max-width: v.$md-breakpoint) {
+            margin: 2rem;
+            font-size: 1.7rem;
+        }
     }
 }

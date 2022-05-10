@@ -1,8 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Whisper&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Babylonica&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Updock&family=Whisper&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Babylonica&family=El+Messiri:wght@400;500;600;700&family=Fredoka+One&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Monsieur+La+Doulaise&family=Nanum+Myeongjo:wght@700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shadows+Into+Light&family=Updock&family=Whisper&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arizonia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Whisper&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -32,7 +31,8 @@ img {
   width: 100%;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Whisper", cursive;
 }
 
@@ -42,20 +42,30 @@ header {
   width: 100%;
 }
 header .banner {
-  background: url(../img/background/Banner8.png);
+  background: url(../img/background/Banner9.png);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
+  height: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+@media screen and (max-width: 1200px) {
+  header .banner {
+    background: url(../img/background/Banner8.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
 header .banner .wrapH1 {
   margin-top: 2rem;
   background-color: #ffffff;
-  box-shadow: 1rem 1rem 0.5rem #5C606B;
+  box-shadow: 1rem 1rem 4rem #000000;
+  margin-bottom: 2rem;
 }
 header .banner .wrapH1 h1 {
   font-family: "Monsieur La Doulaise", cursive;
@@ -63,85 +73,108 @@ header .banner .wrapH1 h1 {
   line-height: 100%;
   padding-top: 1rem;
   margin: 0.5rem;
-  width: 25rem;
-  border: 0.5rem solid #5C606B;
-  color: #5C606B;
+  border: 0.5rem solid #3a3636;
+  color: #3a3636;
   background-color: #ffffff;
+  padding: 1.5rem;
+}
+@media screen and (max-width: 992px) {
+  header .banner .wrapH1 h1 {
+    width: 25rem;
+  }
+}
+header .banner .underTitle {
+  line-height: 0%;
 }
 header .banner h3 {
   color: #ffffff;
   font-family: "Whisper", cursive;
-  font-size: 2rem;
-  margin-top: 1rem;
-  text-shadow: 0.3rem 0.3rem 0.2rem #5C606B;
+  font-size: 3.5rem;
+  margin: 1rem 0 1.5rem 0;
+  text-shadow: 0.3rem 0.3rem 0.2rem #5c606b;
   letter-spacing: 0.25rem;
+}
+header .banner .underBanner {
+  font-size: 1.2rem;
+  font-family: "Playfair Display", serif;
 }
 
 .navBar {
   display: flex;
-  justify-content: space-around;
-  background-color: #F3FADC;
+  justify-content: center;
+  background-color: #d9ecac;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   .navBar {
     flex-wrap: wrap;
+    font-size: 1rem;
+    justify-items: center;
   }
 }
 .navBar a {
-  padding-left: 5rem;
-  margin: 1rem;
+  margin: 1rem 2rem 1rem 2rem;
   color: #000000;
   font-weight: 600;
   text-decoration: overline;
+  text-decoration: overline;
+}
+@media screen and (max-width: 576px) {
+  .navBar a {
+    margin: 1rem 1rem 0.5rem 0;
+  }
 }
 .navBar a:hover {
   color: white;
   text-shadow: 0.2rem 0.2rem 1rem #000000;
 }
 
-.headerBottom {
-  padding-top: 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-}
-.headerBottom img {
-  width: 3rem;
-  height: 3rem;
-}
-.headerBottom .h3 {
-  font-size: 3rem;
-  letter-spacing: 0.25rem;
-  font-family: "Arizonia", cursive;
-  font-size: 5rem;
-  margin-top: 0;
-}
-
 /*-------------FOOTER------------*/
 h5 {
   font-size: 1rem;
-  margin-left: 4rem;
   text-align: center;
+  margin: 0;
 }
 
 .wrapFoot {
   font-size: 1rem;
   padding: 1rem;
   text-align: center;
-  background-color: #F3FADC;
+  background-color: #d9ecac;
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
-.wrapFoot h2 {
-  text-align: center;
+@media screen and (max-width: 576px) {
+  .wrapFoot {
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
 }
-.wrapFoot .contactUs {
-  text-align: center;
-  margin-left: 0rem;
-  width: 25%;
+.wrapFoot .wrapFootSection {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
-.wrapFoot .contactUs img {
+.wrapFoot .wrapFootSection .footSection {
+  text-align: center;
+  width: 50%;
+}
+@media screen and (max-width: 576px) {
+  .wrapFoot .wrapFootSection .footSection {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+.wrapFoot .wrapFootSection .footSection ul {
+  margin-right: 3rem;
+}
+.wrapFoot .wrapFootSection .footSection ul span {
+  font-weight: 800;
+}
+.wrapFoot .wrapFootSection .footSection img {
   width: 5rem;
   padding: 1rem;
 }
@@ -154,27 +187,6 @@ h5 {
 .wrapFoot .payment .copyright {
   display: flex;
   justify-content: center;
-}
-.wrapFoot .payment .copyright img {
-  width: 2rem;
-  height: 2rem;
-}
-.wrapFoot .followUs {
-  width: 25%;
-}
-.wrapFoot .followUs ul li {
-  text-align: left;
-}
-.wrapFoot .followUs ul li span {
-  font-weight: 800;
-  margin-right: 2rem;
-}
-.wrapFoot .navFooter {
-  width: 25%;
-  text-align: center;
-}
-.wrapFoot .navFooter a {
-  color: #000000;
 }
 
 .copyright {
@@ -201,10 +213,10 @@ hr {
 .productsView h2 {
   font-family: "Arizonia", cursive;
   font-size: 7rem;
-  background-color: #F3FADC;
+  background-color: #d9ecac;
   border-radius: 2rem;
   border: 0.5rem solid #e9ecdf;
-  box-shadow: 1rem 1rem 1rem #728572;
+  box-shadow: 1rem 1rem 1rem #b7dab7;
   text-align: center;
 }
 @media screen and (max-width: 768px) {
@@ -221,12 +233,13 @@ hr {
   margin-left: 20%;
   border-radius: 2rem;
   padding: 1rem;
-  box-shadow: 0.1rem 0.1rem 1rem #728572;
 }
 @media screen and (max-width: 768px) {
   .productsView h3 {
-    font-size: 1rem;
+    font-size: 2rem;
     box-shadow: none;
+    width: 90%;
+    margin-left: 5%;
   }
 }
 .productsView .wrapProducts {
@@ -238,8 +251,8 @@ hr {
 }
 .productsView .wrapProducts .prod {
   border: 0.5rem solid #e9ecdf;
-  box-shadow: 1rem 1rem 1rem #728572;
-  background-color: #F3FADC;
+  box-shadow: 1rem 1rem 1rem #b7dab7;
+  background-color: #d9ecac;
   border-radius: 2rem;
   margin: 3rem;
   width: 25%;
@@ -255,7 +268,6 @@ hr {
   font-size: 2.5rem;
   text-transform: uppercase;
   margin: 0;
-  padding: 0;
 }
 .productsView .wrapProducts .prod a {
   color: #000000;
@@ -281,7 +293,7 @@ hr {
 .radient {
   width: 100%;
   height: 5rem;
-  background: linear-gradient(to bottom, transparent, 50%, #F3FADC);
+  background: linear-gradient(to bottom, transparent, 50%, #f3fadc);
 }
 
 .viewProducts {
@@ -296,25 +308,34 @@ hr {
   width: 80%;
   font-family: "Arizonia", cursive;
   font-size: 7rem;
-  background-color: #F3FADC;
+  background-color: #d9ecac;
   border-radius: 2rem;
   border: 0.5rem solid #e9ecdf;
-  box-shadow: 1rem 1rem 1rem #728572;
+  box-shadow: 1rem 1rem 1rem #b7dab7;
 }
 .viewProducts .view {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-.viewProducts .view .img {
-  border: 1rem solid #e9ecdf;
-  box-shadow: 0.5rem 0.5rem 1rem #728572;
+@media screen and (max-width: 576px) {
+  .viewProducts .view {
+    flex-direction: column;
+    align-items: center;
+  }
+  .viewProducts .view .wrapImg {
+    width: 100%;
+  }
+}
+.viewProducts .view .wrapImg {
+  border: 1rem solid #d9ecac;
+  box-shadow: 0.5rem 0.5rem 1rem #b7dab7;
   background-color: white;
   background: url("../img/background/backgroundFloral.png");
   background-size: cover;
-  width: 25%;
+  width: 25rem;
   border-radius: 2rem;
   display: flex;
   align-items: center;
@@ -323,38 +344,39 @@ hr {
   flex-wrap: wrap;
   flex-direction: column;
 }
-.viewProducts .view .img img {
-  border: 0.5rem solid #e9ecdf;
-  width: 27rem;
+.viewProducts .view .wrapImg img {
+  border: 0.5rem solid #d9ecac;
+  width: 20rem;
   border-radius: 2rem;
 }
-.viewProducts .view .img:hover img {
-  -webkit-filter: sepia(100%);
-  filter: sepia(100%);
+.viewProducts .view .wrapImg:hover img {
+  -webkit-filter: opacity(70%);
+  filter: opacity(70%);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-.viewProducts .view .img .txtView {
+.viewProducts .view .wrapImg .txtView {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 2rem;
   margin: 1rem;
   padding: 1rem;
-  color: #5C606B;
-  text-shadow: 0.1rem 0.1rem 0.5rem #728572;
-  background-color: #F3FADC;
+  color: #5c606b;
+  text-shadow: 0.1rem 0.1rem 0.5rem #b7dab7;
+  background: url("../img/background/inverseBackground.png");
+  background-position: center;
+  background-size: cover;
 }
-.viewProducts .view .img .txtView h3 {
+.viewProducts .view .wrapImg .txtView h3 {
   padding: 1rem;
   border-radius: 2rem;
-  text-transform: uppercase;
   background-color: #ffffff;
+  font-size: 1.5rem;
 }
-.viewProducts .view .img .txtView h4 {
-  background-color: #ffffff;
-  padding: 1rem;
+.viewProducts .view .wrapImg .txtView h4 {
   border-radius: 2rem;
+  font-size: 1.2rem;
 }
 
 .a {
@@ -370,57 +392,79 @@ hr {
   text-align: center;
 }
 .whoIAmPage img {
-  width: 50%;
-  box-shadow: 1rem 1rem 1rem #5C606B;
-  border: 2rem solid #F3FADC;
+  width: 50rem;
+  box-shadow: 1rem 1rem 1rem #5c606b;
+  border: 2rem solid #d9ecac;
+}
+@media screen and (max-width: 576px) {
+  .whoIAmPage img {
+    width: 25rem;
+  }
 }
 .whoIAmPage h1 {
   font-family: "Arizonia", cursive;
   font-size: 7rem;
-  background-color: #F3FADC;
+  background-color: #d9ecac;
   border-radius: 2rem;
   border: 0.5rem solid #e9ecdf;
-  box-shadow: 1rem 1rem 1rem #728572;
+  box-shadow: 1rem 1rem 1rem #b7dab7;
+}
+.whoIAmPage p {
+  margin: 5rem 15rem 5rem 15rem;
+  font-size: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .whoIAmPage p {
+    margin: 2rem;
+    font-size: 1.7rem;
+  }
 }
 
 .partnersPage {
   text-align: center;
-  margin: 5rem;
   background: url("../img/background/backgroundFloral.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
-.partnersPage h1 {
-  font-family: "Arizonia", cursive;
-  font-size: 7rem;
-  background-color: #F3FADC;
-  border-radius: 2rem;
-  border: 0.5rem solid #e9ecdf;
-  box-shadow: 1rem 1rem 1rem #728572;
-}
-.partnersPage .imgPartners {
+.partnersPage .txtPartners {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
 }
-.partnersPage .imgPartners a {
+@media screen and (max-width: 1200px) {
+  .partnersPage .txtPartners {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.partnersPage .txtPartners .retailPartners {
+  display: flex;
+  margin: 5em;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.partnersPage .txtPartners .retailPartners a {
   position: relative;
 }
-.partnersPage .imgPartners a img {
-  background-color: #F3FADC;
+.partnersPage .txtPartners .retailPartners a img {
+  background-color: #d9ecac;
+  text-align: center;
   padding: 2rem;
-  width: 80%;
+  width: 36rem;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  box-shadow: 1rem 1rem 1rem #5C606B;
+  box-shadow: 1rem 1rem 1rem #5c606b;
 }
-.partnersPage .imgPartners a:hover img {
+@media screen and (max-width: 992px) {
+  .partnersPage .txtPartners .retailPartners a img {
+    width: 25rem;
+  }
+}
+.partnersPage .txtPartners .retailPartners a:hover img {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-.partnersPage .imgPartners a h6 {
+.partnersPage .txtPartners .retailPartners a h6 {
   position: absolute;
   left: 0;
   right: 0;
@@ -429,6 +473,16 @@ hr {
   margin-bottom: 3rem;
   color: #ffffff;
   text-shadow: 0.2rem 0.2rem 0.2rem #000000;
+  background-color: rgba(243, 250, 220, 0.5);
+  border-radius: 2rem;
+  margin-right: 5rem;
+  margin-left: 5rem;
+}
+.partnersPage .txtPartners .retailPartners p {
+  margin: 2rem;
+}
+.partnersPage .txtPartners .retailPartners p span {
+  font-weight: 800;
 }
 
 .contactPage .flowerPicture {
@@ -454,10 +508,10 @@ hr {
 .contactPage form h1 {
   font-family: "Arizonia", cursive;
   font-size: 7rem;
-  background-color: #F3FADC;
+  background-color: #d9ecac;
   border-radius: 2rem;
   border: 0.5rem solid #e9ecdf;
-  box-shadow: 1rem 1rem 1rem #728572;
+  box-shadow: 1rem 1rem 1rem #b7dab7;
   width: 90%;
   text-align: center;
 }
@@ -470,14 +524,14 @@ hr {
 .contactPage form .form-group input,
 .contactPage form .form-group textarea {
   border-radius: 2rem;
-  background-color: #F3FADC;
-  border: 0.2rem solid #5C606B;
-  box-shadow: 0.5rem 0.5rem 1rem #5C606B;
+  background-color: #d9ecac;
+  border: 0.2rem solid #5c606b;
+  box-shadow: 0.5rem 0.5rem 1rem #5c606b;
   padding: 1rem;
   font-family: "Playfair Display", serif;
 }
 .contactPage form .submit {
-  background-color: #F3FADC;
+  background-color: #d9ecac;
   font-family: "Playfair Display", serif;
   font-size: 3rem;
   font-weight: 800;
@@ -486,11 +540,11 @@ hr {
   padding: 2rem;
   padding-right: 5rem;
   padding-left: 5rem;
-  box-shadow: 1rem 1rem 1rem #5C606B;
+  box-shadow: 1rem 1rem 1rem #5c606b;
 }
 .contactPage form .submit:hover {
-  background-color: #5C606B;
-  color: #F3FADC;
+  background-color: #5c606b;
+  color: #d9ecac;
 }
 
 .flowerPicture {
@@ -517,10 +571,10 @@ form {
 form h2 {
   font-family: "Arizonia", cursive;
   font-size: 7rem;
-  background-color: #F3FADC;
+  background-color: #d9ecac;
   border-radius: 2rem;
   border: 0.5rem solid #e9ecdf;
-  box-shadow: 1rem 1rem 1rem #728572;
+  box-shadow: 1rem 1rem 1rem #b7dab7;
   width: 90%;
   text-align: center;
 }
@@ -532,14 +586,14 @@ form .form-group {
 }
 form .form-group input {
   border-radius: 2rem;
-  background-color: #F3FADC;
-  border: 0.2rem solid #5C606B;
-  box-shadow: 0.5rem 0.5rem 1rem #5C606B;
+  background-color: #d9ecac;
+  border: 0.2rem solid #5c606b;
+  box-shadow: 0.5rem 0.5rem 1rem #5c606b;
   padding: 1rem;
   font-family: "Playfair Display", serif;
 }
 form .submit {
-  background-color: #F3FADC;
+  background-color: #d9ecac;
   font-family: "Playfair Display", serif;
   font-size: 3rem;
   font-weight: 800;
@@ -548,17 +602,22 @@ form .submit {
   padding: 2rem;
   padding-right: 5rem;
   padding-left: 5rem;
-  box-shadow: 1rem 1rem 1rem #5C606B;
+  box-shadow: 1rem 1rem 1rem #5c606b;
 }
 form .submit:hover {
-  background-color: #5C606B;
-  color: #F3FADC;
+  background-color: #5c606b;
+  color: #d9ecac;
+}
+@media screen and (max-width: 576px) {
+  form .submit {
+    font-size: 2rem;
+  }
 }
 
 .bottomLink {
   text-align: center;
   font-size: 2rem;
-  text-shadow: 0.2rem 0.2rem 0.25rem #5C606B;
+  text-shadow: 0.2rem 0.2rem 0.25rem #5c606b;
   text-decoration: overline;
 }
 
@@ -569,26 +628,40 @@ form .submit:hover {
   width: 100%;
   margin-bottom: 30rem;
 }
+.myAccount .ourProducts {
+  font-family: "Arizonia", cursive;
+  font-size: 7rem;
+  background-color: #d9ecac;
+  border-radius: 2rem;
+  border: 0.5rem solid #e9ecdf;
+  box-shadow: 1rem 1rem 1rem #b7dab7;
+  text-align: center;
+  margin: 0 10% 0 10%;
+}
 .myAccount .view {
   display: flex;
   max-width: 100%;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 5rem;
   background: url("../img/background/backgroundFloral.png");
-  border: 2rem solid #F3FADC;
+  border: 2rem solid #d9ecac;
   border-radius: 2rem;
 }
 .myAccount .view .photo {
-  max-width: 8rem;
+  max-width: 12rem;
   flex-wrap: wrap;
-  margin: 0.2rem;
-  padding: 0.2rem;
-  border: 0.1rem solid #000000;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 0.2rem solid #000000;
+  border-radius: 2rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: column;
   text-align: center;
+}
+.myAccount .view .photo img {
+  border-radius: 2rem;
 }
 .myAccount .view .photo h1 {
   font-size: 2rem;
@@ -598,10 +671,19 @@ form .submit:hover {
   font-size: 1.5rem;
   margin-top: 0.1rem;
 }
+.myAccount .view .photo form button {
+  margin: 0.1rem;
+  border-radius: 2rem;
+  font-size: 1.3rem;
+  color: #000000;
+  background-color: #d9ecac;
+  box-shadow: 0.5rem 0.5rem 0.5rem #5c606b;
+}
+
 .welcome {
   font-size: 3rem;
   text-align: center;
-  background-color: #F3FADC;
+  background: linear-gradient(to top, transparent, 20%, #f3fadc);
 }
 
 .inscription p {
@@ -610,7 +692,12 @@ form .submit:hover {
 
 .deleteAccount h3 {
   text-align: center;
-  background-color: #F3FADC;
+  background-color: #d9ecac;
+}
+
+.error {
+  color: #aa0000;
+  text-align: center;
 }
 
 .mL {
@@ -618,46 +705,93 @@ form .submit:hover {
 }
 
 /*--------HOMEPAGE---------*/
-section {
+.topSection {
+  text-align: center;
+  line-height: 0rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(to top, transparent, 20%, #f3fadc);
+}
+.topSection img {
+  width: 10rem;
+}
+.topSection .smH3 {
+  font-size: 1.5rem;
+  letter-spacing: 1rem;
+}
+.topSection .xlH3 {
+  margin: 3rem 0 5rem 0;
+  font-size: 5rem;
+}
+@media screen and (max-width: 768px) {
+  .topSection .xlH3 {
+    font-size: 3.5rem;
+  }
+}
+
+.wrapSection {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   /*--------------Others----------------------*/
 }
-section .pic {
+.wrapSection .pic {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  box-sizing: none;
 }
-section .pic .pictures {
+.wrapSection .pic .pictures {
   display: flex;
   flex-wrap: wrap;
-  background-color: #F3FADC;
-  flex-direction: column;
-  padding: 1rem;
+  background-color: #d9ecac;
+  width: 22rem;
+  height: 30rem;
 }
-section .pic .pictures img {
-  width: 20rem;
+.wrapSection .pic .pictures img {
+  width: auto;
+  height: 100%;
+  border: 0.2rem solid #d9ecac;
 }
-section .presentation {
+@media screen and (max-width: 992px) {
+  .wrapSection .pic .pictures img {
+    max-width: 22rem;
+    height: auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  .wrapSection .pic .pictures img {
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  .wrapSection .pic .pictures img:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.wrapSection .presentation {
   text-align: center;
   width: 80%;
   background: url("../img/background/backgroundFloral.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
-section .presentation h2 {
+.wrapSection .presentation h2 {
   font-family: "Arizonia", cursive;
   font-size: 7rem;
-  background-color: #F3FADC;
+  background-color: #d9ecac;
   border-radius: 2rem;
   border: 0.5rem solid #e9ecdf;
-  box-shadow: 1rem 1rem 1rem #728572;
+  box-shadow: 1rem 1rem 1rem #b7dab7;
 }
-section .presentation p {
+@media screen and (max-width: 768px) {
+  .wrapSection .presentation h2 {
+    font-size: 5rem;
+  }
+}
+.wrapSection .presentation p {
   margin: 5rem;
 }
-section .magasinPicture {
+.wrapSection .magasinPicture {
   display: flex;
   flex-wrap: wrap;
   background-image: url("../img/Magasin/MagasinComptoir.jpg");
@@ -668,54 +802,62 @@ section .magasinPicture {
   background-repeat: no-repeat;
   background-size: cover;
 }
-section .magasinPicture2 {
+.wrapSection .magasinPicture2 {
   background-image: url("../img/Magasin/Magasin.jpg");
   width: 100%;
   height: 40rem;
   background-attachment: fixed;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
-section .products .wrapProducts .prod {
-  width: 25%;
+@media screen and (max-width: 768px) {
+  .wrapSection .productsView {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+  }
+  .wrapSection .productsView h2 {
+    font-size: 4rem;
+  }
 }
-section .products .wrapProducts .prod h4 {
+.wrapSection .productsView .wrapProducts .prod h4 {
   font-size: 2rem;
   padding: 0;
 }
-section .products .wrapProducts .prod img {
-  width: 10rem;
+.wrapSection .productsView .wrapProducts .prod img {
+  width: 15rem;
 }
-section .products .wrapProducts .prod p {
+.wrapSection .productsView .wrapProducts .prod p {
   margin-bottom: 0;
 }
-section .othersActivity {
+.wrapSection .othersActivity {
   display: flex;
 }
 @media screen and (max-width: 992px) {
-  section .othersActivity {
+  .wrapSection .othersActivity {
     flex-direction: column;
     align-items: center;
   }
 }
-section .othersActivity .wrapImg {
+.wrapSection .othersActivity .wrapImg {
   position: relative;
 }
-section .othersActivity .wrapImg img {
+.wrapSection .othersActivity .wrapImg img {
   width: 30rem;
   margin: 2rem;
-  border: 2rem solid #F3FADC;
+  border: 2rem solid #d9ecac;
   margin-bottom: 0;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  box-shadow: 1rem 1rem 1rem #5C606B;
+  box-shadow: 1rem 1rem 1rem #5c606b;
 }
-section .othersActivity .wrapImg img:hover {
+.wrapSection .othersActivity .wrapImg img:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-section .othersActivity .wrapImg h6 {
+.wrapSection .othersActivity .wrapImg h6 {
   position: absolute;
   left: 0;
   right: 0;
@@ -730,7 +872,7 @@ section .othersActivity .wrapImg h6 {
   margin-right: 5rem;
   margin-left: 5rem;
 }
-section .map {
+.wrapSection .map {
   background: url("../img/background/backgroundFloral.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -741,34 +883,33 @@ section .map {
   justify-content: center;
 }
 @media screen and (max-width: 992px) {
-  section .map {
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-section .map iframe {
-  background-color: #F3FADC;
-  padding: 2rem;
-  box-shadow: 1rem 1rem 1rem #5C606B;
-}
-@media screen and (max-width: 992px) {
-  section .map iframe {
-    width: 30rem;
+  .wrapSection .map {
     display: flex;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
+  }
+  .wrapSection .map iframe {
+    width: 100%;
   }
 }
-section .map .parking {
+.wrapSection .map iframe {
+  background-color: #d9ecac;
+  padding: 2rem;
+  box-shadow: 1rem 1rem 1rem #5c606b;
+}
+.wrapSection .map .parking {
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  width: 25%;
+  margin: 5rem;
 }
-section .map .parking h3 {
-  margin: 2rem;
+@media screen and (max-width: 992px) {
+  .wrapSection .map .parking {
+    width: 80%;
+  }
 }
-section .map .parking img {
+.wrapSection .map .parking img {
   width: 10rem;
   height: 10rem;
   padding: 1rem;

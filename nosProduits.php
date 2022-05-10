@@ -1,7 +1,8 @@
 <?php
 include("templates/header.php");
+require_once './system/config.php';
 
-$db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
+//$db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
 $query = $db->query("SELECT *FROM photos
                  WHERE category = 'Fleurs' 
                  ORDER BY id DESC");
@@ -38,12 +39,16 @@ $query = $db->query("SELECT *FROM photos
 $othersPic = $query->fetchAll();
 ?>
 
+<div class="topSection" id="top">
+    <img src="assets/img/logo/Flower.png" alt="">
+    <h3 class="smH3">Découvrez</h3>
 
+    <h3 class="xlH3">Nos Productions</h3>
+    <hr>
+</div>
 
 <div class="productsView">
-    <h2 id="top">Nos Productions</h2>
     <h3>Tous nos produits sont 100% faits maison</h3>
-
     <hr>
     <div class="wrapProducts">
         <div class="prod">
@@ -53,14 +58,13 @@ $othersPic = $query->fetchAll();
                 <hr>
                 <p>Fleurs, bouquets, compositions...Découvrez nos diverses créations florales</p>
             </a>
-
         </div>
         <div class="prod">
             <a href="#plantLink">
                 <img src="./assets/img/logo/plante.png" alt="Plantes Vertes">
                 <h4>Plantes vertes</h4>
                 <hr>
-                <p>Retrouvez notre selection de plantes vertes pour egayer votre intérieur</p>
+                <p>Retrouvez notre sélection de plantes vertes pour égayer votre intérieur</p>
             </a>
         </div>
         <div class="prod">
@@ -68,7 +72,7 @@ $othersPic = $query->fetchAll();
                 <img src="./assets/img/logo/decoratif.png" alt="Décorations">
                 <h4>Décorations</h4>
                 <hr>
-                <p>Voici nos décorations florales ou pas</p>
+                <p>Voici nos décorations florales et artisanales</p>
             </a>
         </div>
         <div class="prod">
@@ -76,7 +80,7 @@ $othersPic = $query->fetchAll();
                 <img src="./assets/img/logo/collier.png" alt="Bijoux">
                 <h4>Bijoux</h4>
                 <hr>
-                <p>Notre gamme de bijoux</p>
+                <p>Notre gamme de bijoux faits maison</p>
             </a>
         </div>
         <div class="prod">
@@ -98,18 +102,15 @@ $othersPic = $query->fetchAll();
     </div>
 </div>
 <div class="radient">
-
 </div>
 
-
 <div class="viewProducts">
-
     <h1>Fleurs</h1>
     <div class="view flowersView" id="flowersLink">
         <?php
         foreach ($flowersPic as $flowerP) {
         ?>
-            <div class="img">
+            <div class="wrapImg">
                 <a href="assets/img/products/<?= $flowerP['picture'] ?>" target="_blank">
                     <img src="assets/img/products/<?= $flowerP['picture'] ?>" alt="">
                 </a>
@@ -123,7 +124,6 @@ $othersPic = $query->fetchAll();
         <?php
         }
         ?>
-
     </div>
     <a href="#top" class="a">Retour vers le haut de page</a>
     <h1>Plantes Vertes</h1>
@@ -131,12 +131,13 @@ $othersPic = $query->fetchAll();
         <?php
         foreach ($plantPic as $plantP) {
         ?>
-            <div class="img">
+            <div class="wrapImg">
                 <a href="assets/img/products/<?= $plantP['picture'] ?>" target="_blank">
                     <img src="assets/img/products/<?= $plantP['picture'] ?>" alt="">
                 </a>
                 <div class="txtView">
                     <h3> <?= $plantP["title"] ?></h3>
+
                     <h4> <?= $plantP["description"] ?></h4>
                     <h4> <?= $plantP["category"] ?></h4>
                 </div>
@@ -144,7 +145,6 @@ $othersPic = $query->fetchAll();
         <?php
         }
         ?>
-
     </div>
     <a href="#top" class="a">Retour vers le haut de page</a>
     <h1>Décorations</h1>
@@ -152,7 +152,7 @@ $othersPic = $query->fetchAll();
         <?php
         foreach ($decoPic as $decoP) {
         ?>
-            <div class="img">
+            <div class="wrapImg">
                 <a href="assets/img/products/<?= $decoP['picture'] ?>" target="_blank">
                     <img src="assets/img/products/<?= $decoP['picture'] ?>" alt="">
                 </a>
@@ -172,7 +172,7 @@ $othersPic = $query->fetchAll();
         <?php
         foreach ($jewelsPic as $jewelsP) {
         ?>
-            <div class="img">
+            <div class="wrapImg">
                 <a href="assets/img/products/<?= $jewelsP['picture'] ?>" target="_blank">
                     <img src="assets/img/products/<?= $jewelsP['picture'] ?>" alt="">
                 </a>
@@ -192,7 +192,7 @@ $othersPic = $query->fetchAll();
         <?php
         foreach ($wedingPic as $wedingP) {
         ?>
-            <div class="img">
+            <div class="wrapImg">
                 <a href="assets/img/products/<?= $wedingP['picture'] ?>" target="_blank">
                     <img src="assets/img/products/<?= $wedingP['picture'] ?>" alt="">
                 </a>
@@ -212,7 +212,7 @@ $othersPic = $query->fetchAll();
         <?php
         foreach ($mourningPic as $mourningP) {
         ?>
-            <div class="img">
+            <div class="wrapImg">
                 <a href="assets/img/products/<?= $mourningP['picture'] ?>" target="_blank">
                     <img src="assets/img/products/<?= $mourningP['picture'] ?>" alt="">
                 </a>
@@ -228,9 +228,6 @@ $othersPic = $query->fetchAll();
     </div>
     <a href="#top" class="a">Retour vers le haut de page</a>
 </div>
-
-
-
 
 <?php
 include("templates/footer.php");

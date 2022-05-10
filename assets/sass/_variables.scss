@@ -1,21 +1,22 @@
 //-------- Variables--------------
 //--color--
-//$green-pale:#799475;
-$green-pale:#F3FADC;
-//$green-pale:#bee9aa;
+// $green-pale:#799475;
+$green-pale-back: #f3fadc;
+$green-pale: #d9ecac;
+$green-pale-nav: #d9ecac;
 $white: #ffffff;
-$dark-gray:#5C606B;
-$black:#000000;
-$color-shadow:#728572;
-$color-border:#e9ecdf;
-
+$dark-gray: #5c606b;
+$black: #000000;
+$color-shadow: #b7dab7;
+$color-border: #e9ecdf;
+$alert: #aa0000;
+$logo-color: #3a3636;
 
 //--font--
 $logo-font: "Monsieur La Doulaise", cursive;
-$title-font: 'Whisper', cursive;
-$body-title-font:  'Arizonia', cursive;
-$font-text: 'Playfair Display', serif;
-
+$title-font: "Whisper", cursive;
+$body-title-font: "Arizonia", cursive;
+$font-text: "Playfair Display", serif;
 
 //--breakpoint--
 $sm-breakpoint: 576px;

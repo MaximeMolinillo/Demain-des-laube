@@ -1,5 +1,4 @@
 @use "variables" as v;
-//@use "reset";
 
 
 @mixin title-mix {
@@ -9,6 +8,7 @@
     border-radius: 2rem;
     border: 0.5rem solid v.$color-border;
     box-shadow: 1rem 1rem 1rem v.$color-shadow;
+  
 }
 
 @mixin no-margin {

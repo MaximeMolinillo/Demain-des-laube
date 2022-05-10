@@ -12,7 +12,7 @@ define("HOST", "http://localhost/demain-des-laube/");
 if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR"])) {
     header("Location: login.php");
 }
-
+// var_dump($_SESSION["userRole"]);
 
 ////envoie de mail sur la boite de la patronne
 $errors = [];
@@ -24,26 +24,19 @@ if (isset($_POST["contactMail"])) {
     $telC = trim(strip_tags($_POST["telC"]));
     $objectC = trim(strip_tags($_POST["objectC"]));
     $messageC = trim(strip_tags($_POST["messageC"]));
-
     //  var_dump($nameC);
-
     if (empty($emailC)) {
         array_push($errors, "Veuillez renseigner votre email, afin que nous puissions vous transmettre une réponse !");
     }
-
     if (empty($errors)) {
         $phpmailer = new PHPMailer();
-
         $phpmailer->isSMTP();
-
         $phpmailer->Host = 'smtp.mailtrap.io';
         $phpmailer->SMTPAuth = true;
         $phpmailer->Port = 2525;
         $phpmailer->Username = '4a87d0b4f0169e';
         $phpmailer->Password = '0163345150a19e';
-
         $phpmailer->From = $emailC;
-
         $phpmailer->FromName = $nameC . " " . $firstnameC;
         // Destinataire
         $phpmailer->addAddress("max_224@hotmail.fr");
@@ -60,31 +53,22 @@ if (isset($_POST["contactMail"])) {
             $phpmailer->send();
 
             // On affiche un message de succès si la requéte s'est bien executée.
-            echo  $messageErrors = "<div class=\"alert alert-success\">Votre message à bien été envoyé.</div>";
+            $messageErrors = "<div class=\"error\">Votre message a bien été envoyé.</div>";
         } catch (Exception $e) {
             $messageErrors = "Un problème s'est produit ";
         }
     }
 }
 
-
-
-
-
-
-// $db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
-// $query = $db->query("SELECT * FROM users WHERE id LIKE ");
-// $photos = $query->fetchAll();
 //Suppression de compte
 if (!empty($_POST["deleteAccountBtn"])) {
     $idUsers = $_SESSION["userId"];
     $db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
     $query = $db->prepare("DELETE FROM users WHERE id LIKE $idUsers");
-    // }
     // $query->bindParam(":deleteAccount", $deleteAccount);
     if ($query->execute()) {
         session_destroy();
-       header("location: index.php");
+        header("location: index.php");
     }
 }
 
@@ -93,20 +77,22 @@ include("templates/header.php");
 
 <div class="contactPage">
     <div class="flowerPicture">
-
-
     </div>
+
     <div class="welcome">
         <h2>Bienvenue sur votre compte, <?= $_SESSION["userName"] . " " . $_SESSION["user"] ?></h2>
     </div>
-
-
+    <?php
+    if (isset($messageErrors)) {
+    ?>
+        <p class="error"><?= $messageErrors ?></p>
+    <?php
+    }
+    ?>
 
     <form action="" method="post">
         <h1>Contactez-nous</h1>
-
         <hr>
-
         <div class="form-group">
             <label for="inputName">Nom :</label>
             <input type="text" name="nameC" id="inputName" placeholder="Votre Nom">
@@ -139,12 +125,10 @@ include("templates/header.php");
         <a href="logout.php">Déconnexion</a>
     </div>
 
-
     <div class="deleteAccount">
         <h3>supprimer mon compte</h3>
         <form action="" method="post">
             <div class="form-group">
-       
                 <input type="submit" value="Supprimer mon compte" name="deleteAccountBtn">
             </div>
         </form>

@@ -7,10 +7,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     margin: 5rem;
-
     h2 {
         @include m.title-mix;
-
         text-align: center;
         @media screen and (max-width: v.$md-breakpoint) {
             font-size: 3rem;
@@ -25,10 +23,11 @@
         margin-left: 20%;
         border-radius: 2rem;
         padding: 1rem;
-        box-shadow: 0.1rem 0.1rem 1rem v.$color-shadow;
         @media screen and (max-width: v.$md-breakpoint) {
-            font-size: 1rem;
+            font-size: 2rem;
             box-shadow: none;
+            width: 90%;
+            margin-left: 5%;
         }
     }
 
@@ -55,18 +54,11 @@
                 font-size: 2.5rem;
                 text-transform: uppercase;
                 margin: 0;
-                padding: 0;
-                // display: inline;
-                // flex-wrap: nowrap;
             }
             a {
-                // width: 10rem;
                 color: v.$black;
-
                 img {
                     background-color: v.$white;
-
-                    //  margin: 2rem;
                     border-radius: 50%;
                     width: 20rem;
                     margin-bottom: 2rem;
@@ -90,38 +82,42 @@
 .radient {
     width: 100%;
     height: 5rem;
-    background: linear-gradient(to bottom, transparent, 50%, v.$green-pale);
+    background: linear-gradient(to bottom, transparent, 50%, v.$green-pale-back);
 }
 
 .viewProducts {
     background: url(../img/background/inverseBackground.png);
-
-    // .flowersView {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
-  
+
     h1 {
         width: 80%;
 
         @include m.title-mix;
     }
     .view {
-        width: 100%;
+        width: 90%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-
-        .img {
-            border: 1rem solid v.$color-border;
+        @media screen and (max-width: v.$sm-breakpoint) {
+            flex-direction: column;
+            align-items: center;
+            .wrapImg {
+                width: 100%;
+            }
+        }
+        .wrapImg {
+            border: 1rem solid v.$green-pale;
             box-shadow: (0.5rem 0.5rem 1rem v.$color-shadow);
             background-color: white;
             background: url("../img/background/backgroundFloral.png");
             background-size: cover;
-width: 25%;
+            width: 25rem;
             border-radius: 2rem;
             display: flex;
             align-items: center;
@@ -129,15 +125,14 @@ width: 25%;
             padding: 1rem;
             flex-wrap: wrap;
             flex-direction: column;
-            // color: v.$dark-gray;
             img {
-                border: 0.5rem solid v.$color-border;
-                width: 27rem;
+                border: 0.5rem solid v.$green-pale;
+                width: 20rem;
                 border-radius: 2rem;
             }
             &:hover img {
-                -webkit-filter: sepia(100%);
-                filter: sepia(100%);
+                -webkit-filter: opacity(70%);
+                filter: opacity(70%);
                 -webkit-transition: 0.3s ease-in-out;
                 transition: 0.3s ease-in-out;
             }
@@ -146,37 +141,30 @@ width: 25%;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
-                // font-family: v.$body-title-font;
-                //  border: 0.1rem solid v.$black;
                 border-radius: 2rem;
                 margin: 1rem;
                 padding: 1rem;
                 color: v.$dark-gray;
                 text-shadow: 0.1rem 0.1rem 0.5rem v.$color-shadow;
-                background-color: v.$green-pale;
-                // box-shadow: 0.1rem 0.1rem 1rem v.$dark-gray;
-              //  max-width: 20%;
+                background: url("../img/background/inverseBackground.png");
+                background-position: center;
+                background-size: cover;
                 h3 {
-          
                     padding: 1rem;
                     border-radius: 2rem;
-                    text-transform: uppercase;
                     background-color: v.$white;
-                   
+                    font-size: 1.5rem;
                 }
                 h4 {
-                    background-color: v.$white;
-                    padding: 1rem;
                     border-radius: 2rem;
-                  //  max-width: 20%;
+                    font-size: 1.2rem;
                 }
             }
         }
     }
-    //  }
 }
 
-.a{
+.a {
     width: 100%;
     text-align: center;
-  }
+}
