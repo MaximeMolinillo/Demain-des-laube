@@ -3,17 +3,18 @@
 @use "mixin" as m;
 
 .whoIAmPage {
-    background: url("../img/background/backgroundFloral.png");
+    background: url("../img/background/backgroundFloral.webp");
     background-size: cover;
     background-repeat: no-repeat;
     margin: 5rem;
     text-align: center;
     img {
-        width: 50rem;
+        width: 50%;
         box-shadow: 1rem 1rem 1rem v.$dark-gray;
         border: 2rem solid v.$green-pale;
-        @media screen and (max-width: v.$sm-breakpoint) {
-            width: 25rem;
+        @media screen and (max-width: v.$md-breakpoint) {
+            border: 1rem solid v.$green-pale;
+            width: 100%;
         }
     }
     h1 {

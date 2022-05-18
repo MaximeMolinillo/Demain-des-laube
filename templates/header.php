@@ -9,13 +9,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+    <meta name="description" content="Demain dès l'aube est un fleuriste situé à Douai. Nous proposons des fleurs en bouquets et compositions, mais également de la décoration, des bijoux, des plantes vertes ainsi que des prestations événementielles comme le mariage ou le deuil.">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+
  
-    <title>Demain dès l'Aube</title>
+    <title>Demain dès l'Aube, <?= $page ?> </title>
 </head>
 
 <body>
@@ -32,13 +34,13 @@
         </div>
 
         <div class="navBar">
-            <a href="./index.php">Home</a>
-            <a href="./nosProduits.php">Nos Produits</a>
-            <a href="./partners.php">Partenaires</a>
-            <a href="./whoIAm.php">Qui-suis-je ?</a>
-            <a href="./login.php">Connexion</a>
-            <a href="./my_account.php">Mon compte</a>
-            <a href="./inscription.php">Inscription</a>
+            <a href="../public/index.php">Home</a>
+            <a href="../public/nosProduits.php">Nos Produits</a>
+            <a href="../public/partners.php">Partenaires</a>
+            <a href="../public/whoIAm.php">Qui-suis-je ?</a>
+            <a href="../public/login.php">Connexion</a>
+            <a href="../public/my_account.php">Mon compte</a>
+            <a href="../public/inscription.php">Inscription</a>
         </div>
 
 

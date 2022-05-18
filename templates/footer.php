@@ -8,18 +8,20 @@
                 <p>17C rue du faubourg de béthune <br> 59500 Douai</p>
                 <p>03-27-90-56-54</p>
                 <p>perlonsen@gmail.com</p>
-                <a href="https://www.facebook.com/artisan.fleuriste.douai" target="_blank">
-                    <img src="./assets/img/logo/facebook.png" alt="facebook">
-                </a>
-                <a href="https://www.instagram.com/_demaindeslaube_/?hl=fr" target="_blank">
-                    <img src="./assets/img/logo/instagram.png" alt="instagram">
-                </a>
-                <a href="mailto:perlonsen@gmail.com">
-                    <img src="./assets/img/logo/email.png" alt="email">
-                </a>
-                <a href="tel:+33327905654">
-                    <img src="./assets/img/logo/vieux-telephone.png" alt="téléphone">
-                </a>
+                <div class="network">
+                    <a href="https://www.facebook.com/artisan.fleuriste.douai" target="_blank">
+                        <img src="../assets/img/logo/facebook.webp" alt="facebook">
+                    </a>
+                    <a href="https://www.instagram.com/_demaindeslaube_/?hl=fr" target="_blank">
+                        <img src="../assets/img/logo/instagram.webp" alt="instagram">
+                    </a>
+                    <a href="mailto:perlonsen@gmail.com">
+                        <img src="../assets/img/logo/email.webp" alt="email">
+                    </a>
+                    <a href="tel:+33327905654">
+                        <img src="../assets/img/logo/vieux-telephone.webp" alt="téléphone">
+                    </a>
+                </div>
             </div>
 
             <div class="footSection">
@@ -57,8 +59,8 @@
                 <h5>Paiement sécurisé :</h5>
                 <hr>
                 <p>Nous acceptons les cartes bleues, sur place et par téléphone</p>
-                <img src="./assets/img/logo/logo-cb.png" alt="Carte bleu, Visa et Mastercard">
-                <p><a href="mentionsLegales.php">Mentions légales</a></p>
+                <img src="../assets/img/logo/logo-cb.webp" alt="Carte bleu, Visa et Mastercard">
+                <p><a href="./mentionsLegales.php">Mentions légales</a></p>
                 <a href="https://www.linkedin.com/in/maxime-molinillo-57b8a1230/" target="_blank" class="copyright">
                     <p> @copyright 2022 Maxime Molinillo</p>
                     <!-- <img src="./assets/img/logo/mMLogo.png" alt="Logo Maxime Molinillo">
@@ -69,7 +71,7 @@
 
     </div>
 </footer>
-<script src="./js/tarteaucitron.js/tarteaucitron.js"></script>
+<script src="../js/tarteaucitron.js/tarteaucitron.js"></script>
 <script type="text/javascript">
     tarteaucitron.init({
         "privacyUrl": "",

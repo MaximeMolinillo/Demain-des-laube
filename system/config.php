@@ -1,7 +1,7 @@
 <?php
 require_once "db.php";
 
-define("HOST", "http://localhost/demain-des-laube");
+define("HOST", "http://localhost/demaindeslaube/public");
 
 // DB
 define("DB_HOSTNAME", "localhost");

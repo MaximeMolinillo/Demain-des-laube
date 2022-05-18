@@ -3,10 +3,11 @@
 @use "mixin" as m;
 
 .productsView {
-    background: url("../img/background/backgroundFloral.png");
+    background: url("../img/background/backgroundFloral.webp");
     background-size: cover;
     background-repeat: no-repeat;
     margin: 5rem;
+    max-width: 100%;
     h2 {
         @include m.title-mix;
         text-align: center;
@@ -37,6 +38,7 @@
         flex-wrap: wrap;
         text-align: center;
         justify-content: center;
+        width: 100%;
 
         .prod {
             border: 0.5rem solid v.$color-border;
@@ -49,11 +51,22 @@
             text-align: center;
             @media screen and (max-width: v.$lg-breakpoint) {
                 width: 25rem;
+                margin: 1rem;
+            }
+            @media screen and (max-width: v.$sm-breakpoint) {
+                width: 10rem;
+                height: 13em;
+                text-align: center;
+                padding: 0;
             }
             h4 {
                 font-size: 2.5rem;
                 text-transform: uppercase;
                 margin: 0;
+                @media screen and (max-width: v.$sm-breakpoint) {
+                    font-size: 1.2rem;
+                    margin: 0;
+                }
             }
             a {
                 color: v.$black;
@@ -66,6 +79,10 @@
                     transform: scale(1);
                     -webkit-transition: 0.3s ease-in-out;
                     transition: 0.3s ease-in-out;
+                    @media screen and (max-width: v.$sm-breakpoint) {
+                        width: 3rem;
+                        margin: 1rem 0 1rem 0;
+                    }
                 }
                 &:hover img {
                     -webkit-transform: scale(1.3);
@@ -73,6 +90,13 @@
                 }
                 p {
                     margin-top: 1rem;
+                    @media screen and (max-width: v.$sm-breakpoint) {
+                        font-size: 1rem;
+                        margin: 0;
+                        max-width: 100%;
+                        margin: 1rem 0.5rem 1rem 0.5rem;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -86,7 +110,7 @@
 }
 
 .viewProducts {
-    background: url(../img/background/inverseBackground.png);
+    background: url("../img/background/inverseBackground.webp");
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -95,27 +119,22 @@
 
     h1 {
         width: 80%;
-
         @include m.title-mix;
     }
     .view {
-        width: 90%;
+        width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         @media screen and (max-width: v.$sm-breakpoint) {
-            flex-direction: column;
             align-items: center;
-            .wrapImg {
-                width: 100%;
-            }
         }
         .wrapImg {
             border: 1rem solid v.$green-pale;
             box-shadow: (0.5rem 0.5rem 1rem v.$color-shadow);
             background-color: white;
-            background: url("../img/background/backgroundFloral.png");
+            background: url("../img/background/backgroundFloral.webp");
             background-size: cover;
             width: 25rem;
             border-radius: 2rem;
@@ -125,10 +144,20 @@
             padding: 1rem;
             flex-wrap: wrap;
             flex-direction: column;
+            justify-content: center;
+            @media screen and (max-width: v.$sm-breakpoint) {
+                width: 12rem;
+                padding: 0;
+                flex-direction: row;
+            }
+
             img {
                 border: 0.5rem solid v.$green-pale;
-                width: 20rem;
                 border-radius: 2rem;
+                @media screen and (max-width: v.$sm-breakpoint) {
+                    width: 90%;
+                    margin: 1rem 0.5rem 1rem 0.5rem;
+                }
             }
             &:hover img {
                 -webkit-filter: opacity(70%);
@@ -146,9 +175,13 @@
                 padding: 1rem;
                 color: v.$dark-gray;
                 text-shadow: 0.1rem 0.1rem 0.5rem v.$color-shadow;
-                background: url("../img/background/inverseBackground.png");
+                background: url("../img/background/inverseBackground.webp");
                 background-position: center;
                 background-size: cover;
+                @media screen and (max-width: v.$sm-breakpoint) {
+                    margin: 0;
+                    padding: 0;
+                }
                 h3 {
                     padding: 1rem;
                     border-radius: 2rem;

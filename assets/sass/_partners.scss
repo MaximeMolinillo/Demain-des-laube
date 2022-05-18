@@ -4,7 +4,7 @@
 
 .partnersPage {
     text-align: center;
-    background: url("../img/background/backgroundFloral.png");
+    background: url("../img/background/backgroundFloral.webp");
     background-size: cover;
     background-repeat: no-repeat;
     .txtPartners {
@@ -19,20 +19,25 @@
             margin: 5em;
             justify-content: space-evenly;
             flex-direction: column;
+            @media screen and (max-width: v.$sm-breakpoint) {
+                margin: 2rem;
+            }
             a {
                 position: relative;
                 img {
-                    background-color: v.$green-pale;
+                    border: 2rem solid v.$green-pale;
                     text-align: center;
-                    padding: 2rem;
-                    width: 36rem;
                     -webkit-transform: scale(1);
                     transform: scale(1);
                     -webkit-transition: 0.3s ease-in-out;
                     transition: 0.3s ease-in-out;
                     box-shadow: 1rem 1rem 1rem v.$dark-gray;
+                    @media screen and (max-width: v.$xl-breakpoint) {
+                        width: 50%;
+                    }
                     @media screen and (max-width: v.$lg-breakpoint) {
-                        width: 25rem;
+                        border: 1rem solid v.$green-pale;
+                        width: 100%;
                     }
                 }
                 &:hover img {
