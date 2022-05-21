@@ -28,6 +28,14 @@ if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR
         header("Location: ./login.php");
     } else {
 
+
+        if (!empty($_GET["id"])) {
+            $id = trim(strip_tags($_GET["id"]));
+            $query = $db->prepare("SELECT * FROM users WHERE id LIKE :id");
+            $query->bindParam(":id", $id);
+            $query->execute();
+            $idContact = $query->fetch();
+        }
         ////envoie de mail sur la boite de la patronne
         $errors = [];
         $messageErrors = "";
@@ -86,6 +94,7 @@ if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR
         }
     }
 }
+
 include("../templates/header.php");
 ?>
 <div class="flowerPicture"></div>
@@ -95,6 +104,11 @@ include("../templates/header.php");
 
     <div class="welcome">
         <h2>Bienvenue sur votre compte, <?= $_SESSION["userName"] . " " . $_SESSION["user"] ?></h2>
+
+    </div>
+    <div class="panier">
+        <p>Panier(0)</p>
+        <img src="../assets/img/logo/sac-de-courses.png" alt="">
     </div>
     <?php
     if (isset($messageErrors)) {
@@ -109,15 +123,15 @@ include("../templates/header.php");
         <hr>
         <div class="form-group">
             <label for="inputName">Nom :</label>
-            <input type="text" name="nameC" id="inputName" placeholder="Votre Nom">
+            <input type="text" name="nameC" id="inputName" value="<?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?>">
         </div>
         <div class="form-group">
             <label for="inputFirstname">Prénom :</label>
-            <input type="text" name="firstnameC" id="inputFirstname" placeholder="Votre Prénom">
+            <input type="text" name="firstnameC" id="inputFirstname" value="<?= isset($_SESSION["user"]) ? $_SESSION["user"] : "" ?>">
         </div>
         <div class="form-group">
             <label for="inputEmail">Email :</label>
-            <input type="email" name="emailC" id="inputEmail" placeholder="Votre email">
+            <input type="email" name="emailC" id="inputEmail" value="<?= isset($_SESSION["email"]) ? $_SESSION["email"] : "" ?>">
         </div>
         <div class="form-group">
             <label for="inputTel">Télephone :</label>

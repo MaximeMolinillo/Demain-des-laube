@@ -5,7 +5,7 @@ $errors = [];
 $message = "";
 
 if (!empty($_POST)) {
-    require_once ('../system/config.php');
+    require_once('../system/config.php');
 
     $name = trim(strip_tags($_POST["name"]));
     $firstname = trim(strip_tags($_POST["firstname"]));

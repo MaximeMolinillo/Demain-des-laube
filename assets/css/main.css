@@ -179,8 +179,7 @@ h5 {
   justify-content: space-between;
 }
 .wrapFoot .wrapFootSection .footSection .network img {
-  width: 100%;
-  padding: 1rem;
+  width: 40%;
 }
 .wrapFoot .payment img {
   width: 20%;
@@ -209,7 +208,7 @@ hr {
   background-color: #f3fadc;
   border-radius: 2rem;
   border: 0.5rem solid #d9ecac;
-  box-shadow: 1rem 1rem 1rem #b7dab7;
+  box-shadow: 1rem 1rem 1rem #464646;
   text-align: center;
 }
 @media screen and (max-width: 576px) {
@@ -250,7 +249,7 @@ hr {
 }
 .productsView .wrapProducts .prod {
   border: 0.5rem solid #e9ecdf;
-  box-shadow: 1rem 1rem 1rem #b7dab7;
+  box-shadow: 1rem 1rem 1rem #464646;
   background-color: #d9ecac;
   border-radius: 2rem;
   margin: 3rem;
@@ -289,7 +288,7 @@ hr {
 .productsView .wrapProducts .prod a img {
   background-color: #ffffff;
   border-radius: 50%;
-  width: 20rem;
+  width: 100%;
   margin-bottom: 2rem;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -303,8 +302,8 @@ hr {
   }
 }
 .productsView .wrapProducts .prod a:hover img {
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
 .productsView .wrapProducts .prod a p {
   margin-top: 1rem;
@@ -340,7 +339,7 @@ hr {
   background-color: #f3fadc;
   border-radius: 2rem;
   border: 0.5rem solid #d9ecac;
-  box-shadow: 1rem 1rem 1rem #b7dab7;
+  box-shadow: 1rem 1rem 1rem #464646;
 }
 @media screen and (max-width: 576px) {
   .viewProducts h1 {
@@ -361,7 +360,7 @@ hr {
 }
 .viewProducts .view .wrapImg {
   border: 1rem solid #d9ecac;
-  box-shadow: 0.5rem 0.5rem 1rem #b7dab7;
+  box-shadow: 0.5rem 0.5rem 1rem #464646;
   background-color: white;
   background: url("../img/background/backgroundFloral.webp");
   background-size: cover;
@@ -406,7 +405,7 @@ hr {
   margin: 1rem;
   padding: 1rem;
   color: #5c606b;
-  text-shadow: 0.1rem 0.1rem 0.5rem #b7dab7;
+  text-shadow: 0.1rem 0.1rem 0.5rem #464646;
   background: url("../img/background/inverseBackground.webp");
   background-position: center;
   background-size: cover;
@@ -429,8 +428,14 @@ hr {
 }
 
 .a {
-  width: 100%;
-  text-align: center;
+  text-align: right;
+  text-align: right;
+  margin-right: 5%;
+  margin-left: 90%;
+}
+.a img {
+  filter: invert(39%) sepia(17%) saturate(309%) hue-rotate(186deg) brightness(88%) contrast(84%);
+  width: 3rem;
 }
 
 .whoIAmPage {
@@ -457,7 +462,7 @@ hr {
   background-color: #f3fadc;
   border-radius: 2rem;
   border: 0.5rem solid #d9ecac;
-  box-shadow: 1rem 1rem 1rem #b7dab7;
+  box-shadow: 1rem 1rem 1rem #464646;
 }
 @media screen and (max-width: 576px) {
   .whoIAmPage h1 {
@@ -549,6 +554,15 @@ hr {
   font-weight: 800;
 }
 
+.contactPage .panier {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+.contactPage .panier img {
+  width: 3rem;
+  height: 4rem;
+}
 .contactPage form {
   background: url("../img/background/backgroundFloral.webp");
   background-size: cover;
@@ -564,7 +578,7 @@ hr {
   background-color: #f3fadc;
   border-radius: 2rem;
   border: 0.5rem solid #d9ecac;
-  box-shadow: 1rem 1rem 1rem #b7dab7;
+  box-shadow: 1rem 1rem 1rem #464646;
   width: 90%;
   text-align: center;
 }
@@ -625,7 +639,7 @@ form {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 8rem;
+  padding-bottom: 3rem;
 }
 form h2 {
   font-family: "Arizonia", cursive;
@@ -633,7 +647,7 @@ form h2 {
   background-color: #f3fadc;
   border-radius: 2rem;
   border: 0.5rem solid #d9ecac;
-  box-shadow: 1rem 1rem 1rem #b7dab7;
+  box-shadow: 1rem 1rem 1rem #464646;
   width: 90%;
   text-align: center;
 }
@@ -697,7 +711,7 @@ form .submit:hover {
   background-color: #f3fadc;
   border-radius: 2rem;
   border: 0.5rem solid #d9ecac;
-  box-shadow: 1rem 1rem 1rem #b7dab7;
+  box-shadow: 1rem 1rem 1rem #464646;
   text-align: center;
   margin: 0 10% 0 10%;
 }
@@ -728,6 +742,9 @@ form .submit:hover {
   flex-direction: column;
   text-align: center;
 }
+.myAccount .view .photo span {
+  text-decoration: underline;
+}
 .myAccount .view .photo img {
   border-radius: 2rem;
 }
@@ -740,12 +757,23 @@ form .submit:hover {
   margin-top: 0.1rem;
 }
 .myAccount .view .photo form button {
-  margin: 0.1rem;
+  margin: 0.5rem;
   border-radius: 2rem;
   font-size: 1.3rem;
   color: #000000;
   background-color: #d9ecac;
   box-shadow: 0.5rem 0.5rem 0.5rem #5c606b;
+  width: 100%;
+}
+.myAccount .view .photo form .btnDelete:hover {
+  background-color: #8c0000;
+  color: #d9ecac;
+}
+.myAccount .view .photo form .btnModify:hover {
+  background-color: #5c606b;
+}
+.myAccount .view .photo form .btnModify:hover a {
+  color: #d9ecac;
 }
 
 .welcome {
@@ -758,13 +786,32 @@ form .submit:hover {
   font-size: 1rem;
 }
 
+.bottomLink {
+  margin-bottom: 5rem;
+}
+.bottomLink a:hover {
+  color: #8c0000;
+}
+
+.deleteAccount {
+  border: 0.1rem solid black;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 2rem;
+}
 .deleteAccount h3 {
   text-align: center;
   background-color: #d9ecac;
+  border-radius: 2rem;
+  margin: 1rem 2rem 1rem 2rem;
+}
+.deleteAccount input:hover {
+  background-color: #8c0000;
+  color: #ffffff;
 }
 
 .error {
-  color: #aa0000;
+  color: #8c0000;
   text-align: center;
 }
 
@@ -865,7 +912,7 @@ form .submit:hover {
   background-color: #f3fadc;
   border-radius: 2rem;
   border: 0.5rem solid #d9ecac;
-  box-shadow: 1rem 1rem 1rem #b7dab7;
+  box-shadow: 1rem 1rem 1rem #464646;
 }
 @media screen and (max-width: 576px) {
   .wrapSection .presentation h2 {

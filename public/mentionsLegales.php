@@ -1,5 +1,5 @@
 <?php
-$page= "mentions légales.";
+$page = "mentions légales.";
 include("../templates/header.php");
 
 ?>

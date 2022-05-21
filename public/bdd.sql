@@ -25,29 +25,6 @@ VALUES
 
 
 
-
-
-
--- CREATE TABLE type(
---     id INT PRIMARY KEY AUTO_INCREMENT,
---     category VARCHAR(60) NOT NULL
-  
--- );
-
--- CREATE TABLE photos_category(
---     id INT PRIMARY KEY AUTO_INCREMENT,
---     id_photos SMALLINT,
---     id_genre SMALLINT
--- );
-
-
-
--- CREATE TABLE products(
---     id INT PRIMARY KEY AUTO_INCREMENT,
---     name VARCHAR(255) NOT NULL
--- )
-
-
 ALTER TABLE users ADD role VARCHAR(50) DEFAULT "utilisateur";
 
 UPDATE users SET role ="admin" WHERE id=1 ;
@@ -83,3 +60,23 @@ VALUES
 ALTER TABLE password_reset
 ADD validity  int(11);
 
+INSERT INTO category
+(name)
+VALUES
+("Fleurs"),
+("Plantes Vertes"),
+("Décoration"),
+("Bijoux"),
+("Mariage"),
+("Deuil"),
+("Autres")
+
+ALTER TABLE photos
+DELETE category
+
+ALTER TABLE photos
+ADD id_category INT
+
+
+SELECT category.name AS 'type',GROUP_CONCAT(photos.title ORDER BY photos.id separator ' </br> ') AS 'photo' FROM category 
+INNER JOIN photos ON category.id = photos.id_category

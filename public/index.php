@@ -8,7 +8,7 @@ $photos = $query->fetchAll();
 include("../templates/header.php");
 ?>
 
-<div class="topSection">
+<div class="topSection" id="topHome">
     <img src="../assets/img/logo/Flower.webp" alt="Fleur">
     <h3 class="smH3">Découvrez</h3>
     <h3 class="xlH3">Nos produits</h3>
@@ -127,6 +127,9 @@ include("../templates/header.php");
             </div>
         </div>
     </div>
+    <a href="#topHome" class="a">
+        <img src="../assets/img/logo/fleche.svg" alt="Retour vers le haut">
+    </a>
 </section>
 
 <?php

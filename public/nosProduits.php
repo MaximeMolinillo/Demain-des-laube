@@ -1,41 +1,41 @@
 <?php
-require_once ('../system/config.php');
+require_once('../system/config.php');
 
-$page="nos produits.";
+$page = "nos produits.";
 
-//$db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
+
 $query = $db->query("SELECT *FROM photos
-                 WHERE category = 'Fleurs' 
+                 WHERE id_category = '1' 
                  ORDER BY id DESC");
 $flowersPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE category = 'PlantesVertes' 
+                 WHERE id_category = '2' 
                  ORDER BY id DESC");
 $plantPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE category = 'Decoration' 
+                 WHERE id_category = '3' 
                  ORDER BY id DESC");
 $decoPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE category = 'Bijoux' 
+                 WHERE id_category = '4' 
                  ORDER BY id DESC");
 $jewelsPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE category = 'Mariage' 
+                 WHERE id_category = '5' 
                  ORDER BY id DESC");
 $wedingPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE category = 'Deuil' 
+                 WHERE id_category = '6' 
                  ORDER BY id DESC");
 $mourningPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE category = 'Others' 
+                 WHERE id_category = '7' 
                  ORDER BY id DESC");
 $othersPic = $query->fetchAll();
 
@@ -118,7 +118,7 @@ include("../templates/header.php");
                 </a>
                 <div class="txtView">
                     <h3> <?= $flowerP["title"] ?></h3>
-                    <h4> <?= $flowerP["category"] ?></h4>
+
                     <h4> <?= $flowerP["description"] ?></h4>
                 </div>
             </div>
@@ -126,7 +126,9 @@ include("../templates/header.php");
         }
         ?>
     </div>
-    <a href="#top" class="a">Retour vers le haut de page</a>
+    <a href="#top" class="a">
+        <img src="../assets/img/logo/fleche.svg" alt="Retour vers le haut">
+    </a>
     <h1>Plantes Vertes</h1>
     <div class="view plantView" id="plantLink">
         <?php
@@ -140,14 +142,16 @@ include("../templates/header.php");
                     <h3> <?= $plantP["title"] ?></h3>
 
                     <h4> <?= $plantP["description"] ?></h4>
-                    <h4> <?= $plantP["category"] ?></h4>
+
                 </div>
             </div>
         <?php
         }
         ?>
     </div>
-    <a href="#top" class="a">Retour vers le haut de page</a>
+    <a href="#top" class="a">
+        <img src="../assets/img/logo/fleche.svg" alt="Retour vers le haut">
+    </a>
     <h1>Décorations</h1>
     <div class="view decoView" id="decoLink">
         <?php
@@ -160,14 +164,16 @@ include("../templates/header.php");
                 <div class="txtView">
                     <h3> <?= $decoP["title"] ?></h3>
                     <h4> <?= $decoP["description"] ?></h4>
-                    <h4> <?= $decoP["category"] ?></h4>
+
                 </div>
             </div>
         <?php
         }
         ?>
     </div>
-    <a href="#top" class="a">Retour vers le haut de page</a>
+    <a href="#top" class="a">
+        <img src="../assets/img/logo/fleche.svg" alt="Retour vers le haut">
+    </a>
     <h1>Bijoux</h1>
     <div class="view jewelsView" id="jewelsLink">
         <?php
@@ -180,14 +186,16 @@ include("../templates/header.php");
                 <div class="txtView">
                     <h3> <?= $jewelsP["title"] ?></h3>
                     <h4> <?= $jewelsP["description"] ?></h4>
-                    <h4> <?= $jewelsP["category"] ?></h4>
+
                 </div>
             </div>
         <?php
         }
         ?>
     </div>
-    <a href="#top" class="a">Retour vers le haut de page</a>
+    <a href="#top" class="a">
+        <img src="../assets/img/logo/fleche.svg" alt="Retour vers le haut">
+    </a>
     <h1>Mariage</h1>
     <div class="view wedingView" id="wedingLink">
         <?php
@@ -200,14 +208,16 @@ include("../templates/header.php");
                 <div class="txtView">
                     <h3> <?= $wedingP["title"] ?></h3>
                     <h4> <?= $wedingP["description"] ?></h4>
-                    <h4> <?= $wedingP["category"] ?></h4>
+
                 </div>
             </div>
         <?php
         }
         ?>
     </div>
-    <a href="#top" class="a">Retour vers le haut de page</a>
+    <a href="#top" class="a">
+        <img src="../assets/img/logo/fleche.svg" alt="Retour vers le haut">
+    </a>
     <h1>Deuil</h1>
     <div class="view mourningView" id="mourningLink">
         <?php
@@ -220,14 +230,16 @@ include("../templates/header.php");
                 <div class="txtView">
                     <h3> <?= $mourningP["title"] ?></h3>
                     <h4> <?= $mourningP["description"] ?></h4>
-                    <h4> <?= $mourningP["category"] ?></h4>
+
                 </div>
             </div>
         <?php
         }
         ?>
     </div>
-    <a href="#top" class="a">Retour vers le haut de page</a>
+    <a href="#top" class="a">
+        <img src="../assets/img/logo/fleche.svg" alt="Retour vers le haut">
+    </a>
 </div>
 
 <?php

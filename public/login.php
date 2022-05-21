@@ -2,7 +2,7 @@
 
 //Grâce à cette ligne nous avons une gestion stricte des types
 declare(strict_types=1);
-require_once ('../system/config.php');
+require_once('../system/config.php');
 $page = "se connecter.";
 // //--------------ROLES--------------// 
 
@@ -152,18 +152,18 @@ if (!empty($_POST)) {
         // var_dump($_SESSION["userRole"]);
         //var_dump($_SESSION);
         $token = bin2hex(random_bytes(50));
-     
+
         $query = $db->prepare("INSERT INTO password_reset (email, token) VALUES (:email, :token)");
         $query->bindParam(":email", $email);
         $query->bindParam(":token", $token);
-     
-        if ($query->execute()){
-        $_SESSION["token"]= $token;
-        }
-        
 
-        if ($result["role"] !== "admin") {      
-             header("Location: ./contact.php");
+        if ($query->execute()) {
+            $_SESSION["token"] = $token;
+        }
+
+
+        if ($result["role"] !== "admin") {
+            header("Location: ./contact.php");
             //  echo "non";
         } else {
             header("Location: ./my_account.php");
@@ -176,8 +176,8 @@ include("../templates/header.php");
 ?>
 
 <main class="login">
-<div class="flowerPicture"></div>
- 
+    <div class="flowerPicture"></div>
+
     <form action="" method="post">
         <h2>Connexion à votre espace utilisateur</h2>
 

@@ -5,8 +5,9 @@ require_once('../system/config.php');
 
 $page = "compte admin.";
 
-$query = $db->query("SELECT * FROM photos ORDER BY id DESC");
+$query = $db->query("SELECT * FROM photos  ORDER BY id DESC");
 $photos = $query->fetchAll();
+
 
 $message = "";
 $errors = [];
@@ -14,8 +15,8 @@ $errors = [];
 
 //test que l'utilisateur est bien connecté
 if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR"]) || !isset($_SESSION["token"])) {
-    header("Location: ./login.php");
     session_destroy();
+    header("Location: ./login.php");
 } else {
     $token = trim(strip_tags($_SESSION["token"]));
     $query = $db->prepare("SELECT email,token FROM password_reset WHERE token = :token");
@@ -27,13 +28,6 @@ if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR
         session_destroy();
         header("Location: ./login.php");
     } else {
-
-        //------------essai de suppresion ds BDD----------
-        // $req = $db->prepare("DELETE * FROM password_reset WHERE token = :token");
-        // $req->bindParam(":token", $token);
-        // $req->execute();
-        // $token = trim(strip_tags($_GET["token"]));
-
 
         //Ajout
 
@@ -69,13 +63,13 @@ if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR
 
                         if (empty(!$title)) {
                             $query = $db->prepare("INSERT INTO photos 
-                              (picture, title, description, category)
+                              (picture, title, description, id_category)
                                VALUES
-                               (:file, :title, :description, :category)");
+                               (:file, :title, :description, :id_category)");
                             $query->bindParam(":file", $file);
                             $query->bindParam(":title", $title);
                             $query->bindParam(":description", $description);
-                            $query->bindParam(":category", $category);
+                            $query->bindParam(":id_category", $category);
                             if ($query->execute()) {
                                 $message = "Image enregistrée. ";
                             }
@@ -96,7 +90,6 @@ if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR
                 $query->bindParam(":id", $id);
                 $query->execute();
                 $photoId = $query->fetch();
-        
             }
 
             if (!empty($_POST["modifyP"])) {
@@ -134,7 +127,7 @@ if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR
                                        title = :titleModify,
                                        description = :descriptionModify,
                                        picture = :filesModify,
-                                       category = :categoryModify
+                                       id_category = :categoryModify
                                        WHERE id = :modify");
                             $query->bindParam(":modify", $modify, PDO::PARAM_INT);
                             $query->bindParam(":filesModify", $file);
@@ -195,7 +188,7 @@ include("../templates/header.php");
 ?>
 
 <div class="myAccount">
-    <div class="welcome">
+    <div class="welcome" id="topAccount">
         <h2>Bienvenue sur votre compte, <?= $_SESSION["user"] . " " . $_SESSION["userName"] ?></h2>
     </div>
     <?php
@@ -241,13 +234,13 @@ include("../templates/header.php");
         <div class="form-group">
             <label for="inputCategory">Veuillez séléctionner la catégorie de votre produit :</label>
             <select name="category" id="inputCategory" class="submit">
-                <option value="Fleurs" <?= (isset($category) && $category === "Fleurs") ? "selected" : "" ?>>Fleurs</option>
-                <option value="PlantesVertes" <?= (isset($category) && $category === "PlantesVertes") ? "selected" : "" ?>>Plantes vertes</option>
-                <option value="Decoration" <?= (isset($category) && $category === "Decoration") ? "selected" : "" ?>>Décoration</option>
-                <option value="Bijoux" <?= (isset($category) && $category === "Bijoux") ? "selected" : "" ?>>Bijoux</option>
-                <option value="Mariage" <?= (isset($category) && $category === "Mariage") ? "selected" : "" ?>>Mariage</option>
-                <option value="Deuil" <?= (isset($category) && $category === "Deuil") ? "selected" : "" ?>>Deuil</option>
-                <option value="Others" <?= (isset($category) && $category === "Others") ? "selected" : "" ?>>Autres</option>
+                <option value="1" <?= (isset($category) && $category === "Fleurs") ? "selected" : "" ?>>Fleurs</option>
+                <option value="2" <?= (isset($category) && $category === "PlantesVertes") ? "selected" : "" ?>>Plantes vertes</option>
+                <option value="3" <?= (isset($category) && $category === "Decoration") ? "selected" : "" ?>>Décoration</option>
+                <option value="4" <?= (isset($category) && $category === "Bijoux") ? "selected" : "" ?>>Bijoux</option>
+                <option value="5" <?= (isset($category) && $category === "Mariage") ? "selected" : "" ?>>Mariage</option>
+                <option value="6" <?= (isset($category) && $category === "Deuil") ? "selected" : "" ?>>Deuil</option>
+                <option value="7" <?= (isset($category) && $category === "Others") ? "selected" : "" ?>>Autres</option>
             </select>
 
         </div>
@@ -271,29 +264,52 @@ include("../templates/header.php");
     ?>
 
     <div class="view">
+        <!-- <?php
+                foreach ($types as $type) {
+                ?>
+                    <h2><?= $type["name"] ?></h2>
+                <?php
+                }
+                ?> -->
         <?php
         foreach ($photos as $photo) {
         ?>
             <div class="photo">
                 <img src="../assets/img/products/<?= $photo['picture'] ?>">
                 <h1><?= $photo["title"] ?></h1>
-                <h2><?= $photo["category"] ?></h2>
-                <h2>Numéro: <?= $photo["id"] ?></h2>
+                <!-- <h2><?= $photo["id_category"] ?></h2> -->
+                <h2> <span> Numéro:</span> <?= $photo["id"] ?></h2>
+                <?php
+                $id_type = $photo["id_category"];
+                $query = $db->prepare("SELECT name FROM category WHERE id = :id_category");
+                $query->bindParam(":id_category", $id_type);
+                $query->execute();
+                $types = $query->fetchAll();
+                foreach ($types as $type) {
+                ?>
+                    <p> <span> Catégorie :</span> <?= $type["name"] ?></p>
+                <?php
+                }
+                ?>
                 <form action="" method="post" enctype="multipart/form-data">
-                    <button type="submit" name="delete" value="<?= $photo["id"] ?>">
+                    <button type="submit" name="delete" value="<?= $photo["id"] ?>" class="btnDelete">
                         Supprimer
                     </button>
-                   
-                        <button type="submit" name="modifyFiles" value="<?= $photo["id"] ?>">
-                        <a href="./my_account.php?id=<?= $photo["id"] ?>#modifyLink">   Modifier </a>
-                        </button>
-                   
+
+                    <button type="submit" name="modifyFiles" value="<?= $photo["id"] ?>" class="btnModify">
+                        <a href="./my_account.php?id=<?= $photo["id"] ?>#modifyLink"> Modifier </a>
+                    </button>
+
                 </form>
+
             </div>
         <?php
         }
         ?>
     </div>
+    <a href="#topAccount" class="a">
+        <img src="../assets/img/logo/fleche.svg" alt="Retour vers le haut">
+    </a>
 
     <div class="modifyDelete">
         <form method="post" enctype="multipart/form-data">
@@ -306,7 +322,7 @@ include("../templates/header.php");
                     }
             ?> -->
             <h3>Veuillez sélectionner votre produit à modifier </h3>
-            <div class="form-group" >
+            <div class="form-group">
                 <label for="inputModify" id="modifyLink">Veuillez entrer le Numéro Identifiant du produit à modifier ou selectionnez directement la photo</label>
                 <input type="text" id="inputModify" name="modify" value="<?= isset($id) ? $id : "" ?>">
 
@@ -344,13 +360,13 @@ include("../templates/header.php");
             <div class="form-group">
                 <label for="inputCategoryModify">Veuillez séléctionner la catégorie de votre produit :</label>
                 <select name="categoryModify" id="inputCategoryModify" class="submit" value="<?= isset($photoId["category"]) ? $photoId["category"] : "" ?>">
-                    <option value="Fleurs" <?= (isset($category) && $category === "Fleurs") ? "selected" : "" ?>>Fleurs</option>
-                    <option value="PlantesVertes" <?= (isset($category) && $category === "PlantesVertes") ? "selected" : "" ?>>Plantes vertes</option>
-                    <option value="Decoration" <?= (isset($category) && $category === "Decoration") ? "selected" : "" ?>>Décoration</option>
-                    <option value="Bijoux" <?= (isset($category) && $category === "Bijoux") ? "selected" : "" ?>>Bijoux</option>
-                    <option value="Mariage" <?= (isset($category) && $category === "Mariage") ? "selected" : "" ?>>Mariage</option>
-                    <option value="Deuil" <?= (isset($category) && $category === "Deuil") ? "selected" : "" ?>>Deuil</option>
-                    <option value="Others" <?= (isset($category) && $category === "Others") ? "selected" : "" ?>>Autres</option>
+                    <option value="1" <?= (isset($category) && $category === "Fleurs") ? "selected" : "" ?>>Fleurs</option>
+                    <option value="2" <?= (isset($category) && $category === "PlantesVertes") ? "selected" : "" ?>>Plantes vertes</option>
+                    <option value="3" <?= (isset($category) && $category === "Decoration") ? "selected" : "" ?>>Décoration</option>
+                    <option value="4" <?= (isset($category) && $category === "Bijoux") ? "selected" : "" ?>>Bijoux</option>
+                    <option value="5" <?= (isset($category) && $category === "Mariage") ? "selected" : "" ?>>Mariage</option>
+                    <option value="6" <?= (isset($category) && $category === "Deuil") ? "selected" : "" ?>>Deuil</option>
+                    <option value="7" <?= (isset($category) && $category === "Others") ? "selected" : "" ?>>Autres</option>
 
                 </select>
             </div>

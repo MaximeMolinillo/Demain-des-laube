@@ -15,9 +15,9 @@
                     <a href="https://www.instagram.com/_demaindeslaube_/?hl=fr" target="_blank">
                         <img src="../assets/img/logo/instagram.webp" alt="instagram">
                     </a>
-                    <a href="mailto:perlonsen@gmail.com">
+                    <!-- <a href="mailto:perlonsen@gmail.com">
                         <img src="../assets/img/logo/email.webp" alt="email">
-                    </a>
+                    </a> -->
                     <a href="tel:+33327905654">
                         <img src="../assets/img/logo/vieux-telephone.webp" alt="téléphone">
                     </a>
