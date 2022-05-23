@@ -2,7 +2,7 @@
 require_once('../system/config.php');
 $page = "Page d'accueil.";
 
-// $db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
+
 $query = $db->query("SELECT * FROM photos ORDER BY id DESC LIMIT 0,12");
 $photos = $query->fetchAll();
 include("../templates/header.php");

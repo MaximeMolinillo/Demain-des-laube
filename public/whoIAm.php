@@ -1,5 +1,5 @@
 <?php
-$page= "qui-sui-je ?";
+$page = "qui-sui-je ?";
 include("../templates/header.php");
 ?>
 

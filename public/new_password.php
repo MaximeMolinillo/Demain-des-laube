@@ -50,9 +50,6 @@ if (isset($_GET["token"])) {
                 $errors["password"] = "Le mot de passe doit contenir 12 caractères minimum, une majuscule, une minuscule, un chiffre et un caractère spécial";
             }
 
-            //------Le formulaire est envoyé et un mot de passe est disponible
-            //----------N'oubliez pas de valider la consistance du mot de passe comme dans create_account.php
-
             if (empty($message)) {
                 $passwordReset = password_hash($passwordReset, PASSWORD_DEFAULT);
                 //-------Requête SQL de mise a jour du mot de passe
@@ -60,7 +57,6 @@ if (isset($_GET["token"])) {
                 $query->bindParam(":passwordReset", $passwordReset);
                 $query->bindParam(":email", $emailReset);
                 if ($query->execute()) {
-                    //-----------Je compléte avec une requête DELETE sur la table password_reset pour purger la ligne en question
                     $req = $db->prepare("DELETE  FROM password_reset WHERE email = :email");
                     $req->bindParam(":email", $emailReset);
                     $req->execute();
@@ -77,7 +73,6 @@ if (isset($_GET["token"])) {
         }
     }
 } else {
-    //--------Pas de token trouvé dan l'url !
     header("Location: ../index.php");
 }
 

@@ -10,8 +10,7 @@ include("../templates/header.php");
 </div>
 
 <div class="partnersPage">
-<h3>Découvrez nos partenaires, et faites livrez vos commandes dans notre boutique.</h3>
-
+    <h3>Découvrez nos partenaires, et faites livrez vos commandes dans notre boutique.</h3>
     <div class="txtPartners">
         <div class="retailPartners">
             <figure>

@@ -5,15 +5,13 @@ require("../vendor/autoload.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 //Création d'une constante pour générer le lien de reinitialisation du mot de passe
-//define("HOST", "http://localhost/demain-des-laube/");
-
 
 $page = "mot de passe oublié.";
 $errors = [];
 $message = "";
 
 if (isset($_POST["email"])) {
-    require_once ('../system/config.php');
+    require_once('../system/config.php');
     $email = trim(strip_tags($_POST["email"]));
     //  $db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
     $query = $db->prepare("SELECT email FROM users WHERE email = :email");
@@ -34,17 +32,15 @@ if (isset($_POST["email"])) {
     }
     if (empty($errors)) {
         //la fonction random_bytes renvoie un binaire que nous transformons en une chaine hexédécimale avec la fonction bin2hex
-        // si nous indiquons 50 en paramétre de la fonction random_bytes nous obtiendrons une chaine de 100 caractéres
         // Génération d'un token de 100 caractères
         $token = bin2hex(random_bytes(50));
-        $validity = time() + 900;
+        $validity = time() + 86400;
         $query = $db->prepare("INSERT INTO password_reset (email, token, validity) VALUES (:email, :token, :validity)");
         $query->bindParam(":email", $email);
         $query->bindParam(":token", $token);
         //Paramétre entier
         $query->bindParam(":validity", $validity, PDO::PARAM_INT);
         if ($query->execute()) {
-            // L'insertion en base c'est ok, on peut passer à l'envoi du mail
             // Appel au constructeur de la classe PHPMailer
             $phpmailer = new PHPMailer();
             $phpmailer->isSMTP();
@@ -69,7 +65,7 @@ if (isset($_POST["email"])) {
             $phpmailer->CharSet = "UTF-8";
             $phpmailer->Subject = "Réinitialisation du mot de passe sur Demain dès l'aube";
             //Corps du mail
-            $phpmailer->Body = "<a href=\"" . HOST . "/new_password.php?token={$token}\">Pour réinitialiser votre mot de passe sur Demain dès l'aube cliquez ici</a>. </br>Ce lien est valable 15 minutes. </br> Si vous n'êtes pas à l'origine de cette demande veuillez ignorer cet email.";
+            $phpmailer->Body = "<a href=\"" . HOST . "/new_password.php?token={$token}\">Pour réinitialiser votre mot de passe sur Demain dès l'aube cliquez ici</a>. </br>Ce lien est valable 24 heures. </br> Si vous n'êtes pas à l'origine de cette demande veuillez ignorer cet email.";
 
             try {
                 //Envoie du mail
@@ -79,18 +75,6 @@ if (isset($_POST["email"])) {
             } catch (Exception $e) {
                 $message = "<div class\"alert alert-danger\">Un problème s'est produit {$mail->ErrorInfo}. Détails : {$e->errorMessage()}.</div>";
             }
-
-            //Mail en ligne
-            // $headers->From = "max_224@hotmail.fr";
-            // $header->FromName ="Demain dès l'aube";
-            // $header->$phpmailer->isHTML();
-            // $header->$phpmailer->Subject = "Réinitialisation du mot de passe";
-            // $header->$phpmailer->$Body = "<a href=\"".HOST."new_password.php?token={$token}\">Réinitialisation du mot de passe</a>";
-            // $header->$phpmailer->Charset = "UTF-8";
-            // $header->send();
-            // mail('maxime.molinillo@outlook.fr', 'Demain dès lAube', 'Hello test mail', $headers);
-
-
         } else {
             $message = "Erreur de Base de donnée";
         }

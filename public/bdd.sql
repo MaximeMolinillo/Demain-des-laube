@@ -17,6 +17,19 @@ CREATE TABLE category(
 );
 
 
+CREATE TABLE password_reset(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(320),
+    token VARCHAR(100),
+    validity INT(11)
+);
+
+CREATE TABLE user_login(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(320),
+    token VARCHAR(100)
+);
+
 INSERT INTO photos
 (title, description, picture, category)
 VALUES
@@ -48,13 +61,7 @@ VALUES
 (1,4)
 
 
--- SELECT photos.title, type.category AS "type"
--- FROM photos
--- INNER JOIN photos_category
--- ON photos.id = photos_category.id_photos
--- INNER JOIN type
--- ON photos_category.id_genre = type.id
--- GROUP BY photos.title;
+
 
 --Ajout nouvelle colonne a passwordreset pr donner une validité au lien
 ALTER TABLE password_reset

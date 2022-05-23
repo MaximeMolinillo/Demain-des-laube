@@ -35,7 +35,6 @@ if (!empty($_POST)) {
     }
 
     //--------Gestion des doublons email
-    //$db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
     $req = $db->prepare("SELECT * FROM users WHERE email = :email");
     $req->bindParam(":email", $email);
     $req->execute();
@@ -45,7 +44,6 @@ if (!empty($_POST)) {
     }
     // -----Insertion en BDD
     if (empty($errors)) {
-        //  $db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
         //---------cryptage MDP
         $password = password_hash($password, PASSWORD_DEFAULT);
 

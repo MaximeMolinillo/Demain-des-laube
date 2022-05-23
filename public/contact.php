@@ -9,15 +9,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 $page = "votre compte.";
-// define("HOST", "http://localhost/demain-des-laube/");
-
 
 if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR"])) {
     header("Location: ./login.php");
     session_destroy();
 } else {
     $token = trim(strip_tags($_SESSION["token"]));
-    $query = $db->prepare("SELECT email,token FROM password_reset WHERE token = :token");
+    $query = $db->prepare("SELECT email_log,token FROM user_login WHERE token = :token");
     $query->bindParam(":token", $token);
     $query->execute();
     $resultToken = $query->fetch();
@@ -27,7 +25,6 @@ if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR
         session_destroy();
         header("Location: ./login.php");
     } else {
-
 
         if (!empty($_GET["id"])) {
             $id = trim(strip_tags($_GET["id"]));

@@ -12,14 +12,13 @@ $photos = $query->fetchAll();
 $message = "";
 $errors = [];
 
-
 //test que l'utilisateur est bien connecté
 if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR"]) || !isset($_SESSION["token"])) {
     session_destroy();
     header("Location: ./login.php");
 } else {
     $token = trim(strip_tags($_SESSION["token"]));
-    $query = $db->prepare("SELECT email,token FROM password_reset WHERE token = :token");
+    $query = $db->prepare("SELECT email_log,token FROM user_login WHERE token = :token");
     $query->bindParam(":token", $token);
     $query->execute();
     $resultToken = $query->fetch();
@@ -50,7 +49,7 @@ if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR
                     $tabExtension = explode(".", $name);
                     $extension = strtolower(end($tabExtension));
                     $extensions = ["jpg", "png", "jpeg", "bmp"];
-                    $maxSize = 2000000;
+                    $maxSize = 200000000;
                     if ($maxSize <= $size) {
                         $errorsF["file"] = "Fichier trop volumineux !";
                     }
@@ -83,7 +82,6 @@ if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR
             }
 
             //-----------/MOdification
-            //-----------selection id
             if (!empty($_GET["id"])) {
                 $id = trim(strip_tags($_GET["id"]));
                 $query = $db->prepare("SELECT * FROM photos where id LIKE :id");
@@ -264,13 +262,6 @@ include("../templates/header.php");
     ?>
 
     <div class="view">
-        <!-- <?php
-                foreach ($types as $type) {
-                ?>
-                    <h2><?= $type["name"] ?></h2>
-                <?php
-                }
-                ?> -->
         <?php
         foreach ($photos as $photo) {
         ?>
@@ -314,13 +305,7 @@ include("../templates/header.php");
     <div class="modifyDelete">
         <form method="post" enctype="multipart/form-data">
             <h2>Modifier un produit </h2>
-            <!-- <?php
-                    if (isset($messageModify)) {
-                    ?>
-                <p class="error"><?= $messageModify ?></p>
-            <?php
-                    }
-            ?> -->
+
             <h3>Veuillez sélectionner votre produit à modifier </h3>
             <div class="form-group">
                 <label for="inputModify" id="modifyLink">Veuillez entrer le Numéro Identifiant du produit à modifier ou selectionnez directement la photo</label>
@@ -349,13 +334,7 @@ include("../templates/header.php");
             <div class="form-group">
                 <label for="descriptionUploadModify">Description :</label>
                 <input type="text" id="descriptionUploadModify" name="descriptionModify" value="<?= isset($photoId["description"]) ? $photoId["description"] : "" ?>">
-                <!-- <?php
-                        if (isset($errors["descriptionModify"])) {
-                        ?>
-                    <span class="infoError"><?= $errors["descriptionModify"] ?></span>
-                <?php
-                        }
-                ?> -->
+
             </div>
             <div class="form-group">
                 <label for="inputCategoryModify">Veuillez séléctionner la catégorie de votre produit :</label>
