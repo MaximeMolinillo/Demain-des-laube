@@ -1,7 +1,7 @@
 <?php
 
 //ouverture de session
-session_start();
+// session_start();
 require_once('../system/config.php');
 require("../vendor/autoload.php");
 
@@ -10,29 +10,29 @@ use PHPMailer\PHPMailer\Exception;
 
 $page = "votre compte.";
 
-if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR"])) {
-    header("Location: ./login.php");
-    session_destroy();
-} else {
-    $token = trim(strip_tags($_SESSION["token"]));
-    $query = $db->prepare("SELECT email_log,token FROM user_login WHERE token = :token");
-    $query->bindParam(":token", $token);
-    $query->execute();
-    $resultToken = $query->fetch();
+// if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR"])) {
+//     header("Location: ./login.php");
+//     session_destroy();
+// } else {
+    // $token = trim(strip_tags($_SESSION["token"]));
+    // $query = $db->prepare("SELECT email_log,token FROM user_login WHERE token = :token");
+    // $query->bindParam(":token", $token);
+    // $query->execute();
+    // $resultToken = $query->fetch();
 
 
-    if (($_SESSION["token"]) != ($resultToken["token"])) {
-        session_destroy();
-        header("Location: ./login.php");
-    } else {
+    // if (($_SESSION["token"]) != ($resultToken["token"])) {
+    //     session_destroy();
+    //     header("Location: ./login.php");
+    // } else {
 
-        if (!empty($_GET["id"])) {
-            $id = trim(strip_tags($_GET["id"]));
-            $query = $db->prepare("SELECT * FROM users WHERE id LIKE :id");
-            $query->bindParam(":id", $id);
-            $query->execute();
-            $idContact = $query->fetch();
-        }
+        // if (!empty($_GET["id"])) {
+        //     $id = trim(strip_tags($_GET["id"]));
+        //     $query = $db->prepare("SELECT * FROM users WHERE id LIKE :id");
+        //     $query->bindParam(":id", $id);
+        //     $query->execute();
+        //     $idContact = $query->fetch();
+        // }
         ////envoie de mail sur la boite de la patronne
         $errors = [];
         $messageErrors = "";
@@ -89,8 +89,8 @@ if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR
                 header("location: ./index.php");
             }
         }
-    }
-}
+//     }
+// }
 
 include("../templates/header.php");
 ?>
@@ -99,14 +99,9 @@ include("../templates/header.php");
 <div class="contactPage">
 
 
-    <div class="welcome">
+    <!-- <div class="welcome">
         <h2>Bienvenue sur votre compte, <?= $_SESSION["userName"] . " " . $_SESSION["user"] ?></h2>
-
-    </div>
-    <div class="panier">
-        <p>Panier(0)</p>
-        <img src="../assets/img/logo/sac-de-courses.png" alt="">
-    </div>
+    </div> -->
     <?php
     if (isset($messageErrors)) {
     ?>
@@ -120,15 +115,15 @@ include("../templates/header.php");
         <hr>
         <div class="form-group">
             <label for="inputName">Nom :</label>
-            <input type="text" name="nameC" id="inputName" value="<?= isset($_SESSION["userName"]) ? $_SESSION["userName"] : "" ?>">
+            <input type="text" name="nameC" id="inputName" placeholder="Votre Nom">
         </div>
         <div class="form-group">
             <label for="inputFirstname">Prénom :</label>
-            <input type="text" name="firstnameC" id="inputFirstname" value="<?= isset($_SESSION["user"]) ? $_SESSION["user"] : "" ?>">
+            <input type="text" name="firstnameC" id="inputFirstname" placeholder="Votre Prénom">
         </div>
         <div class="form-group">
             <label for="inputEmail">Email :</label>
-            <input type="email" name="emailC" id="inputEmail" value="<?= isset($_SESSION["email"]) ? $_SESSION["email"] : "" ?>">
+            <input type="email" name="emailC" id="inputEmail" placeholder="Votre email">
         </div>
         <div class="form-group">
             <label for="inputTel">Télephone :</label>
@@ -146,18 +141,18 @@ include("../templates/header.php");
         <input type="submit" class="submit" value="Envoyer" name="contactMail">
     </form>
 
-    <div class="bottomLink">
+    <!-- <div class="bottomLink">
         <a href="logout.php">Déconnexion</a>
-    </div>
+    </div> -->
 
-    <div class="deleteAccount">
+    <!-- <div class="deleteAccount">
         <h3>supprimer mon compte</h3>
         <form action="" method="post">
             <div class="form-group">
                 <input type="submit" value="Supprimer mon compte" name="deleteAccountBtn">
             </div>
         </form>
-    </div>
+    </div> -->
 
 </div>
 

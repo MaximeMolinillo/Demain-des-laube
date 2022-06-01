@@ -41,52 +41,49 @@ include("../templates/header.php");
             <hr>
             <div class="wrapProducts">
                 <div class="prod">
-                    <a href="nosProduits.php#flowerLink">
-                        <img src="../assets/img/logo/bouquet-de-fleurs.webp" alt="Bouquet de fleurs">
-                        <hr>
-                        <h4>Fleurs </h4>
-                        <p>Fleurs, bouquets, compositions... Découvrez nos diverses créations florales</p>
-                    </a>
+
+                    <img src="../assets/img/logo/bouquet-de-fleurs.webp" alt="Bouquet de fleurs">
+                    <hr>
+
+                    <h4> <a href="nosProduits.php#flowerLink">Fleurs </a> </h4>
+
+                    <p>Fleurs, bouquets, compositions... Découvrez nos diverses créations florales</p>
+
                 </div>
                 <div class="prod">
-                    <a href="nosProduits.php#plantLink">
-                        <img src="../assets/img/logo/plante.webp" alt="Plante Verte">
-                        <hr>
-                        <h4>Plantes Vertes</h4>
-                        <p>Retrouvez notre sélection de plantes vertes pour égayer votre intérieur</p>
-                    </a>
+
+                    <img src="../assets/img/logo/plante.webp" alt="Plante Verte">
+                    <hr>
+                    <h4> <a href="nosProduits.php#plantLink">Plantes Vertes </a></h4>
+                    <p>Retrouvez notre sélection de plantes vertes pour égayer votre intérieur</p>
+
                 </div>
                 <div class="prod">
-                    <a href="nosProduits.php#decoLink">
-                        <img src="../assets/img/logo/decoratif.webp" alt="Décorations">
-                        <hr>
-                        <h4>Décorations</h4>
-                        <p>Voici nos décorations florales et artisanales</p>
-                    </a>
+
+                    <img src="../assets/img/logo/decoratif.webp" alt="Décorations">
+                    <hr>
+                    <h4> <a href="nosProduits.php#decoLink">Décorations </a></h4>
+                    <p>Voici nos décorations florales et artisanales</p>
+
                 </div>
                 <div class="prod">
-                    <a href="nosProduits.php#jewelsLink">
-                        <img src="../assets/img/logo/collier.webp" alt="Bijoux">
-                        <hr>
-                        <h4>Bijoux</h4>
-                        <p>Notre gamme de bijoux faits maison</p>
-                    </a>
+                    <img src="../assets/img/logo/collier.webp" alt="Bijoux">
+                    <hr>
+                    <h4> <a href="nosProduits.php#jewelsLink">Bijoux </a></h4>
+                    <p>Notre gamme de bijoux faits maison</p>
                 </div>
-                <div class="prod">
-                    <a href="nosProduits.php#wedingLink">
+                <div class="prod">                  
                         <img src="../assets/img/logo/weding.webp" alt="Mariage">
                         <hr>
-                        <h4>Mariages</h4>
-                        <p>Découvrez nos réalisations pour vos mariages</p>
-                    </a>
+                        <h4> <a href="nosProduits.php#wedingLink">Mariages</a></h4>
+                        <p>Découvrez nos réalisations pour vos mariages</p>                  
                 </div>
                 <div class="prod">
-                    <a href="nosProduits.php#mourningLink">
+                   
                         <img src="../assets/img/logo/rip.webp" alt="Deuil">
-                        <hr>
-                        <h4>Deuil</h4>
+                        <hr>                 
+                        <h4> <a href="nosProduits.php#mourningLink">Deuil</a></h4>
                         <p>Découvrez nos réalisations pour accompagner vos périodes de deuil</p>
-                    </a>
                 </div>
             </div>
         </div>
@@ -96,22 +93,22 @@ include("../templates/header.php");
 
         <div class="othersActivity">
             <div class="wrapImg">
-                <a href="./contact.php">
                     <img src="../assets/img/Magasin/couronne.webp" alt="Contact">
-                    <h6>Contact</h6>
-                </a>
+                
+                    <h6><a href="./contact.php">Contact</a></h6>
+                
             </div>
             <div class="wrapImg">
-                <a href="./partners.php">
+                
                     <img src="../assets/img/Magasin/potager-city-box.webp" alt="Nos partenaires">
-                    <h6>Nos partenaires</h6>
-                </a>
+                    <h6><a href="./partners.php">Nos partenaires</a></h6>
+                
             </div>
             <div class="wrapImg">
-                <a href="./whoIAm.php">
+               
                     <img src="../assets/img/Magasin/carolineDelautre.webp" alt="Qui-suis-je ?">
-                    <h6>Qui-suis-je?</h6>
-                </a>
+                    <h6> <a href="./whoIAm.php">Qui-suis-je?</a></h6>
+                
             </div>
         </div>
         <hr>

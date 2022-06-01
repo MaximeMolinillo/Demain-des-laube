@@ -54,52 +54,52 @@ include("../templates/header.php");
     <hr>
     <div class="wrapProducts">
         <div class="prod">
-            <a href="#flowerLink">
+         
                 <img src="../assets/img/logo/bouquet-de-fleurs.webp" alt="Bouquet de fleurs">
-                <h4>Fleurs </h4>
+            
+                <h4>   <a href="#flowerLink">Fleurs </a></h4>
                 <hr>
                 <p>Fleurs, bouquets, compositions... Découvrez nos diverses créations florales</p>
-            </a>
         </div>
         <div class="prod">
-            <a href="#plantLink">
+            
                 <img src="../assets/img/logo/plante.webp" alt="Plantes Vertes">
-                <h4>Plantes vertes</h4>
+                <h4><a href="#plantLink">Plantes vertes</a></h4>
                 <hr>
                 <p>Retrouvez notre sélection de plantes vertes pour égayer votre intérieur</p>
-            </a>
+            
         </div>
         <div class="prod">
-            <a href="#decoLink">
+            
                 <img src="../assets/img/logo/decoratif.webp" alt="Décorations">
-                <h4>Décorations</h4>
+                <h4><a href="#decoLink">Décorations</a></h4>
                 <hr>
                 <p>Voici nos décorations florales et artisanales</p>
-            </a>
+            
         </div>
         <div class="prod">
-            <a href="#jewelsLink">
+            
                 <img src="../assets/img/logo/collier.webp" alt="Bijoux">
-                <h4>Bijoux</h4>
+                <h4><a href="#jewelsLink">Bijoux</a></h4>
                 <hr>
                 <p>Notre gamme de bijoux faits maison</p>
-            </a>
+            
         </div>
         <div class="prod">
-            <a href="#wedingLink">
+            
                 <img src="../assets/img/logo/weding.webp" alt="Mariage">
-                <h4>Mariages</h4>
+                <h4><a href="#wedingLink">Mariages</a></h4>
                 <hr>
                 <p>Découvrez nos réalisations pour vos mariages</p>
-            </a>
+            
         </div>
         <div class="prod">
-            <a href="#mourningLink">
+            
                 <img src="../assets/img/logo/rip.webp" alt="Deuil">
-                <h4>Deuils</h4>
+                <h4><a href="#mourningLink">Deuils</a></h4>
                 <hr>
                 <p>Découvrez nos réalisations pour accompagner vos périodes de deuil</p>
-            </a>
+            
         </div>
     </div>
 </div>

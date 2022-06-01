@@ -48,8 +48,8 @@
                     <li><a href="./nosProduits.php">Nos Produits</a></li>
                     <li><a href="./partners.php">Partenaires</a></li>
                     <li><a href="./whoIAm.php">Qui-suis-je ?</a></li>
-                    <li><a href="./login.php">Connexion</a></li>
-                    <li><a href="./inscription.php">Inscription</a></li>
+                    <li><a href="./contact.php">Contact</a></li>
+                    <li><a href="./login.php">Espace Administrateur</a></li>
                 </ul>
                 <div class="copyright">
                 </div>

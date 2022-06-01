@@ -34,9 +34,10 @@
             <a href="../public/nosProduits.php">Nos Produits</a>
             <a href="../public/partners.php">Partenaires</a>
             <a href="../public/whoIAm.php">Qui-suis-je ?</a>
-            <a href="../public/login.php">Connexion</a>
+            <a href="../public/contact.php">Contact</a>
+            <!-- <a href="../public/login.php">Connexion</a>
             <a href="../public/my_account.php">Mon compte</a>
-            <a href="../public/inscription.php">Inscription</a>
+            <a href="../public/inscription.php">Inscription</a> -->
         </div>
 
 

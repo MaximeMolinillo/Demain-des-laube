@@ -1,5 +1,4 @@
 <?php
-//ouverture de session
 session_start();
 require_once('../system/config.php');
 
@@ -49,7 +48,7 @@ if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR
                     $tabExtension = explode(".", $name);
                     $extension = strtolower(end($tabExtension));
                     $extensions = ["jpg", "png", "jpeg", "bmp"];
-                    $maxSize = 200000000;
+                    $maxSize = 2000000;
                     if ($maxSize <= $size) {
                         $errorsF["file"] = "Fichier trop volumineux !";
                     }

@@ -282,10 +282,7 @@ hr {
     margin: 0;
   }
 }
-.productsView .wrapProducts .prod a {
-  color: #000000;
-}
-.productsView .wrapProducts .prod a img {
+.productsView .wrapProducts .prod img {
   background-color: #ffffff;
   border-radius: 50%;
   width: 100%;
@@ -296,20 +293,20 @@ hr {
   transition: 0.3s ease-in-out;
 }
 @media screen and (max-width: 576px) {
-  .productsView .wrapProducts .prod a img {
+  .productsView .wrapProducts .prod img {
     width: 3rem;
     margin: 1rem 0 1rem 0;
   }
 }
-.productsView .wrapProducts .prod a:hover img {
+.productsView .wrapProducts .prod:hover img {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
-.productsView .wrapProducts .prod a p {
+.productsView .wrapProducts .prod p {
   margin-top: 1rem;
 }
 @media screen and (max-width: 576px) {
-  .productsView .wrapProducts .prod a p {
+  .productsView .wrapProducts .prod p {
     font-size: 1rem;
     margin: 0;
     max-width: 100%;
@@ -554,15 +551,6 @@ hr {
   font-weight: 800;
 }
 
-.contactPage .panier {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 2rem;
-}
-.contactPage .panier img {
-  width: 3rem;
-  height: 4rem;
-}
 .contactPage form {
   background: url("../img/background/backgroundFloral.webp");
   background-size: cover;
@@ -631,10 +619,35 @@ hr {
   background-size: cover;
 }
 
-form {
+.login {
   background: url("../img/background/backgroundFloral.webp");
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  .login {
+    flex-direction: column;
+  }
+}
+.login .log {
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .login .log {
+    width: 100%;
+  }
+}
+.login .inscription {
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .login .inscription {
+    width: 100%;
+  }
+}
+
+form {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -1014,12 +1027,14 @@ form .submit:hover {
   right: 0;
   bottom: 0;
   text-align: center;
-  color: #ffffff;
   text-shadow: 0.2rem 0.2rem 0.2rem #000000;
   font-size: 3rem;
   font-family: "Arizonia", cursive;
   background-color: rgba(243, 250, 220, 0.5);
   border-radius: 2rem;
+}
+.wrapSection .othersActivity .wrapImg h6 a {
+  color: #ffffff;
 }
 @media screen and (max-width: 768px) {
   .wrapSection .othersActivity .wrapImg h6 {
