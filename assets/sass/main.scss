@@ -16,12 +16,8 @@
     line-height: 0rem;
     margin-bottom: 2rem;
     background: linear-gradient(to top, transparent, 20%, v.$green-pale-back);
-    // background-color: v.$green-pale-back;
     @media screen and (max-width: v.$md-breakpoint) {
         background: linear-gradient(to top, transparent, 20%, #e6ffc1);
-        // img{
-        //     display: none;
-        // }
     }
     img {
         width: 10%;
@@ -32,7 +28,6 @@
         letter-spacing: 1rem;
     }
     .xlH3 {
-        // margin: 3rem 0 5rem 0;
         font-size: 5rem;
         @media screen and (max-width: v.$md-breakpoint) {
             font-size: 3.5rem;
@@ -41,64 +36,29 @@
 }
 section {
     max-width: 100%;
-
-    // margin-left: 10%;
     .wrapSection {
-        // max-width: 100%;
-
-        // padding: 2rem;
         .wrapPic {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             width: 90%;
             margin-right: 5%;
-            //     // text-align: center;
             margin-left: 5%;
             .pic {
                 display: flex;
-                // flex-direction: row;
-                // align-items: center;
                 box-sizing: none;
-
                 .pictures {
-                    // display: flex;
                     width: 100%;
                     flex-wrap: wrap;
-                    // flex-wrap: wrap;
                     background-color: v.$green-pale;
-                    // width: 22rem;
-                    // height: 30rem;
-                    // align-items: center;
-                    // flex-direction: row;
-                    // flex-basis: 20%;
-                    // flex-direction: row;
-
-                    // @media screen and (max-width: v.$sm-breakpoint) {
-                    //     max-width: 10rem;
-                    //     height: 10rem;
-                    // }
                     img {
-                        // background-size: cover;
                         width: 20rem;
                         height: 20rem;
                         object-fit: cover;
-                        // height: auto;
-                        // width: auto;
-                        // height: 100%;
                         border: 0.2rem solid v.$green-pale-nav;
-                        // @media screen and (max-width: v.$sm-breakpoint) {
-                        //     width: 100%;
-                        //     // width: 7rem;
-                        //     // height: 7rem;
-                        //   object-fit: cover;
-                        // }
                         @media screen and (max-width: v.$lg-breakpoint) {
-                            // max-width: 100%;
-                            // height: auto;
                             width: 10rem;
                             height: 10rem;
-                            // width: 100%;
                             object-fit: cover;
                         }
                         @media screen and (min-width: v.$lg-breakpoint) {
@@ -138,8 +98,6 @@ section {
             background-image: url("../img/Magasin/MagainComptoir.webp");
             width: 100%;
             height: 40rem;
-            // height: auto;
-
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;

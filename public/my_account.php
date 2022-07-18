@@ -19,17 +19,7 @@ if (
     session_destroy();
     header("Location: ./login.php");
 }
-//  else {
-//     $token = trim(strip_tags($_SESSION["token"]));
-//     $query = $db->prepare("SELECT email_log,token FROM user_login WHERE token = :token");
-//     $query->bindParam(":token", $token);
-//     $query->execute();
-//     $resultToken = $query->fetch();
 
-// if (($_SESSION["token"]) != ($resultToken["token"])) {
-//     session_destroy();
-//     header("Location: ./login.php");
-// } else {
 
 //Ajout
 
@@ -343,11 +333,7 @@ include("../templates/header.php");
             </div>
             <input type="submit" class="submit" value="Modifier le produit" name="modifyP">
         </form>
-    </div>
-
-    <!-- <div class="video">
-    <source src="../assets/img/Magasin/Video.mp4">
-</div> -->
+    </div>s
     <figure class="figure">
         <figcaption>
             <h4>Video explicative de l'espace administrateur</h4>
