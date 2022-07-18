@@ -3,10 +3,10 @@
 //ouverture de session
 // session_start();
 require_once('../system/config.php');
-require("../vendor/autoload.php");
+// require("../vendor/autoload.php");
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
 
 $page = "votre compte.";
 
@@ -14,81 +14,102 @@ $page = "votre compte.";
 //     header("Location: ./login.php");
 //     session_destroy();
 // } else {
-    // $token = trim(strip_tags($_SESSION["token"]));
-    // $query = $db->prepare("SELECT email_log,token FROM user_login WHERE token = :token");
-    // $query->bindParam(":token", $token);
-    // $query->execute();
-    // $resultToken = $query->fetch();
+// $token = trim(strip_tags($_SESSION["token"]));
+// $query = $db->prepare("SELECT email_log,token FROM user_login WHERE token = :token");
+// $query->bindParam(":token", $token);
+// $query->execute();
+// $resultToken = $query->fetch();
 
 
-    // if (($_SESSION["token"]) != ($resultToken["token"])) {
-    //     session_destroy();
-    //     header("Location: ./login.php");
-    // } else {
+// if (($_SESSION["token"]) != ($resultToken["token"])) {
+//     session_destroy();
+//     header("Location: ./login.php");
+// } else {
 
-        // if (!empty($_GET["id"])) {
-        //     $id = trim(strip_tags($_GET["id"]));
-        //     $query = $db->prepare("SELECT * FROM users WHERE id LIKE :id");
-        //     $query->bindParam(":id", $id);
-        //     $query->execute();
-        //     $idContact = $query->fetch();
-        // }
-        ////envoie de mail sur la boite de la patronne
-        $errors = [];
-        $messageErrors = "";
-        if (isset($_POST["contactMail"])) {
-            $nameC = trim(strip_tags($_POST["nameC"]));
-            $firstnameC = trim(strip_tags($_POST["firstnameC"]));
-            $emailC = trim(strip_tags($_POST["emailC"]));
-            $telC = trim(strip_tags($_POST["telC"]));
-            $objectC = trim(strip_tags($_POST["objectC"]));
-            $messageC = trim(strip_tags($_POST["messageC"]));
+// if (!empty($_GET["id"])) {
+//     $id = trim(strip_tags($_GET["id"]));
+//     $query = $db->prepare("SELECT * FROM users WHERE id LIKE :id");
+//     $query->bindParam(":id", $id);
+//     $query->execute();
+//     $idContact = $query->fetch();
+// }
+////envoie de mail sur la boite de la patronne
+$errors = [];
+$messageErrors = "";
+if (isset($_POST["contactMail"])) {
+    $nameC = trim(strip_tags($_POST["nameC"]));
+    $firstnameC = trim(strip_tags($_POST["firstnameC"]));
+    $emailC = trim(strip_tags($_POST["emailC"]));
+    $telC = trim(strip_tags($_POST["telC"]));
+    $objectC = trim(strip_tags($_POST["objectC"]));
+    $messageC = trim(strip_tags($_POST["messageC"]));
 
-            if (empty($emailC)) {
-                array_push($errors, "Veuillez renseigner votre email, afin que nous puissions vous transmettre une réponse !");
-            }
-            if (empty($errors)) {
-                $phpmailer = new PHPMailer();
-                $phpmailer->isSMTP();
-                $phpmailer->Host = 'smtp.mailtrap.io';
-                $phpmailer->SMTPAuth = true;
-                $phpmailer->Port = 2525;
-                $phpmailer->Username = '4a87d0b4f0169e';
-                $phpmailer->Password = '0163345150a19e';
-                $phpmailer->From = $emailC;
-                $phpmailer->FromName = $nameC . " " . $firstnameC;
-                // Destinataire
-                $phpmailer->addAddress("max_224@hotmail.fr");
-                // Adresse de réponse
-                $phpmailer->addReplyTo($emailC);
-                //Send HTML or Plain Text email
-                $phpmailer->isHTML();
-                $phpmailer->CharSet = "UTF-8";
-                $phpmailer->Subject = $objectC;
-                //Corps du mail
-                $phpmailer->Body = $messageC . " " . 'De la part de :' . " " . $firstnameC . " " . $nameC . ". " . 'Numéro de téléphone :' . " " . $telC;
-                try {
-                    //Envoie du mail
-                    $phpmailer->send();
+    $to = 'perlonsen@gmail.com';
+    // $to = 'max_224@hotmail.fr';
+    $messageMail = $messageC . ' 
+    ' . 'De la part de :' . " " . $firstnameC . " " . $nameC . ".
+    " . 'Numéro de téléphone :' . " " . $telC . ".
+    " . 'Mail de réponse :' .  " " . $emailC;
+    $from = $emailC;
+    $headers = 'From:' . $emailC . "\r\n" .
+    'Reply-To:' . $emailC . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+    // $headers = 'From:' . $emailC . "\r\n" .
+    // 'Reply-To:$emailC' . "\r\n" .
+    // 'X-Mailer: PHP/' . phpversion();
 
-                    // On affiche un message de succès si la requéte s'est bien executée.
-                    $messageErrors = "<div class=\"error\">Votre message a bien été envoyé.</div>";
-                } catch (Exception $e) {
-                    $messageErrors = "Un problème s'est produit ";
-                }
-            }
-        }
+    if (empty($emailC)) {
+        array_push($errors, "Veuillez renseigner votre email, afin que nous puissions vous transmettre une réponse !");
+    };
+    if (mail($to, $objectC, $messageMail)) {
+        $messageErrors = "Votre message à été envoyé avec succès !";
+    } else {
+        $messageErrors = "Impossible d'envoyer le mail, veillez recommencer.";
+    }
 
-        //Suppression de compte
-        if (!empty($_POST["deleteAccountBtn"])) {
-            $idUsers = $_SESSION["userId"];
-            $query = $db->prepare("DELETE FROM users WHERE id LIKE :idUsers");
-            $query->bindParam(":idUsers", $idUsers);
-            if ($query->execute()) {
-                session_destroy();
-                header("location: ./index.php");
-            }
-        }
+
+    // if (empty($errors)) {
+    //     $phpmailer = new PHPMailer();
+    //     $phpmailer->isSMTP();
+    //     $phpmailer->Host = 'smtp.mailtrap.io';
+    //     $phpmailer->SMTPAuth = true;
+    //     $phpmailer->Port = 2525;
+    //     $phpmailer->Username = '4a87d0b4f0169e';
+    //     $phpmailer->Password = '0163345150a19e';
+    //     $phpmailer->From = $emailC;
+    //     $phpmailer->FromName = $nameC . " " . $firstnameC;
+    //     // Destinataire
+    //     $phpmailer->addAddress("max_224@hotmail.fr");
+    //     // Adresse de réponse
+    //     $phpmailer->addReplyTo($emailC);
+    //     //Send HTML or Plain Text email
+    //     $phpmailer->isHTML();
+    //     $phpmailer->CharSet = "UTF-8";
+    //     $phpmailer->Subject = $objectC;
+    //     //Corps du mail
+    //     $phpmailer->Body = $messageC . " " . 'De la part de :' . " " . $firstnameC . " " . $nameC . ". " . 'Numéro de téléphone :' . " " . $telC;
+    //     try {
+    //         //Envoie du mail
+    //         $phpmailer->send();
+
+    //         // On affiche un message de succès si la requéte s'est bien executée.
+    //         $messageErrors = "<div class=\"error\">Votre message a bien été envoyé.</div>";
+    //     } catch (Exception $e) {
+    //         $messageErrors = "Un problème s'est produit ";
+    //     }
+    // }
+}
+
+//Suppression de compte
+if (!empty($_POST["deleteAccountBtn"])) {
+    $idUsers = $_SESSION["userId"];
+    $query = $db->prepare("DELETE FROM users WHERE id LIKE :idUsers");
+    $query->bindParam(":idUsers", $idUsers);
+    if ($query->execute()) {
+        session_destroy();
+        header("location: ./index.php");
+    }
+}
 //     }
 // }
 
@@ -99,9 +120,7 @@ include("../templates/header.php");
 <div class="contactPage">
 
 
-    <!-- <div class="welcome">
-        <h2>Bienvenue sur votre compte, <?= $_SESSION["userName"] . " " . $_SESSION["user"] ?></h2>
-    </div> -->
+
     <?php
     if (isset($messageErrors)) {
     ?>

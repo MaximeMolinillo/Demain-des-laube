@@ -4,7 +4,7 @@ include("../templates/header.php");
 ?>
 
 <div class="topSection">
-    <img src="../assets/img/logo/Flower.webp" alt="">
+    <img src="../assets/img/logo/Flower.png" alt="">
     <h3 class="smH3">Découvrez</h3>
     <h3 class="xlH3">Qui je suis..</h3>
     <hr>

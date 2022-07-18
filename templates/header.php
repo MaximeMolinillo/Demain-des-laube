@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Demain dès l'aube est un fleuriste situé à Douai. Nous proposons des fleurs, mais également de la décoration, des bijoux, des plantes vertes ainsi que des prestations événementielles.">
+    <meta name="description" content="Fleuriste à Douai, Création de bouquets, Décorations, Bijoux, Plantes vertes et prestations événementielles. Parking accessible .">
 
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
@@ -20,7 +20,7 @@
     <header>
         <div class="banner">
             <div class="wrapH1">
-                <h1>Demain dès l'Aube</h1>
+               <a href="../public/index.php"><h1>Demain dès l'Aube</h1></a> 
             </div>
             <div class="underTitle">
                 <h3>Artisan Fleuriste</h3>

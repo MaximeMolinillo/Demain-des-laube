@@ -3,14 +3,14 @@ $page = "nos partenaires";
 include("../templates/header.php");
 ?>
 <div class="topSection">
-    <img src="../assets/img/logo/Flower.webp" alt="Fleur">
+    <img src="../assets/img/logo/Flower.png" alt="Fleur">
     <h3 class="smH3">Découvrez</h3>
     <h3 class="xlH3">Nos partenaires</h3>
     <hr>
 </div>
 
 <div class="partnersPage">
-    <h3>Découvrez nos partenaires, et faites livrez vos commandes dans notre boutique.</h3>
+    <h3>Découvrez nos partenaires, et faites livrer vos commandes dans notre boutique.</h3>
     <div class="txtPartners">
         <div class="retailPartners">
             <figure>

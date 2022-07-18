@@ -15,227 +15,275 @@
     text-align: center;
     line-height: 0rem;
     margin-bottom: 2rem;
-    // background: linear-gradient(to top, transparent, 20%, v.$green-pale-back);
-    background-color: v.$green-pale-back;
+    background: linear-gradient(to top, transparent, 20%, v.$green-pale-back);
+    // background-color: v.$green-pale-back;
+    @media screen and (max-width: v.$md-breakpoint) {
+        background: linear-gradient(to top, transparent, 20%, #e6ffc1);
+        // img{
+        //     display: none;
+        // }
+    }
     img {
         width: 10%;
+        margin-bottom: 2%;
     }
     .smH3 {
         font-size: 1.5rem;
         letter-spacing: 1rem;
     }
     .xlH3 {
-        margin: 3rem 0 5rem 0;
+        // margin: 3rem 0 5rem 0;
         font-size: 5rem;
         @media screen and (max-width: v.$md-breakpoint) {
             font-size: 3.5rem;
         }
     }
 }
+section {
+    max-width: 100%;
 
-.wrapSection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    // margin-left: 10%;
+    .wrapSection {
+        // max-width: 100%;
 
-    .pic {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        box-sizing: none;
-
-        .pictures {
+        // padding: 2rem;
+        .wrapPic {
             display: flex;
             flex-wrap: wrap;
-            background-color: v.$green-pale;
-            width: 22rem;
-            height: 30rem;
-            @media screen and (max-width: v.$sm-breakpoint) {
-                max-width: 10rem;
-                height: 10rem;
-            }
-            img {
-                width: auto;
-                height: 100%;
-                border: 0.2rem solid v.$green-pale-nav;
-                @media screen and (max-width: v.$sm-breakpoint) {
+            justify-content: center;
+            width: 90%;
+            margin-right: 5%;
+            //     // text-align: center;
+            margin-left: 5%;
+            .pic {
+                display: flex;
+                // flex-direction: row;
+                // align-items: center;
+                box-sizing: none;
+
+                .pictures {
+                    // display: flex;
                     width: 100%;
+                    flex-wrap: wrap;
+                    // flex-wrap: wrap;
+                    background-color: v.$green-pale;
+                    // width: 22rem;
+                    // height: 30rem;
+                    // align-items: center;
+                    // flex-direction: row;
+                    // flex-basis: 20%;
+                    // flex-direction: row;
+
+                    // @media screen and (max-width: v.$sm-breakpoint) {
+                    //     max-width: 10rem;
+                    //     height: 10rem;
+                    // }
+                    img {
+                        // background-size: cover;
+                        width: 20rem;
+                        height: 20rem;
+                        object-fit: cover;
+                        // height: auto;
+                        // width: auto;
+                        // height: 100%;
+                        border: 0.2rem solid v.$green-pale-nav;
+                        // @media screen and (max-width: v.$sm-breakpoint) {
+                        //     width: 100%;
+                        //     // width: 7rem;
+                        //     // height: 7rem;
+                        //   object-fit: cover;
+                        // }
+                        @media screen and (max-width: v.$lg-breakpoint) {
+                            // max-width: 100%;
+                            // height: auto;
+                            width: 10rem;
+                            height: 10rem;
+                            // width: 100%;
+                            object-fit: cover;
+                        }
+                        @media screen and (min-width: v.$lg-breakpoint) {
+                            -webkit-transition: 0.3s ease-in-out;
+                            transition: 0.3s ease-in-out;
+                            &:hover {
+                                -webkit-transform: scale(1.1);
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
                 }
+            }
+        }
+        .presentation {
+            text-align: center;
+            width: 100%;
+            background: url("../img/background/back.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            @media screen and (max-width: v.$sm-breakpoint) {
+                margin-top: 4rem;
+            }
+            h2 {
+                @include m.title-mix;
+                @media screen and (max-width: v.$md-breakpoint) {
+                    font-size: 5rem;
+                }
+            }
+            p {
+                margin: 5rem;
+            }
+        }
+        .magasinPicture {
+            display: flex;
+            flex-wrap: wrap;
+            background-image: url("../img/Magasin/MagainComptoir.webp");
+            width: 100%;
+            height: 40rem;
+            // height: auto;
+
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .magasinPicture2 {
+            background-image: url("../img/Magasin/Magasin.webp");
+            width: 100%;
+            height: 40rem;
+            background-attachment: fixed;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .productsView {
+            @media screen and (max-width: v.$md-breakpoint) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                margin: 0;
+                h2 {
+                    font-size: 4rem;
+                }
+            }
+
+            //------Voir nosProduits.scss-------
+            .wrapProducts {
+                .prod {
+                    h4 {
+                        a {
+                            font-size: 3.5rem;
+                            font-weight: 800;
+                            padding: 0;
+                            margin: 0;
+                            @media screen and (max-width: v.$lg-breakpoint) {
+                                font-size: 2.5rem;
+                                margin: 0;
+                            }
+                            @media screen and (max-width: v.$sm-breakpoint) {
+                                font-size: 1.2rem;
+                                margin: 0;
+                            }
+                        }
+                    }
+                    img {
+                        @media screen and (max-width: v.$sm-breakpoint) {
+                            width: 50%;
+                        }
+                    }
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        /*--------------Others----------------------*/
+
+        .othersActivity {
+            display: flex;
+            .wrapImg {
+                width: 100%;
+                position: relative;
+                margin: 5rem;
                 @media screen and (max-width: v.$lg-breakpoint) {
-                    max-width: 100%;
-                    height: auto;
+                    margin: 1rem;
                 }
-                @media screen and (min-width: v.$lg-breakpoint) {
+                img {
+                    text-align: center;
+                    width: 100%;
+                    border: 2rem solid v.$green-pale;
+                    margin-bottom: 0;
                     -webkit-transition: 0.3s ease-in-out;
                     transition: 0.3s ease-in-out;
+                    box-shadow: 1rem 1rem 1rem v.$dark-gray;
+                    @media screen and (max-width: v.$lg-breakpoint) {
+                        border: 1rem solid v.$green-pale;
+                    }
                     &:hover {
                         -webkit-transform: scale(1.1);
                         transform: scale(1.1);
                     }
                 }
-            }
-        }
-    }
+                h6 {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    text-align: center;
 
-    .presentation {
-        text-align: center;
-        width: 80%;
-        background: url("../img/background/backgroundFloral.webp");
-        background-size: cover;
-        background-repeat: no-repeat;
-        @media screen and (max-width: v.$sm-breakpoint) {
-            margin-top: 4rem;
-        }
-        h2 {
-            @include m.title-mix;
-            @media screen and (max-width: v.$md-breakpoint) {
-                font-size: 5rem;
-            }
-        }
-        p {
-            margin: 5rem;
-        }
-    }
-    .magasinPicture {
-        display: flex;
-        flex-wrap: wrap;
-        background-image: url("../img/Magasin/MagainComptoir.webp");
-        width: 100%;
-        height: 40rem;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .magasinPicture2 {
-        background-image: url("../img/Magasin/Magasin.webp");
-        width: 100%;
-        height: 40rem;
-        background-attachment: fixed;
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .productsView {
-        @media screen and (max-width: v.$md-breakpoint) {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            margin: 0;
-            h2 {
-                font-size: 4rem;
-            }
-        }
-
-        //------Voir nosProduits.scss-------
-        .wrapProducts {
-            .prod {
-                h4 {
-                    font-size: 2rem;
-                    font-weight: 800;
-                    padding: 0;
-                    @media screen and (max-width: v.$sm-breakpoint) {
-                        font-size: 1.2rem;
-                        margin: 0;
+                    text-shadow: 0.2rem 0.2rem 0.2rem v.$black;
+                    font-size: 3rem;
+                    font-family: v.$body-title-font;
+                    background-color: rgb(243, 250, 220, 0.5);
+                    border-radius: 2rem;
+                    a {
+                        color: v.$white;
                     }
+                    @media screen and (max-width: v.$md-breakpoint) {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .map {
+            background: url("../img/background/back.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            padding: 5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            @media screen and (max-width: v.$lg-breakpoint) {
+                display: flex;
+                flex-direction: column;
+                iframe {
+                    width: 100%;
+                }
+            }
+            iframe {
+                background-color: v.$green-pale;
+                padding: 2rem;
+                box-shadow: 1rem 1rem 1rem v.$dark-gray;
+            }
+            .parking {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+                width: 25%;
+                margin: 5rem;
+                @media screen and (max-width: v.$lg-breakpoint) {
+                    width: 80%;
+                    margin-left: 10%;
+                    margin-right: 10%;
                 }
                 img {
-                    @media screen and (max-width: v.$sm-breakpoint) {
-                        width: 50%;
-                    }
+                    width: 40%;
+                    padding: 1rem;
                 }
-                p {
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
-
-    /*--------------Others----------------------*/
-
-    .othersActivity {
-        display: flex;
-        .wrapImg {
-            width: 100%;
-            position: relative;
-            margin: 5rem;
-            @media screen and (max-width: v.$lg-breakpoint) {
-                margin: 1rem;
-            }
-            img {
-                text-align: center;
-                width: 100%;
-                border: 2rem solid v.$green-pale;
-                margin-bottom: 0;
-                -webkit-transition: 0.3s ease-in-out;
-                transition: 0.3s ease-in-out;
-                box-shadow: 1rem 1rem 1rem v.$dark-gray;
-                @media screen and (max-width: v.$lg-breakpoint) {
-                    border: 1rem solid v.$green-pale;
-                }
-                &:hover {
-                    -webkit-transform: scale(1.1);
-                    transform: scale(1.1);
-                }
-            }
-            h6 {
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                text-align: center;
-              
-                text-shadow: 0.2rem 0.2rem 0.2rem v.$black;
-                font-size: 3rem;
-                font-family: v.$body-title-font;
-                background-color: rgb(243, 250, 220, 0.5);
-                border-radius: 2rem;
-                a{
-                    color: v.$white;
-                }
-                @media screen and (max-width: v.$md-breakpoint) {
-                    font-size: 1.5rem;
-                }
-            }
-        }
-    }
-
-    .map {
-        background: url("../img/background/backgroundFloral.webp");
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 100%;
-        margin: 5rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        @media screen and (max-width: v.$lg-breakpoint) {
-            display: flex;
-            flex-direction: column;
-            iframe {
-                width: 100%;
-            }
-        }
-        iframe {
-            background-color: v.$green-pale;
-            padding: 2rem;
-            box-shadow: 1rem 1rem 1rem v.$dark-gray;
-        }
-        .parking {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
-            width: 25%;
-            margin: 5rem;
-            @media screen and (max-width: v.$lg-breakpoint) {
-                width: 80%;
-            }
-            img {
-                width: 40%;
-                padding: 1rem;
             }
         }
     }

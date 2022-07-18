@@ -1,9 +1,9 @@
 <?php
 //Chargement dependances Composer
-require("../vendor/autoload.php");
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+// require("../vendor/autoload.php");
+require_once('../system/config.php');
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
 //Création d'une constante pour générer le lien de reinitialisation du mot de passe
 
 $page = "mot de passe oublié.";
@@ -38,43 +38,67 @@ if (isset($_POST["email"])) {
         $query = $db->prepare("INSERT INTO password_reset (email, token, validity) VALUES (:email, :token, :validity)");
         $query->bindParam(":email", $email);
         $query->bindParam(":token", $token);
-        //Paramétre entier
+        //Paramétre entier&
         $query->bindParam(":validity", $validity, PDO::PARAM_INT);
         if ($query->execute()) {
             // Appel au constructeur de la classe PHPMailer
-            $phpmailer = new PHPMailer();
-            $phpmailer->isSMTP();
-            $phpmailer->Host = 'smtp.mailtrap.io';
-            $phpmailer->SMTPAuth = true;
-            $phpmailer->Port = 2525;
-            $phpmailer->Username = '4a87d0b4f0169e';
-            $phpmailer->Password = '0163345150a19e';
-            $phpmailer->SMTPSecure = 'tls';
-            //Expéditeur
-            $phpmailer->From = "caro@demaindeslaube.fr";
-            //Nom a afficher à la place de l'adresse mail
-            $phpmailer->FromName = "Demain des lAube";
-            // Destinataire
-            $phpmailer->addAddress($email);
-            //On indique que le contenu du mail sera du code html
-            // Adresse de réponse
-            $phpmailer->addReplyTo("no-reply@demaindeslaube.fr");
-            //Send HTML or Plain Text email
-            $phpmailer->isHTML();
-            //Encodage utf-8
-            $phpmailer->CharSet = "UTF-8";
-            $phpmailer->Subject = "Réinitialisation du mot de passe sur Demain dès l'aube";
-            //Corps du mail
-            $phpmailer->Body = "<a href=\"" . HOST . "/new_password.php?token={$token}\">Pour réinitialiser votre mot de passe sur Demain dès l'aube cliquez ici</a>. </br>Ce lien est valable 24 heures. </br> Si vous n'êtes pas à l'origine de cette demande veuillez ignorer cet email.";
+            // $phpmailer = new PHPMailer();
+            // $phpmailer->isSMTP();
+            // $phpmailer->Host = 'smtp.mailtrap.io';
+            // $phpmailer->SMTPAuth = true;
+            // $phpmailer->Port = 2525;
+            // $phpmailer->Username = '4a87d0b4f0169e';
+            // $phpmailer->Password = '0163345150a19e';
+            // $phpmailer->SMTPSecure = 'tls';
+            // //Expéditeur
+            // $phpmailer->From = "caro@demaindeslaube.fr";
+            // //Nom a afficher à la place de l'adresse mail
+            // $phpmailer->FromName = "Demain des lAube";
+            // // Destinataire
+            // $phpmailer->addAddress($email);
+            // //On indique que le contenu du mail sera du code html
+            // // Adresse de réponse
+            // $phpmailer->addReplyTo("no-reply@demaindeslaube.fr");
+            // //Send HTML or Plain Text email
+            // $phpmailer->isHTML();
+            // //Encodage utf-8
+            // $phpmailer->CharSet = "UTF-8";
+            // $phpmailer->Subject = "Réinitialisation du mot de passe sur Demain dès l'aube";
+            // //Corps du mail
+            // $phpmailer->Body = "<a href=\"" . HOST . "/new_password.php?token={$token}\">Pour réinitialiser votre mot de passe sur Demain dès l'aube cliquez ici</a>. </br>Ce lien est valable 24 heures. </br> Si vous n'êtes pas à l'origine de cette demande veuillez ignorer cet email.";
 
-            try {
-                //Envoie du mail
-                $phpmailer->send();
-                // On affiche un message de succès si la requéte s'est bien executée.
-                $messageSucces = "<div class=\"alert alert-success\">Un email pour réinitialiser votre mot de passe a été envoyé. Veuillez consulter votre boîte mail.</div>";
-            } catch (Exception $e) {
-                $message = "<div class\"alert alert-danger\">Un problème s'est produit {$mail->ErrorInfo}. Détails : {$e->errorMessage()}.</div>";
+            $to = $email;
+            $messageMail = 
+            "<a target='_blank' href=\"" . HOST . "/new_password.php?token={$token}\">Pour réinitialiser votre mot de passe sur Demain dès l'aube cliquez ici</a>." ."
+             " . "Ce lien est valable 24 heures." ." 
+             " . "Si vous n'êtes pas à l'origine de cette demande veuillez ignorer cet email."
+
+            . " " . "Si vous n'êtes pas à l'origine de cette demande veuillez ignorer cet email.";
+            $object = "Réinitialisation du mot de passe -- Demain dès l'Aube";
+            // $from = $email;
+            // $headers = 'From:' . $email . "\r\n" .
+            // 'Reply-To:fojiy79138@giftcv.com' . "\r\n" .
+            // 'X-Mailer: PHP/' . phpversion();
+
+            $headers[] = 'MIME-Version: 1.0';
+            $headers[] = 'Content-type: text/html; charset=iso-8859-1;CharSet = "UTF-8"';
+
+            if (mail($to, $object, $messageMail, implode("\r\n", $headers))) {
+                $message = "Un email pour réinitialiser votre mot de passe a été envoyé." . " <br>
+                ". "Veuillez consulter votre boîte mail.";
+            } else {
+                $message = "Impossible d'envoyer le mail, veillez recommencer.";
             }
+
+            // try {
+            //     //Envoie du mail
+            //     // $phpmailer->send();
+         
+            //     // On affiche un message de succès si la requéte s'est bien executée.
+            //     $messageSucces = "<div class=\"alert alert-success\">Un email pour réinitialiser votre mot de passe a été envoyé. Veuillez consulter votre boîte mail.</div>";
+            // } catch (Exception $e) {
+            //     $message = "<div class\"alert alert-danger\">Un problème s'est produit {$mail->ErrorInfo}. Détails : {$e->errorMessage()}.</div>";
+            // }
         } else {
             $message = "Erreur de Base de donnée";
         }
@@ -91,18 +115,15 @@ include("../templates/header.php");
     <form action="" method="post">
         <h2>Mot de passe oublié</h2>
         <?php
-        if (isset($messageSucces)) {
+        if (isset($message)) {
         ?>
-            <p><?= $messageSucces ?></p>
+            <p><?= $message ?></p>
         <?php
         }
         ?>
         <div class="form-group">
             <label for="inputEmail">Email :</label>
             <input type="email" id="inputEmail" name="email">
-        </div>
-        <div class="error">
-            <?= $message ?>
         </div>
         <input type="submit" class="submit" value="Envoyer">
     </form>

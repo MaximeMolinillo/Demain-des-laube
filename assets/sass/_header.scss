@@ -3,7 +3,7 @@
 
 /*-----------HEADER---------*/
 header {
-    width: 100%;
+    max-width: 100%;
     .banner {
         background: url("../img/background/Banner9.webp");
         background-size: cover;
@@ -69,6 +69,17 @@ header {
         flex-wrap: wrap;
         font-size: 1rem;
         justify-items: center;
+        
+    }
+    @media screen and (max-width: v.$md-breakpoint) {
+        background-color: #bbd67c;
+        
+    }
+    @media screen and (max-width: v.$xl-breakpoint) {
+        flex-wrap: wrap;
+        font-size: 1rem;
+        justify-items: center;
+        
     }
 
     a {

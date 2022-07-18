@@ -49,6 +49,12 @@ h5 {
                 }
             }
         }
+        .horraire{
+            @media screen and (max-width: v.$sm-breakpoint) {
+                font-size: 0.7rem;
+                
+            }
+        }
     }
     .payment {
         img {

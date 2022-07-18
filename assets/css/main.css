@@ -16,6 +16,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 a {
@@ -39,7 +40,7 @@ h2 {
 /*-------IMPORT---------*/
 /*-----------HEADER---------*/
 header {
-  width: 100%;
+  max-width: 100%;
 }
 header .banner {
   background: url("../img/background/Banner9.webp");
@@ -102,7 +103,19 @@ header .banner .underBanner {
 .navBar {
   display: flex;
   justify-content: center;
-  background-color: #d9ecac;
+  background-color: #b5d666;
+}
+@media screen and (max-width: 1200px) {
+  .navBar {
+    flex-wrap: wrap;
+    font-size: 1rem;
+    justify-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navBar {
+    background-color: #bbd67c;
+  }
 }
 @media screen and (max-width: 1200px) {
   .navBar {
@@ -139,7 +152,7 @@ h5 {
   font-size: 1rem;
   padding: 1rem;
   text-align: center;
-  background-color: #d9ecac;
+  background-color: #b5d666;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -181,6 +194,11 @@ h5 {
 .wrapFoot .wrapFootSection .footSection .network img {
   width: 40%;
 }
+@media screen and (max-width: 576px) {
+  .wrapFoot .wrapFootSection .horraire {
+    font-size: 0.7rem;
+  }
+}
 .wrapFoot .payment img {
   width: 20%;
   padding: 1rem;
@@ -196,7 +214,7 @@ hr {
 }
 
 .productsView {
-  background: url("../img/background/backgroundFloral.webp");
+  background: url("../img/background/back");
   background-size: cover;
   background-repeat: no-repeat;
   margin: 5rem;
@@ -205,10 +223,13 @@ hr {
 .productsView h2 {
   font-family: "Arizonia", cursive;
   font-size: 5rem;
-  background-color: #f3fadc;
+  background-color: #D3FF93;
   border-radius: 2rem;
-  border: 0.5rem solid #d9ecac;
+  border: 0.5rem solid #b5d666;
   box-shadow: 1rem 1rem 1rem #464646;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   text-align: center;
 }
 @media screen and (max-width: 576px) {
@@ -250,7 +271,7 @@ hr {
 .productsView .wrapProducts .prod {
   border: 0.5rem solid #e9ecdf;
   box-shadow: 1rem 1rem 1rem #464646;
-  background-color: #d9ecac;
+  background-color: #b5d666;
   border-radius: 2rem;
   margin: 3rem;
   width: 25%;
@@ -318,11 +339,11 @@ hr {
 .radient {
   width: 100%;
   height: 5rem;
-  background: linear-gradient(to bottom, transparent, 50%, #f3fadc);
+  background: linear-gradient(to bottom, transparent, 50%, #D3FF93);
 }
 
 .viewProducts {
-  background: url("../img/background/inverseBackground.webp");
+  background: url("../img/background/backInv.png");
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -333,10 +354,13 @@ hr {
   width: 80%;
   font-family: "Arizonia", cursive;
   font-size: 5rem;
-  background-color: #f3fadc;
+  background-color: #D3FF93;
   border-radius: 2rem;
-  border: 0.5rem solid #d9ecac;
+  border: 0.5rem solid #b5d666;
   box-shadow: 1rem 1rem 1rem #464646;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 @media screen and (max-width: 576px) {
   .viewProducts h1 {
@@ -356,10 +380,10 @@ hr {
   }
 }
 .viewProducts .view .wrapImg {
-  border: 1rem solid #d9ecac;
+  border: 1rem solid #b5d666;
   box-shadow: 0.5rem 0.5rem 1rem #464646;
   background-color: white;
-  background: url("../img/background/backgroundFloral.webp");
+  background: url("../img/background/back.png");
   background-size: cover;
   width: 25rem;
   border-radius: 2rem;
@@ -379,7 +403,7 @@ hr {
   }
 }
 .viewProducts .view .wrapImg img {
-  border: 0.5rem solid #d9ecac;
+  border: 0.5rem solid #b5d666;
   border-radius: 2rem;
 }
 @media screen and (max-width: 576px) {
@@ -403,7 +427,7 @@ hr {
   padding: 1rem;
   color: #5c606b;
   text-shadow: 0.1rem 0.1rem 0.5rem #464646;
-  background: url("../img/background/inverseBackground.webp");
+  background: url("../img/background/backInv.png");
   background-position: center;
   background-size: cover;
 }
@@ -436,7 +460,7 @@ hr {
 }
 
 .whoIAmPage {
-  background: url("../img/background/backgroundFloral.webp");
+  background: url("../img/background/back.png");
   background-size: cover;
   background-repeat: no-repeat;
   margin: 5rem;
@@ -445,21 +469,24 @@ hr {
 .whoIAmPage img {
   width: 50%;
   box-shadow: 1rem 1rem 1rem #5c606b;
-  border: 2rem solid #d9ecac;
+  border: 2rem solid #b5d666;
 }
 @media screen and (max-width: 768px) {
   .whoIAmPage img {
-    border: 1rem solid #d9ecac;
+    border: 1rem solid #b5d666;
     width: 100%;
   }
 }
 .whoIAmPage h1 {
   font-family: "Arizonia", cursive;
   font-size: 5rem;
-  background-color: #f3fadc;
+  background-color: #D3FF93;
   border-radius: 2rem;
-  border: 0.5rem solid #d9ecac;
+  border: 0.5rem solid #b5d666;
   box-shadow: 1rem 1rem 1rem #464646;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 @media screen and (max-width: 576px) {
   .whoIAmPage h1 {
@@ -479,7 +506,7 @@ hr {
 
 .partnersPage {
   text-align: center;
-  background: url("../img/background/backgroundFloral.webp");
+  background: url("../img/background/back.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -507,7 +534,7 @@ hr {
   position: relative;
 }
 .partnersPage .txtPartners .retailPartners a img {
-  border: 2rem solid #d9ecac;
+  border: 2rem solid #b5d666;
   text-align: center;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -522,7 +549,7 @@ hr {
 }
 @media screen and (max-width: 992px) {
   .partnersPage .txtPartners .retailPartners a img {
-    border: 1rem solid #d9ecac;
+    border: 1rem solid #b5d666;
     width: 100%;
   }
 }
@@ -552,7 +579,7 @@ hr {
 }
 
 .contactPage form {
-  background: url("../img/background/backgroundFloral.webp");
+  background: url("../img/background/back.png");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -563,10 +590,13 @@ hr {
 .contactPage form h1 {
   font-family: "Arizonia", cursive;
   font-size: 5rem;
-  background-color: #f3fadc;
+  background-color: #D3FF93;
   border-radius: 2rem;
-  border: 0.5rem solid #d9ecac;
+  border: 0.5rem solid #b5d666;
   box-shadow: 1rem 1rem 1rem #464646;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   width: 90%;
   text-align: center;
 }
@@ -584,14 +614,14 @@ hr {
 .contactPage form .form-group input,
 .contactPage form .form-group textarea {
   border-radius: 2rem;
-  background-color: #d9ecac;
+  background-color: #b5d666;
   border: 0.2rem solid #5c606b;
   box-shadow: 0.5rem 0.5rem 1rem #5c606b;
   padding: 1rem;
   font-family: "Playfair Display", serif;
 }
 .contactPage form .submit {
-  background-color: #d9ecac;
+  background-color: #b5d666;
   font-family: "Playfair Display", serif;
   font-size: 3rem;
   font-weight: 800;
@@ -604,7 +634,7 @@ hr {
 }
 .contactPage form .submit:hover {
   background-color: #5c606b;
-  color: #d9ecac;
+  color: #b5d666;
 }
 
 .flowerPicture {
@@ -620,7 +650,7 @@ hr {
 }
 
 .login {
-  background: url("../img/background/backgroundFloral.webp");
+  background: url("../img/background/back.png");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -657,10 +687,13 @@ form {
 form h2 {
   font-family: "Arizonia", cursive;
   font-size: 5rem;
-  background-color: #f3fadc;
+  background-color: #D3FF93;
   border-radius: 2rem;
-  border: 0.5rem solid #d9ecac;
+  border: 0.5rem solid #b5d666;
   box-shadow: 1rem 1rem 1rem #464646;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   width: 90%;
   text-align: center;
 }
@@ -677,14 +710,14 @@ form .form-group {
 }
 form .form-group input {
   border-radius: 2rem;
-  background-color: #d9ecac;
+  background-color: #b5d666;
   border: 0.2rem solid #5c606b;
   box-shadow: 0.5rem 0.5rem 1rem #5c606b;
   padding: 1rem;
   font-family: "Playfair Display", serif;
 }
 form .submit {
-  background-color: #d9ecac;
+  background-color: #b5d666;
   font-family: "Playfair Display", serif;
   font-size: 3rem;
   font-weight: 800;
@@ -697,7 +730,7 @@ form .submit {
 }
 form .submit:hover {
   background-color: #5c606b;
-  color: #d9ecac;
+  color: #b5d666;
 }
 @media screen and (max-width: 576px) {
   form .submit {
@@ -721,12 +754,14 @@ form .submit:hover {
 .myAccount .ourProducts {
   font-family: "Arizonia", cursive;
   font-size: 5rem;
-  background-color: #f3fadc;
+  background-color: #D3FF93;
   border-radius: 2rem;
-  border: 0.5rem solid #d9ecac;
+  border: 0.5rem solid #b5d666;
   box-shadow: 1rem 1rem 1rem #464646;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   text-align: center;
-  margin: 0 10% 0 10%;
 }
 @media screen and (max-width: 576px) {
   .myAccount .ourProducts {
@@ -739,8 +774,8 @@ form .submit:hover {
   justify-content: center;
   flex-wrap: wrap;
   margin: 5rem;
-  background: url("../img/background/backgroundFloral.webp");
-  border: 2rem solid #d9ecac;
+  background: url("../img/background/back.png");
+  border: 2rem solid #b5d666;
   border-radius: 2rem;
 }
 .myAccount .view .photo {
@@ -769,30 +804,33 @@ form .submit:hover {
   font-size: 1.5rem;
   margin-top: 0.1rem;
 }
+.myAccount .view .photo .fond {
+  background: url("../img/background/back.png");
+}
 .myAccount .view .photo form button {
   margin: 0.5rem;
   border-radius: 2rem;
   font-size: 1.3rem;
   color: #000000;
-  background-color: #d9ecac;
+  background-color: #b5d666;
   box-shadow: 0.5rem 0.5rem 0.5rem #5c606b;
   width: 100%;
 }
 .myAccount .view .photo form .btnDelete:hover {
   background-color: #8c0000;
-  color: #d9ecac;
+  color: #b5d666;
 }
 .myAccount .view .photo form .btnModify:hover {
   background-color: #5c606b;
 }
 .myAccount .view .photo form .btnModify:hover a {
-  color: #d9ecac;
+  color: #b5d666;
 }
 
 .welcome {
   font-size: 3rem;
   text-align: center;
-  background: linear-gradient(to top, transparent, 20%, #f3fadc);
+  background: linear-gradient(to top, transparent, 20%, #D3FF93);
 }
 
 .inscription p {
@@ -811,10 +849,14 @@ form .submit:hover {
   width: 50%;
   margin-left: 25%;
   border-radius: 2rem;
+  text-align: center;
+}
+.deleteAccount h1 {
+  font-size: 5rem;
 }
 .deleteAccount h3 {
   text-align: center;
-  background-color: #d9ecac;
+  background-color: #b5d666;
   border-radius: 2rem;
   margin: 1rem 2rem 1rem 2rem;
 }
@@ -828,6 +870,17 @@ form .submit:hover {
   text-align: center;
 }
 
+figure {
+  justify-content: center;
+  text-align: center;
+}
+figure video {
+  margin-left: 25%;
+  margin-right: 25%;
+  border: 1rem solid #b5d666;
+  box-shadow: 0.5rem 0.5rem 1rem #5c606b;
+}
+
 .mL {
   text-align: center;
 }
@@ -837,17 +890,22 @@ form .submit:hover {
   text-align: center;
   line-height: 0rem;
   margin-bottom: 2rem;
-  background-color: #f3fadc;
+  background: linear-gradient(to top, transparent, 20%, #D3FF93);
+}
+@media screen and (max-width: 768px) {
+  .topSection {
+    background: linear-gradient(to top, transparent, 20%, #e6ffc1);
+  }
 }
 .topSection img {
   width: 10%;
+  margin-bottom: 2%;
 }
 .topSection .smH3 {
   font-size: 1.5rem;
   letter-spacing: 1rem;
 }
 .topSection .xlH3 {
-  margin: 3rem 0 5rem 0;
   font-size: 5rem;
 }
 @media screen and (max-width: 768px) {
@@ -856,91 +914,89 @@ form .submit:hover {
   }
 }
 
-.wrapSection {
+section {
+  max-width: 100%;
+}
+section .wrapSection {
+  /*--------------Others----------------------*/
+}
+section .wrapSection .wrapPic {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /*--------------Others----------------------*/
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
-.wrapSection .pic {
+section .wrapSection .wrapPic .pic {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   box-sizing: none;
 }
-.wrapSection .pic .pictures {
-  display: flex;
+section .wrapSection .wrapPic .pic .pictures {
+  width: 100%;
   flex-wrap: wrap;
-  background-color: #d9ecac;
-  width: 22rem;
-  height: 30rem;
+  background-color: #b5d666;
 }
-@media screen and (max-width: 576px) {
-  .wrapSection .pic .pictures {
-    max-width: 10rem;
-    height: 10rem;
-  }
-}
-.wrapSection .pic .pictures img {
-  width: auto;
-  height: 100%;
-  border: 0.2rem solid #d9ecac;
-}
-@media screen and (max-width: 576px) {
-  .wrapSection .pic .pictures img {
-    width: 100%;
-  }
+section .wrapSection .wrapPic .pic .pictures img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  border: 0.2rem solid #b5d666;
 }
 @media screen and (max-width: 992px) {
-  .wrapSection .pic .pictures img {
-    max-width: 100%;
-    height: auto;
+  section .wrapSection .wrapPic .pic .pictures img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
   }
 }
 @media screen and (min-width: 992px) {
-  .wrapSection .pic .pictures img {
+  section .wrapSection .wrapPic .pic .pictures img {
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
   }
-  .wrapSection .pic .pictures img:hover {
+  section .wrapSection .wrapPic .pic .pictures img:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
 }
-.wrapSection .presentation {
+section .wrapSection .presentation {
   text-align: center;
-  width: 80%;
-  background: url("../img/background/backgroundFloral.webp");
+  width: 100%;
+  background: url("../img/background/back.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 @media screen and (max-width: 576px) {
-  .wrapSection .presentation {
+  section .wrapSection .presentation {
     margin-top: 4rem;
   }
 }
-.wrapSection .presentation h2 {
+section .wrapSection .presentation h2 {
   font-family: "Arizonia", cursive;
   font-size: 5rem;
-  background-color: #f3fadc;
+  background-color: #D3FF93;
   border-radius: 2rem;
-  border: 0.5rem solid #d9ecac;
+  border: 0.5rem solid #b5d666;
   box-shadow: 1rem 1rem 1rem #464646;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 @media screen and (max-width: 576px) {
-  .wrapSection .presentation h2 {
+  section .wrapSection .presentation h2 {
     font-size: 3.5rem;
   }
 }
 @media screen and (max-width: 768px) {
-  .wrapSection .presentation h2 {
+  section .wrapSection .presentation h2 {
     font-size: 5rem;
   }
 }
-.wrapSection .presentation p {
+section .wrapSection .presentation p {
   margin: 5rem;
 }
-.wrapSection .magasinPicture {
+section .wrapSection .magasinPicture {
   display: flex;
   flex-wrap: wrap;
   background-image: url("../img/Magasin/MagainComptoir.webp");
@@ -951,7 +1007,7 @@ form .submit:hover {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.wrapSection .magasinPicture2 {
+section .wrapSection .magasinPicture2 {
   background-image: url("../img/Magasin/Magasin.webp");
   width: 100%;
   height: 40rem;
@@ -961,67 +1017,74 @@ form .submit:hover {
   background-size: cover;
 }
 @media screen and (max-width: 768px) {
-  .wrapSection .productsView {
+  section .wrapSection .productsView {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin: 0;
   }
-  .wrapSection .productsView h2 {
+  section .wrapSection .productsView h2 {
     font-size: 4rem;
   }
 }
-.wrapSection .productsView .wrapProducts .prod h4 {
-  font-size: 2rem;
+section .wrapSection .productsView .wrapProducts .prod h4 a {
+  font-size: 3.5rem;
   font-weight: 800;
   padding: 0;
+  margin: 0;
+}
+@media screen and (max-width: 992px) {
+  section .wrapSection .productsView .wrapProducts .prod h4 a {
+    font-size: 2.5rem;
+    margin: 0;
+  }
 }
 @media screen and (max-width: 576px) {
-  .wrapSection .productsView .wrapProducts .prod h4 {
+  section .wrapSection .productsView .wrapProducts .prod h4 a {
     font-size: 1.2rem;
     margin: 0;
   }
 }
 @media screen and (max-width: 576px) {
-  .wrapSection .productsView .wrapProducts .prod img {
+  section .wrapSection .productsView .wrapProducts .prod img {
     width: 50%;
   }
 }
-.wrapSection .productsView .wrapProducts .prod p {
+section .wrapSection .productsView .wrapProducts .prod p {
   margin-bottom: 0;
 }
-.wrapSection .othersActivity {
+section .wrapSection .othersActivity {
   display: flex;
 }
-.wrapSection .othersActivity .wrapImg {
+section .wrapSection .othersActivity .wrapImg {
   width: 100%;
   position: relative;
   margin: 5rem;
 }
 @media screen and (max-width: 992px) {
-  .wrapSection .othersActivity .wrapImg {
+  section .wrapSection .othersActivity .wrapImg {
     margin: 1rem;
   }
 }
-.wrapSection .othersActivity .wrapImg img {
+section .wrapSection .othersActivity .wrapImg img {
   text-align: center;
   width: 100%;
-  border: 2rem solid #d9ecac;
+  border: 2rem solid #b5d666;
   margin-bottom: 0;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   box-shadow: 1rem 1rem 1rem #5c606b;
 }
 @media screen and (max-width: 992px) {
-  .wrapSection .othersActivity .wrapImg img {
-    border: 1rem solid #d9ecac;
+  section .wrapSection .othersActivity .wrapImg img {
+    border: 1rem solid #b5d666;
   }
 }
-.wrapSection .othersActivity .wrapImg img:hover {
+section .wrapSection .othersActivity .wrapImg img:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-.wrapSection .othersActivity .wrapImg h6 {
+section .wrapSection .othersActivity .wrapImg h6 {
   position: absolute;
   left: 0;
   right: 0;
@@ -1033,39 +1096,39 @@ form .submit:hover {
   background-color: rgba(243, 250, 220, 0.5);
   border-radius: 2rem;
 }
-.wrapSection .othersActivity .wrapImg h6 a {
+section .wrapSection .othersActivity .wrapImg h6 a {
   color: #ffffff;
 }
 @media screen and (max-width: 768px) {
-  .wrapSection .othersActivity .wrapImg h6 {
+  section .wrapSection .othersActivity .wrapImg h6 {
     font-size: 1.5rem;
   }
 }
-.wrapSection .map {
-  background: url("../img/background/backgroundFloral.webp");
+section .wrapSection .map {
+  background: url("../img/background/back.png");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  margin: 5rem;
+  padding: 5rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 @media screen and (max-width: 992px) {
-  .wrapSection .map {
+  section .wrapSection .map {
     display: flex;
     flex-direction: column;
   }
-  .wrapSection .map iframe {
+  section .wrapSection .map iframe {
     width: 100%;
   }
 }
-.wrapSection .map iframe {
-  background-color: #d9ecac;
+section .wrapSection .map iframe {
+  background-color: #b5d666;
   padding: 2rem;
   box-shadow: 1rem 1rem 1rem #5c606b;
 }
-.wrapSection .map .parking {
+section .wrapSection .map .parking {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -1074,11 +1137,13 @@ form .submit:hover {
   margin: 5rem;
 }
 @media screen and (max-width: 992px) {
-  .wrapSection .map .parking {
+  section .wrapSection .map .parking {
     width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
-.wrapSection .map .parking img {
+section .wrapSection .map .parking img {
   width: 40%;
   padding: 1rem;
 }

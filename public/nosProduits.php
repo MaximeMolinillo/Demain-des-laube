@@ -5,37 +5,37 @@ $page = "nos produits.";
 
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE id_category = '1' 
+                 WHERE category = 'Fleurs' 
                  ORDER BY id DESC");
 $flowersPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE id_category = '2' 
+                 WHERE category = 'Plantes Vertes' 
                  ORDER BY id DESC");
 $plantPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE id_category = '3' 
+                 WHERE category = 'Décorations' 
                  ORDER BY id DESC");
 $decoPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE id_category = '4' 
+                 WHERE category = 'Bijoux' 
                  ORDER BY id DESC");
 $jewelsPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE id_category = '5' 
+                 WHERE category = 'Mariage' 
                  ORDER BY id DESC");
 $wedingPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE id_category = '6' 
+                 WHERE category = 'Deuil' 
                  ORDER BY id DESC");
 $mourningPic = $query->fetchAll();
 
 $query = $db->query("SELECT *FROM photos
-                 WHERE id_category = '7' 
+                 WHERE category = 'Autres' 
                  ORDER BY id DESC");
 $othersPic = $query->fetchAll();
 
@@ -43,7 +43,7 @@ include("../templates/header.php");
 ?>
 
 <div class="topSection" id="top">
-    <img src="../assets/img/logo/Flower.webp" alt="Fleur">
+    <img src="../assets/img/logo/Flower.png" alt="Fleur">
     <h3 class="smH3">Découvrez</h3>
     <h3 class="xlH3">Nos Productions</h3>
     <hr>

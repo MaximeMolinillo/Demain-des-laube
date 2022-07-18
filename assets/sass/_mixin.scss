@@ -7,6 +7,9 @@
     border-radius: 2rem;
     border: 0.5rem solid v.$green-pale;
     box-shadow: 1rem 1rem 1rem v.$color-shadow;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     @media screen and (max-width: v.$sm-breakpoint) {
         font-size: 3.5rem;
     }

@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="footSection">
+            <div class="footSection horraire">
                 <h5>Horaires d'ouverture :</h5>
                 <hr>
                 <ul>
@@ -71,7 +71,7 @@
 
     </div>
 </footer>
-<script src="../js/tarteaucitron.js/tarteaucitron.js"></script>
+<!-- <script src="../js/tarteaucitron.js/tarteaucitron.js"></script>
 <script type="text/javascript">
     tarteaucitron.init({
         "privacyUrl": "",
@@ -136,7 +136,7 @@
         /* Show a message about mandatory cookies */
         "mandatoryCta": true /* Show the disabled accept button when mandatory on */
     });
-</script>
+</script> -->
 
 </body>
 

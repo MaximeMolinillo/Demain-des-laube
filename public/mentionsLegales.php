@@ -14,7 +14,7 @@ include("../templates/header.php");
             515093656</p>
         <p>Numéro RCS Douai A 515 093 656</p>
         <p>Numéro d'identification à la TVA: 00020</p>
-        <p>Identité de l'hébergeur</p>
+        <p>Identité de l'hébergeur: Hostinger</p>
     </div>
 </div>
 <?php

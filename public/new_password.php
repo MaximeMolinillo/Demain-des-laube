@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("../vendor/autoload.php");
+// require("../vendor/autoload.php");
 $page = "nouveau mot de passe.";
 
 $message = "";
@@ -8,7 +8,7 @@ $errors = [];
 if (isset($_GET["token"])) {
     require_once('../system/config.php');
     $token = trim(strip_tags($_GET["token"]));
-    // $db = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
+
     $query = $db->prepare("SELECT email, validity FROM password_reset WHERE token = :token");
     $query->bindParam(":token", $token);
     $query->execute();
@@ -46,8 +46,8 @@ if (isset($_GET["token"])) {
             $haveSpace = preg_match("/ /", $passwordReset);
             $specialChar = preg_match("/[^a-zA-Z0-9]/", $passwordReset);
 
-            if (strlen($passwordReset) < 12 || !$uppercase || !$lowercase || $haveSpace || !$specialChar) {
-                $errors["password"] = "Le mot de passe doit contenir 12 caractères minimum, une majuscule, une minuscule, un chiffre et un caractère spécial";
+            if (strlen($passwordReset) < 8 || !$uppercase || !$lowercase || $haveSpace || !$specialChar) {
+                $errors["password"] = "Le mot de passe doit contenir 8 caractères minimum, une majuscule, une minuscule, un chiffre et un caractère spécial";
             }
 
             if (empty($message)) {
@@ -80,6 +80,7 @@ include("../templates/header.php");
 ?>
 
 <div class="newPassword">
+<div class="flowerPicture"></div>
     <form action="" method="post">
         <div class="error"> <?= $message ?></div>
         <div class="form-group">

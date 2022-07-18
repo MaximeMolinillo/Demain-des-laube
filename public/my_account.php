@@ -12,174 +12,178 @@ $message = "";
 $errors = [];
 
 //test que l'utilisateur est bien connecté
-if (!isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR"]) || !isset($_SESSION["token"])) {
+if (
+    !isset($_SESSION["user"])  || ($_SESSION["user_ip"] != $_SERVER["REMOTE_ADDR"])
+    // || !isset($_SESSION["token"])
+) {
     session_destroy();
     header("Location: ./login.php");
-} else {
-    $token = trim(strip_tags($_SESSION["token"]));
-    $query = $db->prepare("SELECT email_log,token FROM user_login WHERE token = :token");
-    $query->bindParam(":token", $token);
-    $query->execute();
-    $resultToken = $query->fetch();
+}
+//  else {
+//     $token = trim(strip_tags($_SESSION["token"]));
+//     $query = $db->prepare("SELECT email_log,token FROM user_login WHERE token = :token");
+//     $query->bindParam(":token", $token);
+//     $query->execute();
+//     $resultToken = $query->fetch();
 
-    if (($_SESSION["token"]) != ($resultToken["token"])) {
-        session_destroy();
-        header("Location: ./login.php");
-    } else {
+// if (($_SESSION["token"]) != ($resultToken["token"])) {
+//     session_destroy();
+//     header("Location: ./login.php");
+// } else {
 
-        //Ajout
+//Ajout
 
-        if ($_SESSION['userRole'] === 'admin') {
-            if (!empty($_POST["upload"])) {
-                $message = "";
-                $errorsF = [];
-                $title = trim(strip_tags($_POST["title"]));
-                $description = trim(strip_tags($_POST["description"]));
-                $category = trim(strip_tags($_POST["category"]));
-                $files = trim(strip_tags($_FILES["file"]["name"]));
+if ($_SESSION['userRole'] === 'admin') {
+    if (!empty($_POST["upload"])) {
+        $message = "";
+        $errorsF = [];
+        $title = trim(strip_tags($_POST["title"]));
+        $description = trim(strip_tags($_POST["description"]));
+        $category = trim(strip_tags($_POST["category"]));
+        $files = trim(strip_tags($_FILES["file"]["name"]));
 
-                if (isset($_FILES['file'])) {
+        if (isset($_FILES['file'])) {
 
-                    $tmpName = $_FILES["file"]["tmp_name"];
-                    $name = $_FILES["file"]["name"];
-                    $size = $_FILES["file"]["size"];
-                    $errors = $_FILES["file"]["error"];
-                    $uploadPath = "../assets/img/products/" . $name;
-                    $tabExtension = explode(".", $name);
-                    $extension = strtolower(end($tabExtension));
-                    $extensions = ["jpg", "png", "jpeg", "bmp"];
-                    $maxSize = 2000000;
-                    if ($maxSize <= $size) {
-                        $errorsF["file"] = "Fichier trop volumineux !";
-                    }
+            $tmpName = $_FILES["file"]["tmp_name"];
+            $name = $_FILES["file"]["name"];
+            $size = $_FILES["file"]["size"];
+            $errors = $_FILES["file"]["error"];
+            $uploadPath = "../assets/img/products/" . $name;
+            $tabExtension = explode(".", $name);
+            $extension = strtolower(end($tabExtension));
+            $extensions = ["jpg", "png", "jpeg", "bmp"];
+            $maxSize = 8000000;
+            if ($maxSize <= $size) {
+                $errorsF["file"] = "Fichier trop volumineux !";
+            }
 
-                    if (in_array($extension, $extensions) && $size <= $maxSize && $errors == 0) {
-                        $uniqueName = md5(time());
-                        $file = $uniqueName . "." . $extension;
-                        move_uploaded_file($tmpName, $uploadPath);
-                        rename("../assets/img/products/$files", "../assets/img/products/$file");
+            if (in_array($extension, $extensions) && $size <= $maxSize && $errors == 0) {
+                $uniqueName = md5(time());
+                $file = $uniqueName . "." . $extension;
+                move_uploaded_file($tmpName, $uploadPath);
+                rename("../assets/img/products/$files", "../assets/img/products/$file");
 
-                        if (empty(!$title)) {
-                            $query = $db->prepare("INSERT INTO photos 
-                              (picture, title, description, id_category)
+                if (empty(!$title)) {
+                    $query = $db->prepare("INSERT INTO photos 
+                              (picture, title, description, category)
                                VALUES
-                               (:file, :title, :description, :id_category)");
-                            $query->bindParam(":file", $file);
-                            $query->bindParam(":title", $title);
-                            $query->bindParam(":description", $description);
-                            $query->bindParam(":id_category", $category);
-                            if ($query->execute()) {
-                                $message = "Image enregistrée. ";
-                            }
-                        } else {
-                            $errorsF["title"] = "Vous devez renseigner un titre !";
-                        }
+                               (:file, :title, :description, :category)");
+                    $query->bindParam(":file", $file);
+                    $query->bindParam(":title", $title);
+                    $query->bindParam(":description", $description);
+                    $query->bindParam(":category", $category);
+                    if ($query->execute()) {
+                        $message = "Image enregistrée. ";
                     }
                 } else {
-                    $errorsF = "Une erreur est survenue";
-                }
-            }
-
-            //-----------/MOdification
-            if (!empty($_GET["id"])) {
-                $id = trim(strip_tags($_GET["id"]));
-                $query = $db->prepare("SELECT * FROM photos where id LIKE :id");
-                $query->bindParam(":id", $id);
-                $query->execute();
-                $photoId = $query->fetch();
-            }
-
-            if (!empty($_POST["modifyP"])) {
-                $modify = trim(strip_tags($_POST["modify"]));
-                $titleModify = trim(strip_tags($_POST["titleModify"]));
-                $descriptionModify = trim(strip_tags($_POST["descriptionModify"]));
-                $categoryModify = trim(strip_tags($_POST["categoryModify"]));
-                $filesModify = trim(strip_tags($_FILES["filesModify"]["name"]));
-                $messageModify = "";
-                $errorsModify = [];
-
-                if (isset($_FILES['filesModify'])) {
-                    $tmpName = $_FILES["filesModify"]["tmp_name"];
-                    $name = $_FILES["filesModify"]["name"];
-                    $size = $_FILES["filesModify"]["size"];
-                    $errorsModify = $_FILES["filesModify"]["error"];
-                    $uploadPath = "../assets/img/products/" . $name;
-                    $tabExtension = explode(".", $name);
-                    $extension = strtolower(end($tabExtension));
-                    $extensions = ["jpg", "png", "jpeg", "bmp"];
-                    $maxSize = 2000000;
-
-                    if (in_array($extension, $extensions) && $size <= $maxSize && $errorsModify == 0) {
-                        $uniqueName =  md5(time());
-                        $file = $uniqueName . "." . $extension;
-                        move_uploaded_file($tmpName, $uploadPath);
-                        rename("../assets/img/products/$filesModify", "../assets/img/products/$file");
-                        //var_dump($file);
-                        if ($maxSize <= $size) {
-                            $errorsModify["filesModify"] = "Fichier trop volumineux !";
-                        }
-                        if (empty($errorsModify)) {
-                            //  $dbase = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
-                            $query = $db->prepare("UPDATE photos SET
-                                       title = :titleModify,
-                                       description = :descriptionModify,
-                                       picture = :filesModify,
-                                       id_category = :categoryModify
-                                       WHERE id = :modify");
-                            $query->bindParam(":modify", $modify, PDO::PARAM_INT);
-                            $query->bindParam(":filesModify", $file);
-                            $query->bindParam(":titleModify", $titleModify);
-                            $query->bindParam(":descriptionModify", $descriptionModify);
-                            $query->bindParam(":categoryModify", $categoryModify);
-                            if ($query->execute()) {
-                                $messageModify = "Image enregistrée";
-                            }
-                        } else {
-                            $errorsModify["error"] = "Erreur !";
-                        }
-                    }
-                } else {
-                    $errorsModify["files"] = "Une erreur de fichier est survenue";
-                }
-            }
-
-
-            //--------------Suppresion de fichier
-            if (!empty($_POST["delete"])) {
-                $deleteMessage = [];
-                $delete = ($_POST["delete"]);
-                $query = $db->prepare("DELETE FROM photos WHERE id = :delete");
-                $query->bindParam(":delete", $delete);
-                if ($query->execute()) {
-                    $deleteMessage["succes"] = "Votre fichier a été supprimé.";
-                    // //   unlink("assets/img/products/")
-                    // $queryp = $db->query("SELECT * FROM photos WHERE id = :delete");
-                    // $queryp->bindParam(":delete", $delete);
-                    // $queryp->execute();
-                    // $pho = $queryp->fetch();
-                    // foreach ($photos as $phot) {
-                    // unlink("assets/img/products/" . $pho["picture"]);
-                    // }
-                } else {
-                    $deleteMessage["fail"] = "Erreur de suppression.";
-                }
-            }
-
-            //--------Suppression de compte
-            if (!empty($_POST["deleteAccountBtn"])) {
-                $idUsers = $_SESSION["userId"];
-                $query = $db->prepare("DELETE FROM users WHERE id LIKE :idUsers");
-                $query->bindParam(":idUsers", $idUsers);
-                if ($query->execute()) {
-                    session_destroy();
-                    header("location: ./index.php");
+                    $errorsF["title"] = "Vous devez renseigner un titre !";
                 }
             }
         } else {
-            Header("Location: ../public/contact.php");
+            $errorsF = "Une erreur est survenue";
         }
     }
+
+    //-----------/MOdification
+    if (!empty($_GET["id"])) {
+        $id = trim(strip_tags($_GET["id"]));
+        $query = $db->prepare("SELECT * FROM photos where id LIKE :id");
+        $query->bindParam(":id", $id);
+        $query->execute();
+        $photoId = $query->fetch();
+    }
+
+    if (!empty($_POST["modifyP"])) {
+        $modify = trim(strip_tags($_POST["modify"]));
+        $titleModify = trim(strip_tags($_POST["titleModify"]));
+        $descriptionModify = trim(strip_tags($_POST["descriptionModify"]));
+        $categoryModify = trim(strip_tags($_POST["categoryModify"]));
+        $filesModify = trim(strip_tags($_FILES["filesModify"]["name"]));
+        $messageModify = "";
+        $errorsModify = [];
+
+        if (isset($_FILES['filesModify'])) {
+            $tmpName = $_FILES["filesModify"]["tmp_name"];
+            $name = $_FILES["filesModify"]["name"];
+            $size = $_FILES["filesModify"]["size"];
+            $errorsModify = $_FILES["filesModify"]["error"];
+            $uploadPath = "../assets/img/products/" . $name;
+            $tabExtension = explode(".", $name);
+            $extension = strtolower(end($tabExtension));
+            $extensions = ["jpg", "png", "jpeg", "bmp"];
+            $maxSize = 8000000;
+
+            if (in_array($extension, $extensions) && $size <= $maxSize && $errorsModify == 0) {
+                $uniqueName =  md5(time());
+                $file = $uniqueName . "." . $extension;
+                move_uploaded_file($tmpName, $uploadPath);
+                rename("../assets/img/products/$filesModify", "../assets/img/products/$file");
+                //var_dump($file);
+                if ($maxSize <= $size) {
+                    $errorsModify["filesModify"] = "Fichier trop volumineux !";
+                }
+                if (empty($errorsModify)) {
+                    //  $dbase = new PDO("mysql:host=localhost;dbname=demaindeslaube", "root", "");
+                    $query = $db->prepare("UPDATE photos SET
+                                       title = :titleModify,
+                                       description = :descriptionModify,
+                                       picture = :filesModify,
+                                       category = :categoryModify
+                                       WHERE id = :modify");
+                    $query->bindParam(":modify", $modify, PDO::PARAM_INT);
+                    $query->bindParam(":filesModify", $file);
+                    $query->bindParam(":titleModify", $titleModify);
+                    $query->bindParam(":descriptionModify", $descriptionModify);
+                    $query->bindParam(":categoryModify", $categoryModify);
+                    if ($query->execute()) {
+                        $messageModify = "Image enregistrée";
+                    }
+                } else {
+                    $errorsModify["error"] = "Erreur !";
+                }
+            }
+        } else {
+            $errorsModify["files"] = "Une erreur de fichier est survenue";
+        }
+    }
+
+
+    //--------------Suppresion de fichier
+    if (!empty($_POST["delete"])) {
+        $deleteMessage = [];
+        $delete = ($_POST["delete"]);
+        $query = $db->prepare("DELETE FROM photos WHERE id = :delete");
+        $query->bindParam(":delete", $delete);
+        if ($query->execute()) {
+            $deleteMessage["succes"] = "Votre fichier a été supprimé.";
+            // //   unlink("assets/img/products/")
+            // $queryp = $db->query("SELECT * FROM photos WHERE id = :delete");
+            // $queryp->bindParam(":delete", $delete);
+            // $queryp->execute();
+            // $pho = $queryp->fetch();
+            // foreach ($photos as $phot) {
+            // unlink("assets/img/products/" . $pho["picture"]);
+            // }
+        } else {
+            $deleteMessage["fail"] = "Erreur de suppression.";
+        }
+    }
+
+    //--------Suppression de compte
+    if (!empty($_POST["deleteAccountBtn"])) {
+        $idUsers = $_SESSION["userId"];
+        $query = $db->prepare("DELETE FROM users WHERE id LIKE :idUsers");
+        $query->bindParam(":idUsers", $idUsers);
+        if ($query->execute()) {
+            session_destroy();
+            header("location: ./index.php");
+        }
+    }
+} else {
+    Header("Location: ../public/contact.php");
 }
+//     }
+// }
 // }
 include("../templates/header.php");
 ?>
@@ -195,7 +199,7 @@ include("../templates/header.php");
     <?php
     }
     ?>
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" class="fond">
         <h2>Ajouter un produit</h2>
         <div class="form-group">
             <div class="submit">
@@ -231,13 +235,13 @@ include("../templates/header.php");
         <div class="form-group">
             <label for="inputCategory">Veuillez séléctionner la catégorie de votre produit :</label>
             <select name="category" id="inputCategory" class="submit">
-                <option value="1" <?= (isset($category) && $category === "Fleurs") ? "selected" : "" ?>>Fleurs</option>
-                <option value="2" <?= (isset($category) && $category === "PlantesVertes") ? "selected" : "" ?>>Plantes vertes</option>
-                <option value="3" <?= (isset($category) && $category === "Decoration") ? "selected" : "" ?>>Décoration</option>
-                <option value="4" <?= (isset($category) && $category === "Bijoux") ? "selected" : "" ?>>Bijoux</option>
-                <option value="5" <?= (isset($category) && $category === "Mariage") ? "selected" : "" ?>>Mariage</option>
-                <option value="6" <?= (isset($category) && $category === "Deuil") ? "selected" : "" ?>>Deuil</option>
-                <option value="7" <?= (isset($category) && $category === "Others") ? "selected" : "" ?>>Autres</option>
+                <option value="Fleurs" <?= (isset($category) && $category === "Fleurs") ? "selected" : "" ?>>Fleurs</option>
+                <option value="Plantes Vertes" <?= (isset($category) && $category === "PlantesVertes") ? "selected" : "" ?>>Plantes vertes</option>
+                <option value="Décorations" <?= (isset($category) && $category === "Decoration") ? "selected" : "" ?>>Décoration</option>
+                <option value="Bijoux" <?= (isset($category) && $category === "Bijoux") ? "selected" : "" ?>>Bijoux</option>
+                <option value="Mariage" <?= (isset($category) && $category === "Mariage") ? "selected" : "" ?>>Mariage</option>
+                <option value="Deuil" <?= (isset($category) && $category === "Deuil") ? "selected" : "" ?>>Deuil</option>
+                <option value="Autres" <?= (isset($category) && $category === "Others") ? "selected" : "" ?>>Autres</option>
             </select>
 
         </div>
@@ -267,20 +271,9 @@ include("../templates/header.php");
             <div class="photo">
                 <img src="../assets/img/products/<?= $photo['picture'] ?>">
                 <h1><?= $photo["title"] ?></h1>
-                <!-- <h2><?= $photo["id_category"] ?></h2> -->
+                <h2><?= $photo["category"] ?></h2>
                 <h2> <span> Numéro:</span> <?= $photo["id"] ?></h2>
-                <?php
-                $id_type = $photo["id_category"];
-                $query = $db->prepare("SELECT name FROM category WHERE id = :id_category");
-                $query->bindParam(":id_category", $id_type);
-                $query->execute();
-                $types = $query->fetchAll();
-                foreach ($types as $type) {
-                ?>
-                    <p> <span> Catégorie :</span> <?= $type["name"] ?></p>
-                <?php
-                }
-                ?>
+
                 <form action="" method="post" enctype="multipart/form-data">
                     <button type="submit" name="delete" value="<?= $photo["id"] ?>" class="btnDelete">
                         Supprimer
@@ -338,27 +331,37 @@ include("../templates/header.php");
             <div class="form-group">
                 <label for="inputCategoryModify">Veuillez séléctionner la catégorie de votre produit :</label>
                 <select name="categoryModify" id="inputCategoryModify" class="submit" value="<?= isset($photoId["category"]) ? $photoId["category"] : "" ?>">
-                    <option value="1" <?= (isset($category) && $category === "Fleurs") ? "selected" : "" ?>>Fleurs</option>
-                    <option value="2" <?= (isset($category) && $category === "PlantesVertes") ? "selected" : "" ?>>Plantes vertes</option>
-                    <option value="3" <?= (isset($category) && $category === "Decoration") ? "selected" : "" ?>>Décoration</option>
-                    <option value="4" <?= (isset($category) && $category === "Bijoux") ? "selected" : "" ?>>Bijoux</option>
-                    <option value="5" <?= (isset($category) && $category === "Mariage") ? "selected" : "" ?>>Mariage</option>
-                    <option value="6" <?= (isset($category) && $category === "Deuil") ? "selected" : "" ?>>Deuil</option>
-                    <option value="7" <?= (isset($category) && $category === "Others") ? "selected" : "" ?>>Autres</option>
+                    <option value="Fleurs" <?= (isset($category) && $category === "Fleurs") ? "selected" : "" ?>>Fleurs</option>
+                    <option value="Plantes Vertes" <?= (isset($category) && $category === "PlantesVertes") ? "selected" : "" ?>>Plantes vertes</option>
+                    <option value="Décorations" <?= (isset($category) && $category === "Decoration") ? "selected" : "" ?>>Décoration</option>
+                    <option value="Bijoux" <?= (isset($category) && $category === "Bijoux") ? "selected" : "" ?>>Bijoux</option>
+                    <option value="Mariage" <?= (isset($category) && $category === "Mariage") ? "selected" : "" ?>>Mariage</option>
+                    <option value="Deuil" <?= (isset($category) && $category === "Deuil") ? "selected" : "" ?>>Deuil</option>
+                    <option value="Autres" <?= (isset($category) && $category === "Others") ? "selected" : "" ?>>Autres</option>
 
                 </select>
             </div>
             <input type="submit" class="submit" value="Modifier le produit" name="modifyP">
         </form>
     </div>
-</div>
 
+    <!-- <div class="video">
+    <source src="../assets/img/Magasin/Video.mp4">
+</div> -->
+    <figure class="figure">
+        <figcaption>
+            <h4>Video explicative de l'espace administrateur</h4>
+        </figcaption>
+        <video controls src="../assets/img/Magasin/Video.mp4" width="50%"></video>
+
+    </figure>
+</div>
 <div class="bottomLink">
     <a href="logout.php">Déconnexion</a>
 </div>
 
 <div class="deleteAccount">
-    <h3>supprimer mon compte</h3>
+    <h1>supprimer mon compte</h1>
     <form action="" method="post">
         <div class="form-group">
 

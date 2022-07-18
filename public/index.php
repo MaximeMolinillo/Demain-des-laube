@@ -9,24 +9,26 @@ include("../templates/header.php");
 ?>
 
 <div class="topSection" id="topHome">
-    <img src="../assets/img/logo/Flower.webp" alt="Fleur">
+    <img src="../assets/img/logo/Flower.png" alt="Fleur">
     <h3 class="smH3">Découvrez</h3>
     <h3 class="xlH3">Nos produits</h3>
     <hr>
 </div>
 <section>
     <div class="wrapSection">
-        <?php
-        foreach ($photos as $photo) {
-        ?>
-            <div class="pic">
-                <div class="pictures">
-                    <img src="../assets/img/products/<?= $photo['picture'] ?>" alt="<?= $photo["title"] ?>">
+        <div class="wrapPic">
+            <?php
+            foreach ($photos as $photo) {
+            ?>
+                <div class="pic">
+                    <div class="pictures">
+                        <img src="../assets/img/products/<?= $photo['picture'] ?>" alt="<?= $photo["title"] ?>">
+                    </div>
                 </div>
-            </div>
-        <?php
-        }
-        ?>
+            <?php
+            }
+            ?>
+        </div>
         <div class="presentation">
             <h2>Présentation</h2>
             <p>Demain dès l'Aube est un fleuriste situé à cinq minutes du centre de Douai. Les fleurs ne sont pas nos seules spécialités car nous proposons également des plantes vertes, de la décoration ainsi que des bijoux. Toutes nos créations sont 100% artisanales et faites maison. Nous proposons également des services évènementiels comme vous accompagner lors de vos mariages (Bouquets de fleurs, décoration voitures, accessoires vestimentaires etc…), ou être à vos côtés lors de vos périodes de deuil . Vous trouverez des emplacements de parking gratuit juste devant la boutique. </p>
@@ -72,18 +74,18 @@ include("../templates/header.php");
                     <h4> <a href="nosProduits.php#jewelsLink">Bijoux </a></h4>
                     <p>Notre gamme de bijoux faits maison</p>
                 </div>
-                <div class="prod">                  
-                        <img src="../assets/img/logo/weding.webp" alt="Mariage">
-                        <hr>
-                        <h4> <a href="nosProduits.php#wedingLink">Mariages</a></h4>
-                        <p>Découvrez nos réalisations pour vos mariages</p>                  
+                <div class="prod">
+                    <img src="../assets/img/logo/weding.webp" alt="Mariage">
+                    <hr>
+                    <h4> <a href="nosProduits.php#wedingLink">Mariages</a></h4>
+                    <p>Découvrez nos réalisations pour vos mariages</p>
                 </div>
                 <div class="prod">
-                   
-                        <img src="../assets/img/logo/rip.webp" alt="Deuil">
-                        <hr>                 
-                        <h4> <a href="nosProduits.php#mourningLink">Deuil</a></h4>
-                        <p>Découvrez nos réalisations pour accompagner vos périodes de deuil</p>
+
+                    <img src="../assets/img/logo/rip.webp" alt="Deuil">
+                    <hr>
+                    <h4> <a href="nosProduits.php#mourningLink">Deuil</a></h4>
+                    <p>Découvrez nos réalisations pour accompagner vos périodes de deuil</p>
                 </div>
             </div>
         </div>
@@ -93,22 +95,22 @@ include("../templates/header.php");
 
         <div class="othersActivity">
             <div class="wrapImg">
-                    <img src="../assets/img/Magasin/couronne.webp" alt="Contact">
-                
-                    <h6><a href="./contact.php">Contact</a></h6>
-                
+                <img src="../assets/img/Magasin/couronne.webp" alt="Contact">
+
+                <h6><a href="./contact.php">Contact</a></h6>
+
             </div>
             <div class="wrapImg">
-                
-                    <img src="../assets/img/Magasin/potager-city-box.webp" alt="Nos partenaires">
-                    <h6><a href="./partners.php">Nos partenaires</a></h6>
-                
+
+                <img src="../assets/img/Magasin/potager-city-box.webp" alt="Nos partenaires">
+                <h6><a href="./partners.php">Nos partenaires</a></h6>
+
             </div>
             <div class="wrapImg">
-               
-                    <img src="../assets/img/Magasin/carolineDelautre.webp" alt="Qui-suis-je ?">
-                    <h6> <a href="./whoIAm.php">Qui-suis-je?</a></h6>
-                
+
+                <img src="../assets/img/Magasin/carolineDelautre.webp" alt="Qui-suis-je ?">
+                <h6> <a href="./whoIAm.php">Qui-suis-je?</a></h6>
+
             </div>
         </div>
         <hr>
@@ -123,10 +125,11 @@ include("../templates/header.php");
                 </div>
             </div>
         </div>
-    </div>
+  
     <a href="#topHome" class="a">
         <img src="../assets/img/logo/fleche.svg" alt="Retour vers le haut">
     </a>
+    </div>
 </section>
 
 <?php

@@ -35,24 +35,32 @@ INSERT INTO photos
 VALUES
 ("HELLO", "123", "IMG-20220422-WA0024", "Fleurs"),
 
-
+CREATE TABLE users(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    firstname VARCHAR(100),
+    email VARCHAR(320),
+    password VARCHAR(255)
+   
+);
 
 
 ALTER TABLE users ADD role VARCHAR(50) DEFAULT "utilisateur";
 
-UPDATE users SET role ="admin" WHERE id=1 ;
+-- UPDATE users SET role ="admin" WHERE id=1 ;
 
-ALTER TABLE type ADD sub_category VARCHAR(70);
+-- ALTER TABLE type ADD sub_category VARCHAR(70);
 
-INSERT INTO type
-(category)
-VALUES
-("Fleurs"),
-("Décorations"),
-("Bijoux"),
-("Mariage"),
-("Deuil"),
-("Autres")
+-- INSERT INTO category
+-- (name)
+-- VALUES
+-- ("Fleurs"),
+-- ("Plantes Vertes"),
+-- ("Décorations"),
+-- ("Bijoux"),
+-- ("Mariage"),
+-- ("Deuil"),
+-- ("Autres")
 
 
 INSERT INTO photos_category
@@ -87,3 +95,5 @@ ADD id_category INT
 
 SELECT category.name AS 'type',GROUP_CONCAT(photos.title ORDER BY photos.id separator ' </br> ') AS 'photo' FROM category 
 INNER JOIN photos ON category.id = photos.id_category
+
+-- ALTER TABLE photos 

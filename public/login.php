@@ -27,15 +27,15 @@ if (!empty($_POST)) {
         //On stocke l'adresse ip de l'utilisateur pour palier à une possible attaque "session hijacking"
         $_SESSION["user_ip"] = $_SERVER["REMOTE_ADDR"];
 
-        $token = bin2hex(random_bytes(50));
+        // $token = bin2hex(random_bytes(50));
 
-        $query = $db->prepare("INSERT INTO user_login (email_log, token) VALUES (:email, :token)");
-        $query->bindParam(":email", $email);
-        $query->bindParam(":token", $token);
+        // $query = $db->prepare("INSERT INTO user_login (email_log, token) VALUES (:email, :token)");
+        // $query->bindParam(":email", $email);
+        // $query->bindParam(":token", $token);
 
-        if ($query->execute()) {
-            $_SESSION["token"] = $token;
-        }
+        // if ($query->execute()) {
+        //     $_SESSION["token"] = $token;
+        // }
 
         if ($result["role"] !== "admin") {
             header("Location: ./contact.php");
@@ -77,8 +77,8 @@ if (!empty($_POST)) {
     $haveSpace = preg_match("/ /", $password);
     $specialChar = preg_match("/[^a-zA-Z0-9]/", $password);
 
-    if (strlen($password) < 12 || !$uppercase || !$lowercase || $haveSpace || !$specialChar) {
-        $errors["password"] = "Le mot de passe doit contenir 12 caractères minimum, une majuscule, une minuscule, un chiffre  et un caractère spécial";
+    if (strlen($password) < 8 || !$uppercase || !$lowercase || $haveSpace || !$specialChar) {
+        $errors["password"] = "Le mot de passe doit contenir 8 caractères minimum, une majuscule, une minuscule, un chiffre  et un caractère spécial";
     }
 
     //--------Gestion des doublons email
@@ -102,7 +102,7 @@ if (!empty($_POST)) {
         $query->bindParam(":email", $email);
         $query->bindParam(":password", $password);
         if ($query->execute()) {
-            header("location: ./login.php");
+            $message = 'Votre compte à été créé avec succès !';
         } else {
             $message = "Erreur de bdd";
         }
@@ -148,6 +148,13 @@ include("../templates/header.php");
 
         <form action="" method="post">
             <h2>Où s'inscrire</h2>
+            <?php
+            if (isset($message)) {
+            ?>
+                <p class="error"><?= $message ?></p>
+            <?php
+            }
+            ?>
             <div class="form-group">
                 <label for="inputName">Votre nom* :</label>
                 <input type="name" name="name" id="inputName" value="<?= isset($name) ? $name : "" ?>" required>

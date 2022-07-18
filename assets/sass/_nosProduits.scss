@@ -3,7 +3,7 @@
 @use "mixin" as m;
 
 .productsView {
-    background: url("../img/background/backgroundFloral.webp");
+    background: url("../img/background/back");
     background-size: cover;
     background-repeat: no-repeat;
     margin: 5rem;
@@ -110,7 +110,7 @@
 }
 
 .viewProducts {
-    background: url("../img/background/inverseBackground.webp");
+    background: url("../img/background/backInv.png");
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -134,7 +134,7 @@
             border: 1rem solid v.$green-pale;
             box-shadow: (0.5rem 0.5rem 1rem v.$color-shadow);
             background-color: white;
-            background: url("../img/background/backgroundFloral.webp");
+            background: url("../img/background/back.png");
             background-size: cover;
             width: 25rem;
             border-radius: 2rem;
@@ -175,7 +175,7 @@
                 padding: 1rem;
                 color: v.$dark-gray;
                 text-shadow: 0.1rem 0.1rem 0.5rem v.$color-shadow;
-                background: url("../img/background/inverseBackground.webp");
+                background: url("../img/background/backInv.png");
                 background-position: center;
                 background-size: cover;
                 @media screen and (max-width: v.$sm-breakpoint) {

@@ -14,74 +14,71 @@
     background-size: cover;
 }
 .login {
-    background: url("../img/background/backgroundFloral.webp");
+    background: url("../img/background/back.png");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     @media screen and (max-width: v.$md-breakpoint) {
         flex-direction: column;
     }
-    .log{
+    .log {
         width: 50%;
         @media screen and (max-width: v.$md-breakpoint) {
             width: 100%;
         }
     }
-    .inscription{
+    .inscription {
         width: 50%;
         @media screen and (max-width: v.$md-breakpoint) {
             width: 100%;
         }
     }
-
-  
 }
-    form {
-     
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+    h2 {
+        @include m.title-mix;
+        width: 90%;
+        text-align: center;
+    }
+    .form-group {
         display: flex;
-        justify-content: center;
         flex-direction: column;
-        align-items: center;
-        padding-bottom: 3rem;
-        h2 {
-            @include m.title-mix;
-            width: 90%;
-            text-align: center;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            font-weight: 600;
-            input {
-                border-radius: 2rem;
-                background-color: v.$green-pale;
-                border: 0.2rem solid v.$dark-gray;
-                box-shadow: 0.5rem 0.5rem 1rem v.$dark-gray;
-                padding: 1rem;
-                font-family: v.$font-text;
-            }
-        }
-        .submit {
-            background-color: v.$green-pale;
-            font-family: v.$font-text;
-            font-size: 3rem;
-            font-weight: 800;
-            margin: 2rem;
+        text-align: center;
+        font-weight: 600;
+        input {
             border-radius: 2rem;
-            padding: 2rem;
-            padding-right: 5rem;
-            padding-left: 5rem;
-            box-shadow: 1rem 1rem 1rem v.$dark-gray;
-            &:hover {
-                background-color: v.$dark-gray;
-                color: v.$green-pale;
-            }
-            @media screen and (max-width: v.$sm-breakpoint) {
-                font-size: 2rem;
-            }
+            background-color: v.$green-pale;
+            border: 0.2rem solid v.$dark-gray;
+            box-shadow: 0.5rem 0.5rem 1rem v.$dark-gray;
+            padding: 1rem;
+            font-family: v.$font-text;
         }
     }
+    .submit {
+        background-color: v.$green-pale;
+        font-family: v.$font-text;
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 2rem;
+        border-radius: 2rem;
+        padding: 2rem;
+        padding-right: 5rem;
+        padding-left: 5rem;
+        box-shadow: 1rem 1rem 1rem v.$dark-gray;
+        &:hover {
+            background-color: v.$dark-gray;
+            color: v.$green-pale;
+        }
+        @media screen and (max-width: v.$sm-breakpoint) {
+            font-size: 2rem;
+        }
+    }
+}
 
 .bottomLink {
     text-align: center;
@@ -99,7 +96,7 @@
     .ourProducts {
         @include m.title-mix;
         text-align: center;
-        margin: 0 10% 0 10%;
+        // margin: 0 10% 0 10%;
     }
     .view {
         display: flex;
@@ -107,7 +104,7 @@
         justify-content: center;
         flex-wrap: wrap;
         margin: 5rem;
-        background: url("../img/background/backgroundFloral.webp");
+        background: url("../img/background/back.png");
         border: 2rem solid v.$green-pale;
         border-radius: 2rem;
         .photo {
@@ -134,6 +131,9 @@
             h2 {
                 font-size: 1.5rem;
                 margin-top: 0.1rem;
+            }
+            .fond {
+                background: url("../img/background/back.png");
             }
             form {
                 button {
@@ -186,6 +186,10 @@
     width: 50%;
     margin-left: 25%;
     border-radius: 2rem;
+    text-align: center;
+    h1{
+       font-size: 5rem; 
+    }
     h3 {
         text-align: center;
         background-color: v.$green-pale;
@@ -202,4 +206,17 @@
 .error {
     color: v.$alert;
     text-align: center;
+}
+
+figure {
+    // display: flex;
+    justify-content: center;
+    text-align: center;
+
+    video {
+        margin-left: 25%;
+        margin-right: 25%;
+        border: 1rem solid v.$green-pale-nav;
+        box-shadow: 0.5rem 0.5rem 1rem v.$dark-gray;
+    }
 }
